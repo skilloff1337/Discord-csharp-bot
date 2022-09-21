@@ -1,0 +1,28 @@
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\Discord Bot.exe
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\Discord Bot.deps.json
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\Discord Bot.runtimeconfig.json
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\Discord Bot.runtimeconfig.dev.json
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\Discord Bot.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\ref\Discord Bot.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\Discord Bot.pdb
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\Discord.Net.Commands.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\Discord.Net.Core.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\Discord.Net.Interactions.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\Discord.Net.Rest.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\Discord.Net.Webhook.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\Discord.Net.WebSocket.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\Newtonsoft.Json.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\System.Interactive.Async.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\System.Linq.Async.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\System.Reactive.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\obj\Debug\net5.0\Discord Bot.csproj.AssemblyReference.cache
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\obj\Debug\net5.0\Discord Bot.GeneratedMSBuildEditorConfig.editorconfig
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\obj\Debug\net5.0\Discord Bot.AssemblyInfoInputs.cache
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\obj\Debug\net5.0\Discord Bot.AssemblyInfo.cs
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\obj\Debug\net5.0\Discord Bot.csproj.CoreCompileInputs.cache
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\obj\Debug\net5.0\Discord Bot.csproj.CopyComplete
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\obj\Debug\net5.0\Discord Bot.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\obj\Debug\net5.0\ref\Discord Bot.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\obj\Debug\net5.0\Discord Bot.pdb
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\obj\Debug\net5.0\Discord Bot.genruntimeconfig.cache
