@@ -26,3 +26,5 @@ F:\Project\My New Project 2022\Discord Bot\Discord Bot\obj\Debug\net5.0\Discord 
 F:\Project\My New Project 2022\Discord Bot\Discord Bot\obj\Debug\net5.0\ref\Discord Bot.dll
 F:\Project\My New Project 2022\Discord Bot\Discord Bot\obj\Debug\net5.0\Discord Bot.pdb
 F:\Project\My New Project 2022\Discord Bot\Discord Bot\obj\Debug\net5.0\Discord Bot.genruntimeconfig.cache
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll

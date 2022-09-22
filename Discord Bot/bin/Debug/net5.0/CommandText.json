@@ -1,0 +1,4 @@
+{
+  "INFO_COMMAND_HELP": "***CMD_TEXT_HELP***\n**Information**\n```\n!help\n!hi\n```\n**Funny**\n```\n!test\n!test2\n!test3\n```",
+  "INFO_COMMAND_HI": "HELLO"
+}
