@@ -34,7 +34,7 @@ namespace Discord_Bot
             _command = services.GetRequiredService<ICommandHandler>();
             _userHandler = services.GetRequiredService<IUserHandler>();
             _welcomeHandler = services.GetRequiredService<IWelcomeHandler>();
-
+            
             await _command.InstallCommandsAsync();
             await _userHandler.InstallEventsAsync();
             await _welcomeHandler.InstallCommandsAsync();
@@ -42,12 +42,13 @@ namespace Discord_Bot
             _client.Log += Log;
 
             var token = _reader.Load().Token;
-            
+
             await _client.LoginAsync(TokenType.Bot, token);
             await _client.StartAsync();
 
             await Task.Delay(Timeout.Infinite);
         }
+        
 
         private Task Log(LogMessage msg)
         {

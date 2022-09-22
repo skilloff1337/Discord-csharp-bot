@@ -28,3 +28,27 @@ F:\Project\My New Project 2022\Discord Bot\Discord Bot\obj\Debug\net5.0\Discord 
 F:\Project\My New Project 2022\Discord Bot\Discord Bot\obj\Debug\net5.0\Discord Bot.genruntimeconfig.cache
 F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
 F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\DnsClient.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\MongoDB.Bson.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\MongoDB.Driver.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\MongoDB.Driver.Core.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\MongoDB.Libmongocrypt.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\SharpCompress.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\runtimes\linux\native\libsnappy64.so
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\runtimes\linux\native\libzstd.so
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\runtimes\osx\native\libsnappy64.dylib
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\runtimes\osx\native\libzstd.dylib
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\runtimes\win\native\libzstd.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\runtimes\win\native\snappy32.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\runtimes\win\native\snappy64.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\runtimes\linux\native\libmongocrypt.so
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\runtimes\osx\native\libmongocrypt.dylib
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\runtimes\win\native\mongocrypt.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\libzstd.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\snappy32.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\snappy64.dll
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\libsnappy64.so
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\libzstd.so
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\libsnappy64.dylib
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\libzstd.dylib
+F:\Project\My New Project 2022\Discord Bot\Discord Bot\bin\Debug\net5.0\mongocrypt.dll

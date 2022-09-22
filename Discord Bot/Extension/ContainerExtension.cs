@@ -1,6 +1,9 @@
 ﻿using Discord.Commands;
 using Discord.WebSocket;
+using Discord_Bot.Models;
 using Discord_Bot.Services.BotSetting;
+using Discord_Bot.Services.DataBase;
+using Discord_Bot.Services.DataBase.Interfaces;
 using Discord_Bot.Services.TextChat;
 using Discord_Bot.Services.TextChat.Interfaces;
 using Discord_Bot.Services.TextChatHandler;
@@ -23,7 +26,8 @@ namespace Discord_Bot.Extension
                 .AddSingleton<IUserHandler, UserHandler>()
                 .AddSingleton<IBotSetting, BotSetting>()
                 .AddSingleton<IWelcomeHandler, WelcomeHandler>()
-                .AddSingleton<ITranslation, Translation>();
+                .AddSingleton<ITranslation, Translation>()
+                .AddSingleton<IRepository<MessageUser>, MessageRepository>();
         }
     }
 }

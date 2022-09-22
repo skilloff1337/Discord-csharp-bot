@@ -4,6 +4,9 @@ namespace Discord_Bot.Models
 {
     public class Config
     {
+        
+        public string DataBaseName { get; set; }
+        public string ConnectionString { get; set; }
         public LanguageType Language { get; set; }
         public string Token { get; set; }
         public string Version { get; set; }
@@ -12,6 +15,7 @@ namespace Discord_Bot.Models
         
         public ulong ChannelIdForBotCommand { get; set; }
         public ulong ChannelIdForBotWelcome { get; set; }
+        public ulong ChannelIdForBotLog { get; set; }
         
         public string CommandHelpText { get; set; }
         

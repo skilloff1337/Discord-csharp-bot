@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
+using Discord.Interactions;
 using Discord_Bot.Services;
 using Discord_Bot.Services.DataReader;
 using Discord_Bot.Services.Translation.Interfaces;
@@ -41,6 +42,11 @@ namespace Discord_Bot.Modules
             var text = _translation.TranslationText(result);
 
             await Context.Message.ReplyAsync(text);
+        }
+        [SlashCommand("bann", "Bans a user in this guild")]
+        public async Task BanAsync(IUser user)
+        {
+            await ReplyAsync($"ban {user.Username}**!");
         }
 
         [Command("hello")]

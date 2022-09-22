@@ -39,13 +39,15 @@ namespace Discord_Bot.Services.DataReader
         {
             var test = new Config()
             {
+                DataBaseName = "discordBot",
+                ConnectionString = "mongodb://localhost:27017",
                 GameName = "Development",
                 Status = UserStatus.Online,
                 Token = "MTAyMTc0NjIzNDM0MTQ3MDI0Mg.GIomAd.cLuQ-spPvNiiyUEBctGIQ1L-FiLgr1atyyLJBk",
                 Version = "1.0.0",
                 ChannelIdForBotCommand = 1022189416728498186,
                 ChannelIdForBotWelcome = 1022418678807023687,
-                CommandHelpText = "Console ",
+                CommandHelpText = "Console",
                 Language = LanguageType.Russian
             };
             var data = JsonConvert.SerializeObject(test, Formatting.Indented);

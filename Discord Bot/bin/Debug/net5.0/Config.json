@@ -1,10 +1,13 @@
 {
   "Language": 1,
   "Token": "MTAyMTc0NjIzNDM0MTQ3MDI0Mg.GIomAd.cLuQ-spPvNiiyUEBctGIQ1L-FiLgr1atyyLJBk",
+  "ConnectionString": "mongodb://localhost:27017",
+  "DataBaseName": "discordBot",
   "Version": "1.0.0",
   "Status": 1,
   "GameName": "CS:GO",
   "ChannelIdForBotCommand": 1022189416728498186,
   "ChannelIdForBotWelcome": 1022418678807023687,
+  "ChannelIdForBotLog": 1022438902809776128,
   "CommandHelpText": "Test "
 }
