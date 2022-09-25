@@ -4,9 +4,10 @@
   "ConnectionString": "mongodb://localhost:27017",
   "DataBaseName": "discordBot",
   "Version": "1.0.0",
-  "Status": 1,
+  "Status": 5,
   "GameName": "CS:GO",
   "ChannelIdForBotCommand": 1022189416728498186,
+  "ChannelIdForBotAdminCommand": 1023177360155086878,
   "ChannelIdForBotWelcome": 1022418678807023687,
   "ChannelIdForBotLog": 1022438902809776128,
   "CommandHelpText": "Test "

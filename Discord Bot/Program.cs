@@ -3,8 +3,11 @@ using System.Threading;
 using System.Threading.Tasks;
 using Discord;
 using Discord.WebSocket;
+using Discord_Bot.Attributes;
 using Discord_Bot.Extension;
+using Discord_Bot.Models;
 using Discord_Bot.Services.DataReader;
+using Discord_Bot.Services.DataReader.Interfaces;
 using Discord_Bot.Services.DataReader.IoC.Extension;
 using Discord_Bot.Services.TextChat.Interfaces;
 using Discord_Bot.Services.TextChatHandler;
@@ -16,11 +19,11 @@ namespace Discord_Bot
     internal class Program
     {
         private DiscordSocketClient _client;
-        private JsonConfigReader _reader;
+        private IJsonReader<Config> _reader;
         private ICommandHandler _command;
         private IUserHandler _userHandler;
         private IWelcomeHandler _welcomeHandler;
-        
+
 
         private static void Main(string[] args) => new Program().MainAsync().GetAwaiter().GetResult();
 
@@ -30,14 +33,18 @@ namespace Discord_Bot
             await using var services = ConfigureServices();
 
             _client = services.GetRequiredService<DiscordSocketClient>();
-            _reader = services.GetRequiredService<JsonConfigReader>();
+            _reader = services.GetRequiredService<IJsonReader<Config>>();
             _command = services.GetRequiredService<ICommandHandler>();
             _userHandler = services.GetRequiredService<IUserHandler>();
             _welcomeHandler = services.GetRequiredService<IWelcomeHandler>();
-            
+            var test = services.GetRequiredService<AdminCommandErrorHandler>();
+            var test2 = services.GetRequiredService<CommandErrorHandler>();
+
             await _command.InstallCommandsAsync();
             await _userHandler.InstallEventsAsync();
             await _welcomeHandler.InstallCommandsAsync();
+
+            
 
             _client.Log += Log;
 

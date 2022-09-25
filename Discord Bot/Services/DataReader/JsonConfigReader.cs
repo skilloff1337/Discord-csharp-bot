@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace Discord_Bot.Services.DataReader
 {
-    public class JsonConfigReader : IJsonReader <Config>
+    public class JsonConfigReader : IJsonReader<Config>
     {
         private readonly string _path;
         private readonly Lazy<Config> _config;
@@ -28,7 +28,7 @@ namespace Discord_Bot.Services.DataReader
             if (!File.Exists(_path))
             {
                 CreateDefaultConfig();
-                System.Console.WriteLine($"{FILE_NAME} not found on path {_path}. Default settings loaded.");
+                Console.WriteLine($"{FILE_NAME} not found on path {_path}. Default settings loaded.");
             }
             var data = File.ReadAllText(_path);
             

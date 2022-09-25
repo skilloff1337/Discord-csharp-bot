@@ -1,5 +1,11 @@
 {
-  "CMD_TEXT_HELLO": "Привет",
-  "CMD_TEXT_BYE": "Пока",
-  "CMD_TEXT_HELP": ":page_with_curl: Команды бота:"
+  "CMD_TEXT_HELLO": {
+    "TranslationText": "Привет"
+  },
+  "CMD_TEXT_BYE": {
+    "TranslationText": "Пока"
+  },
+  "CMD_TEXT_HELP": {
+    "TranslationText": ":page_with_curl: Команды бота:"
+  }
 }

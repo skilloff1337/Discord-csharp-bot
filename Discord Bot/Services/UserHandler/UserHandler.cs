@@ -6,6 +6,7 @@ using Discord.WebSocket;
 using Discord_Bot.Models;
 using Discord_Bot.Services.DataBase.Interfaces;
 using Discord_Bot.Services.DataReader;
+using Discord_Bot.Services.DataReader.Interfaces;
 using Discord_Bot.Services.UserHandler.Interfaces;
 
 namespace Discord_Bot.Services.UserHandler
@@ -18,7 +19,7 @@ namespace Discord_Bot.Services.UserHandler
         private readonly ulong _channelId;
 
         public UserHandler(DiscordSocketClient client,
-            JsonConfigReader configReader, 
+            IJsonReader<Config> configReader, 
             IRepository<MessageUser> repository)
         {
             _client = client;

@@ -2,19 +2,21 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
+using Discord_Bot.Models;
 using Discord_Bot.Services.DataReader;
+using Discord_Bot.Services.DataReader.Interfaces;
 using Discord_Bot.Services.Translation.Interfaces;
 
 namespace Discord_Bot.Services.Translation
 {
     public class Translation : ITranslation
     {
-        private readonly JsonLanguageReader _loader;
+        private readonly IJsonReader<Dictionary<string,TranslationWord>> _loader;
         
-        private Dictionary<string, string> _currentLanguage = new();
+        private Dictionary<string, TranslationWord> _currentLanguage = new();
         private static readonly Regex _regex = new(@"(?:[A-Z]+_|[A-Z]:?){5,}", RegexOptions.Compiled);
 
-        public Translation(JsonLanguageReader loader)
+        public Translation(IJsonReader<Dictionary<string,TranslationWord>> loader)
         {
             _loader = loader;
             
@@ -24,7 +26,7 @@ namespace Discord_Bot.Services.Translation
         public string GetTranslationByTextID(string textID)
         {
             if (_currentLanguage.TryGetValue(textID, out var result))
-                return result;
+                return result.TranslationText;
             
             System.Console.WriteLine($"Not found TEXT_ID: {textID}, result: {result}");
             return "Unknown";
@@ -38,11 +40,11 @@ namespace Discord_Bot.Services.Translation
             {
                 if (!_currentLanguage.TryGetValue(match.ToString(), out var replace))
                 {
-                    replace = "Unknown";
-                    System.Console.WriteLine($"Not found match {match}");
+                    replace.TranslationText = "Unknown";
+                    Console.WriteLine($"Not found match {match}");
                 }
                 
-                text = text.Replace(match.ToString(), replace);
+                text = text.Replace(match.ToString(), replace.TranslationText);
             }
 
             return text;

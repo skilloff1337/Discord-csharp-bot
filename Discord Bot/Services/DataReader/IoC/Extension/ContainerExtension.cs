@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using System.Collections.Generic;
+using Discord_Bot.Models;
+using Discord_Bot.Services.DataReader.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Discord_Bot.Services.DataReader.IoC.Extension
 {
@@ -7,9 +10,9 @@ namespace Discord_Bot.Services.DataReader.IoC.Extension
         public static IServiceCollection BindingReaders(this IServiceCollection collection)
         {
             return collection
-                .AddSingleton<JsonConfigReader>()
-                .AddSingleton<JsonCommandTextReader>()
-                .AddSingleton<JsonLanguageReader>();
+                .AddSingleton<IJsonReader<Config>,JsonConfigReader>()
+                .AddSingleton<IJsonReader<Dictionary<string,CommandText>>,JsonCommandTextReader>()
+                .AddSingleton<IJsonReader<Dictionary<string,TranslationWord>>,JsonLanguageReader>();
         }
     }
 }

@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
+using Discord_Bot.Models;
 using Discord_Bot.Services.DataReader;
+using Discord_Bot.Services.DataReader.Interfaces;
 using Discord_Bot.Services.TextChat.Interfaces;
 
 namespace Discord_Bot.Services.TextChatHandler
@@ -16,44 +19,30 @@ namespace Discord_Bot.Services.TextChatHandler
         private readonly IServiceProvider _provider;
 
         private readonly ulong _idBotChannel;
+        private ulong _idAdminCommandChannel;
 
         public CommandHandler(CommandService command,
             DiscordSocketClient client,
             IServiceProvider provider,
-            JsonConfigReader jsonReader)
+            IJsonReader<Config> jsonReader)
         {
             _command = command;
             _client = client;
             _provider = provider;
             _idBotChannel = jsonReader.Load().ChannelIdForBotCommand;
+            _idAdminCommandChannel = jsonReader.Load().ChannelIdForBotAdminCommand;
         }
 
         public async Task InstallCommandsAsync()
         {
             _client.MessageReceived += HandleCommandAsync;
-            _command.CommandExecuted += OnCommandExecutedAsync;
 
             await _command.AddModulesAsync(Assembly.GetEntryAssembly(), _provider);
         }
-
-        private async Task OnCommandExecutedAsync(Optional<CommandInfo> info, ICommandContext context, IResult result)
-        {
-            if (!string.IsNullOrEmpty(result?.ErrorReason))
-            {
-                Console.WriteLine($"{DateTime.Now:T} INFO \t{context.User.Username}#{context.User.Discriminator}" +
-                                  $" write {result.ErrorReason} {context.Message}");
-                await context.Message.ReplyAsync(result.ErrorReason);
-            }
-            else
-            {
-                Console.WriteLine($"{DateTime.Now:T} INFO \t{context.User.Username}#{context.User.Discriminator}" +
-                                  $" write {context.Message}");
-            }
-        }
-
+        
         private async Task HandleCommandAsync(SocketMessage messageParam)
         {
-            if (messageParam.Channel != _client.GetChannel(_idBotChannel))
+            if (!RequiredServer(messageParam.Channel))
                 return;
 
             if (messageParam.Author.IsBot || messageParam is not SocketUserMessage message
@@ -62,7 +51,7 @@ namespace Discord_Bot.Services.TextChatHandler
 
             var argPos = 0;
 
-            if (!(message.HasCharPrefix('!', ref argPos) || message.HasCharPrefix('/', ref argPos)) 
+            if (!(message.HasCharPrefix('!', ref argPos) || message.HasCharPrefix('/', ref argPos))
                 || message.HasMentionPrefix(_client.CurrentUser, ref argPos))
                 return;
 
@@ -70,5 +59,8 @@ namespace Discord_Bot.Services.TextChatHandler
 
             await _command.ExecuteAsync(context, argPos, _provider);
         }
+
+        private bool RequiredServer(ISocketMessageChannel channel)
+            => channel == _client.GetChannel(_idBotChannel) || channel == _client.GetChannel(_idAdminCommandChannel);
     }
 }

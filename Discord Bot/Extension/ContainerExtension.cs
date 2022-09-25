@@ -1,10 +1,10 @@
 ﻿using Discord.Commands;
 using Discord.WebSocket;
+using Discord_Bot.Attributes;
 using Discord_Bot.Models;
 using Discord_Bot.Services.BotSetting;
 using Discord_Bot.Services.DataBase;
 using Discord_Bot.Services.DataBase.Interfaces;
-using Discord_Bot.Services.TextChat;
 using Discord_Bot.Services.TextChat.Interfaces;
 using Discord_Bot.Services.TextChatHandler;
 using Discord_Bot.Services.Translation;
@@ -27,6 +27,8 @@ namespace Discord_Bot.Extension
                 .AddSingleton<IBotSetting, BotSetting>()
                 .AddSingleton<IWelcomeHandler, WelcomeHandler>()
                 .AddSingleton<ITranslation, Translation>()
+                .AddSingleton<AdminCommandErrorHandler>()
+                .AddSingleton<CommandErrorHandler>()
                 .AddSingleton<IRepository<MessageUser>, MessageRepository>();
         }
     }

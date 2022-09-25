@@ -2,6 +2,7 @@
 using Discord_Bot.Models;
 using Discord_Bot.Services.DataBase.Interfaces;
 using Discord_Bot.Services.DataReader;
+using Discord_Bot.Services.DataReader.Interfaces;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
@@ -13,7 +14,7 @@ namespace Discord_Bot.Services.DataBase
         private readonly IMongoCollection<MessageUser> _collection;
         private readonly IMongoDatabase _database;
 
-        public MessageRepository(JsonConfigReader configReader)
+        public MessageRepository(IJsonReader<Config> configReader)
         {
             var databaseName = configReader.Load().DataBaseName;
             var connectionString = configReader.Load().ConnectionString;

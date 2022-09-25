@@ -5,31 +5,34 @@ using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
 using Discord.Interactions;
+using Discord.WebSocket;
+using Discord_Bot.Attributes;
+using Discord_Bot.Models;
 using Discord_Bot.Services;
 using Discord_Bot.Services.DataReader;
+using Discord_Bot.Services.DataReader.Interfaces;
 using Discord_Bot.Services.Translation.Interfaces;
+using ChannelType = Discord_Bot.Models.Types.ChannelType;
 using Console = System.Console;
 
 namespace Discord_Bot.Modules
 {
+    [RequiredChannel(ChannelType.BotCommand)]
     public class InfoModule : ModuleBase<SocketCommandContext>
     {
-        private readonly JsonConfigReader _configReader;
-        private readonly JsonCommandTextReader _commandReader;
+     //   private readonly DiscordSocketClient _client;
+        private readonly IJsonReader<Dictionary<string,CommandText>> _commandReader;
         private readonly ITranslation _translation;
 
-        private Dictionary<string, string> _commandText;
+        private Dictionary<string, CommandText> _commandText;
+        
 
-        public InfoModule(JsonConfigReader configReader,
-            ITranslation translation,
-            JsonCommandTextReader commandReader)
+        public InfoModule(ITranslation translation, IJsonReader<Dictionary<string,CommandText>> commandReader)
         {
-            _configReader = configReader;
             _translation = translation;
             _commandReader = commandReader;
             LoadCommandText();
         }
-
         [Command("help")]
         public async Task Help()
         {
@@ -39,19 +42,20 @@ namespace Discord_Bot.Modules
                 throw new Exception();
             }
 
-            var text = _translation.TranslationText(result);
+            var text = _translation.TranslationText(result.TextCommand);
 
             await Context.Message.ReplyAsync(text);
         }
-        [SlashCommand("bann", "Bans a user in this guild")]
-        public async Task BanAsync(IUser user)
+        [Command("test")]
+        public async Task Test(IUser user)
         {
-            await ReplyAsync($"ban {user.Username}**!");
+            await ReplyAsync($"test {user.Username}**!");
         }
-
         [Command("hello")]
         public async Task Hello()
-            => await ReplyAsync($"Hello there, **{Context.User.Username}**!");
+        {
+            await ReplyAsync($"BanUser there, **{Context.User.Username}**!");
+        }
 
         private void LoadCommandText()
         {

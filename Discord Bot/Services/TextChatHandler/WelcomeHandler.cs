@@ -4,7 +4,9 @@ using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
+using Discord_Bot.Models;
 using Discord_Bot.Services.DataReader;
+using Discord_Bot.Services.DataReader.Interfaces;
 
 namespace Discord_Bot.Services.TextChatHandler
 {
@@ -19,7 +21,7 @@ namespace Discord_Bot.Services.TextChatHandler
         public WelcomeHandler(CommandService command,
             DiscordSocketClient client,
             IServiceProvider provider,
-            JsonConfigReader jsonReader)
+            IJsonReader<Config> jsonReader)
         {
             _command = command;
             _client = client;
