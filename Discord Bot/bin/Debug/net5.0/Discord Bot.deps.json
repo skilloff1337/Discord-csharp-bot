@@ -8,40 +8,37 @@
     ".NETCoreApp,Version=v5.0": {
       "Discord Bot/1.0.0": {
         "dependencies": {
-          "Discord.Net": "3.5.0",
+          "Discord.Net": "3.8.0",
           "Microsoft.Extensions.DependencyInjection": "6.0.0",
-          "MongoDB.Bson": "2.17.1",
           "MongoDB.Driver": "2.17.1",
-          "MongoDB.Driver.Core": "2.17.1",
-          "MongoDB.Libmongocrypt": "1.6.0",
           "Newtonsoft.Json": "13.0.1"
         },
         "runtime": {
           "Discord Bot.dll": {}
         }
       },
-      "Discord.Net/3.5.0": {
+      "Discord.Net/3.8.0": {
         "dependencies": {
-          "Discord.Net.Commands": "3.5.0",
-          "Discord.Net.Core": "3.5.0",
-          "Discord.Net.Interactions": "3.5.0",
-          "Discord.Net.Rest": "3.5.0",
-          "Discord.Net.WebSocket": "3.5.0",
-          "Discord.Net.Webhook": "3.5.0"
+          "Discord.Net.Commands": "3.8.0",
+          "Discord.Net.Core": "3.8.0",
+          "Discord.Net.Interactions": "3.8.0",
+          "Discord.Net.Rest": "3.8.0",
+          "Discord.Net.WebSocket": "3.8.0",
+          "Discord.Net.Webhook": "3.8.0"
         }
       },
-      "Discord.Net.Commands/3.5.0": {
+      "Discord.Net.Commands/3.8.0": {
         "dependencies": {
-          "Discord.Net.Core": "3.5.0"
+          "Discord.Net.Core": "3.8.0"
         },
         "runtime": {
           "lib/net5.0/Discord.Net.Commands.dll": {
-            "assemblyVersion": "3.5.0.0",
-            "fileVersion": "3.5.0.0"
+            "assemblyVersion": "3.8.0.0",
+            "fileVersion": "3.8.0.0"
           }
         }
       },
-      "Discord.Net.Core/3.5.0": {
+      "Discord.Net.Core/3.8.0": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.1",
           "System.Collections.Immutable": "5.0.0",
@@ -50,59 +47,59 @@
         },
         "runtime": {
           "lib/net5.0/Discord.Net.Core.dll": {
-            "assemblyVersion": "3.5.0.0",
-            "fileVersion": "3.5.0.0"
+            "assemblyVersion": "3.8.0.0",
+            "fileVersion": "3.8.0.0"
           }
         }
       },
-      "Discord.Net.Interactions/3.5.0": {
+      "Discord.Net.Interactions/3.8.0": {
         "dependencies": {
-          "Discord.Net.Core": "3.5.0",
-          "Discord.Net.Rest": "3.5.0",
-          "Discord.Net.WebSocket": "3.5.0",
+          "Discord.Net.Core": "3.8.0",
+          "Discord.Net.Rest": "3.8.0",
+          "Discord.Net.WebSocket": "3.8.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
           "System.Collections.Immutable": "5.0.0",
           "System.Reactive": "5.0.0"
         },
         "runtime": {
           "lib/net5.0/Discord.Net.Interactions.dll": {
-            "assemblyVersion": "3.5.0.0",
-            "fileVersion": "3.5.0.0"
+            "assemblyVersion": "3.8.0.0",
+            "fileVersion": "3.8.0.0"
           }
         }
       },
-      "Discord.Net.Rest/3.5.0": {
+      "Discord.Net.Rest/3.8.0": {
         "dependencies": {
-          "Discord.Net.Core": "3.5.0"
+          "Discord.Net.Core": "3.8.0"
         },
         "runtime": {
           "lib/net5.0/Discord.Net.Rest.dll": {
-            "assemblyVersion": "3.5.0.0",
-            "fileVersion": "3.5.0.0"
+            "assemblyVersion": "3.8.0.0",
+            "fileVersion": "3.8.0.0"
           }
         }
       },
-      "Discord.Net.Webhook/3.5.0": {
+      "Discord.Net.Webhook/3.8.0": {
         "dependencies": {
-          "Discord.Net.Core": "3.5.0",
-          "Discord.Net.Rest": "3.5.0"
+          "Discord.Net.Core": "3.8.0",
+          "Discord.Net.Rest": "3.8.0"
         },
         "runtime": {
           "lib/net5.0/Discord.Net.Webhook.dll": {
-            "assemblyVersion": "3.5.0.0",
-            "fileVersion": "3.5.0.0"
+            "assemblyVersion": "3.8.0.0",
+            "fileVersion": "3.8.0.0"
           }
         }
       },
-      "Discord.Net.WebSocket/3.5.0": {
+      "Discord.Net.WebSocket/3.8.0": {
         "dependencies": {
-          "Discord.Net.Core": "3.5.0",
-          "Discord.Net.Rest": "3.5.0"
+          "Discord.Net.Core": "3.8.0",
+          "Discord.Net.Rest": "3.8.0"
         },
         "runtime": {
           "lib/net5.0/Discord.Net.WebSocket.dll": {
-            "assemblyVersion": "3.5.0.0",
-            "fileVersion": "3.5.0.0"
+            "assemblyVersion": "3.8.0.0",
+            "fileVersion": "3.8.0.0"
           }
         }
       },
@@ -159,7 +156,7 @@
         "dependencies": {
           "MongoDB.Bson": "2.17.1",
           "MongoDB.Driver.Core": "2.17.1",
-          "MongoDB.Libmongocrypt": "1.6.0"
+          "MongoDB.Libmongocrypt": "1.5.5"
         },
         "runtime": {
           "lib/netstandard2.1/MongoDB.Driver.dll": {
@@ -172,7 +169,7 @@
         "dependencies": {
           "DnsClient": "1.6.1",
           "MongoDB.Bson": "2.17.1",
-          "MongoDB.Libmongocrypt": "1.6.0",
+          "MongoDB.Libmongocrypt": "1.5.5",
           "SharpCompress": "0.30.1",
           "System.Buffers": "4.5.1"
         },
@@ -220,11 +217,11 @@
           }
         }
       },
-      "MongoDB.Libmongocrypt/1.6.0": {
+      "MongoDB.Libmongocrypt/1.5.5": {
         "runtime": {
           "lib/netstandard2.1/MongoDB.Libmongocrypt.dll": {
-            "assemblyVersion": "1.6.0.0",
-            "fileVersion": "1.6.0.0"
+            "assemblyVersion": "1.5.5.0",
+            "fileVersion": "1.5.5.0"
           }
         },
         "runtimeTargets": {
@@ -314,54 +311,54 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Discord.Net/3.5.0": {
+    "Discord.Net/3.8.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-IUtexpvogudb1rllKBWkIEpBVQoToMjtVo81KPkt+gNMe7KtRDcZJgcn6+72viMtyw0e95OJPXFV5VEA/n2OQQ==",
-      "path": "discord.net/3.5.0",
-      "hashPath": "discord.net.3.5.0.nupkg.sha512"
+      "sha512": "sha512-sZD2xupS+9GD5n0hrg0i31bC8KszAt+S9COr3Z526vt0CE2TwIdohUjsOK6Pao7Hrl58Nf0BL9+j7iZZz+0VjQ==",
+      "path": "discord.net/3.8.0",
+      "hashPath": "discord.net.3.8.0.nupkg.sha512"
     },
-    "Discord.Net.Commands/3.5.0": {
+    "Discord.Net.Commands/3.8.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ClTv8aiTlitvS48YatRiTLvgE2f2uKgmHNPVBIuvJBHZO2u4bZCzoN1fid+pZn2sbVOkt8uftlLGzz5DSZlFIA==",
-      "path": "discord.net.commands/3.5.0",
-      "hashPath": "discord.net.commands.3.5.0.nupkg.sha512"
+      "sha512": "sha512-NaeScuFoL8O7QfeDxWGiBRAd13Qajn2iWl6MS5HdCFFfKWjNrCmo7v6STap8uN7PyID/14dwFDzCNCudRArJRg==",
+      "path": "discord.net.commands/3.8.0",
+      "hashPath": "discord.net.commands.3.8.0.nupkg.sha512"
     },
-    "Discord.Net.Core/3.5.0": {
+    "Discord.Net.Core/3.8.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-rCzzaznMVQ+bLMxOpYwTyqm9V22kMy6BxlQisSxemHZDe2Jedz3Clp/a0dToACLz+Dlp3u+jYUfCBnTz7L6f4g==",
-      "path": "discord.net.core/3.5.0",
-      "hashPath": "discord.net.core.3.5.0.nupkg.sha512"
+      "sha512": "sha512-anq5FvYE5Uls7zIbMJt6IT9yXndoJpPh/fMiNhFDMqgzQlZtCoOODGHcHtG50hDNn777kYTpWPQ8Q0UosqHjWQ==",
+      "path": "discord.net.core/3.8.0",
+      "hashPath": "discord.net.core.3.8.0.nupkg.sha512"
     },
-    "Discord.Net.Interactions/3.5.0": {
+    "Discord.Net.Interactions/3.8.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-wE9+V9DJ7r+1s4euOi4sGPIAt4sD7r+Tk5s9mrlbLCHVQTK4KllAvcrL25bPFI38FuFceREEzFoRlTrekSyB2Q==",
-      "path": "discord.net.interactions/3.5.0",
-      "hashPath": "discord.net.interactions.3.5.0.nupkg.sha512"
+      "sha512": "sha512-rbnSyD6GqNledBVzbjtkhIsnmoz8tKt2vTzEkNg4d4h8Q2Eh066Co5oVSO7jNH07ugT8kyZSdW87Q60YrrD7+w==",
+      "path": "discord.net.interactions/3.8.0",
+      "hashPath": "discord.net.interactions.3.8.0.nupkg.sha512"
     },
-    "Discord.Net.Rest/3.5.0": {
+    "Discord.Net.Rest/3.8.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-BnTdLFuuQsKvCv08VQrD4X1Hw2Xp+MELIRQiDiKfG01IiQlRTN+1gc3LB1zXgn5xBvC0HXjHxwV22GrMD9uKHQ==",
-      "path": "discord.net.rest/3.5.0",
-      "hashPath": "discord.net.rest.3.5.0.nupkg.sha512"
+      "sha512": "sha512-D8CGSkWqeRg3D8ZawthWdwKFHPVhdYB8dxltT5wAgN5op6lZd8BjEzCCOlsDrnIGcah3BkOnVqgPk1u0SBxqWw==",
+      "path": "discord.net.rest/3.8.0",
+      "hashPath": "discord.net.rest.3.8.0.nupkg.sha512"
     },
-    "Discord.Net.Webhook/3.5.0": {
+    "Discord.Net.Webhook/3.8.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-vCIGZS+m88sQDuFmdbUqg+2RIXS/NJWx8ei3MX+ZEYiAvOkDgQfkIlEnU1NKpds6ivTt5GFlv6UzcWubb5VJ1w==",
-      "path": "discord.net.webhook/3.5.0",
-      "hashPath": "discord.net.webhook.3.5.0.nupkg.sha512"
+      "sha512": "sha512-5TZavUm1OqZKWr98JH1J9dZNixu32Kylz+9iL2czvR+IfdfpG6UXr40qk79Po6WLjWHmtBEpULVwSN11otTG3g==",
+      "path": "discord.net.webhook/3.8.0",
+      "hashPath": "discord.net.webhook.3.8.0.nupkg.sha512"
     },
-    "Discord.Net.WebSocket/3.5.0": {
+    "Discord.Net.WebSocket/3.8.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-LjBOvcP40vJ+dhOtBDi8haEeblPAKpAIqR04NBzTM1/0RVavJZH89ovfSQIk42ygkiOaDV4E2x0Mmh6DRoIYcw==",
-      "path": "discord.net.websocket/3.5.0",
-      "hashPath": "discord.net.websocket.3.5.0.nupkg.sha512"
+      "sha512": "sha512-DOPGQLqyf2km0UyOcLxeV6TP4WA2f18aWJAaU4TxInYMqAVSOZVaQfB0bBf307uNNlYqCE6loYwrysH8zQNbpQ==",
+      "path": "discord.net.websocket/3.8.0",
+      "hashPath": "discord.net.websocket.3.8.0.nupkg.sha512"
     },
     "DnsClient/1.6.1": {
       "type": "package",
@@ -419,12 +416,12 @@
       "path": "mongodb.driver.core/2.17.1",
       "hashPath": "mongodb.driver.core.2.17.1.nupkg.sha512"
     },
-    "MongoDB.Libmongocrypt/1.6.0": {
+    "MongoDB.Libmongocrypt/1.5.5": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-kh+MMf+ECIf5sQDIqOdKBd75ktD5aD1EuzCX3R4HOUGPlAbeAm8harf4zwlbvFe2BLfCXZO7HajSABLf4P0GNg==",
-      "path": "mongodb.libmongocrypt/1.6.0",
-      "hashPath": "mongodb.libmongocrypt.1.6.0.nupkg.sha512"
+      "sha512": "sha512-0DV4l2PjXirSJHD/b+LpOK3IfUDvkbpvvZBM2w1aYL6E/4vbhfyr/FP5laDNx2zRylqN1hIZO+EL7NgO/5GpVg==",
+      "path": "mongodb.libmongocrypt/1.5.5",
+      "hashPath": "mongodb.libmongocrypt.1.5.5.nupkg.sha512"
     },
     "Newtonsoft.Json/13.0.1": {
       "type": "package",

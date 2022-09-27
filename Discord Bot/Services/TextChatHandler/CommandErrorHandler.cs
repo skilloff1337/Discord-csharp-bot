@@ -23,9 +23,9 @@ namespace Discord_Bot.Services.TextChatHandler
 
         private async Task ErrorHandler(Optional<CommandInfo> info, ICommandContext context, IResult result)
         {
-            if (context.Channel != _client.GetChannel(_idBotChannel) || info.Value.Module.Name == "AdminModule")
+            if (context.Channel != _client.GetChannel(_idBotChannel))
                 return;
-            
+
             switch (result.Error)
             {
                 case CommandError.BadArgCount:

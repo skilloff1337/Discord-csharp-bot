@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
@@ -20,31 +22,42 @@ namespace Discord_Bot.Modules
     [RequiredChannel(ChannelType.BotCommand)]
     public class InfoModule : ModuleBase<SocketCommandContext>
     {
-     //   private readonly DiscordSocketClient _client;
-        private readonly IJsonReader<Dictionary<string,CommandText>> _commandReader;
+
         private readonly ITranslation _translation;
-
-        private Dictionary<string, CommandText> _commandText;
+        private readonly CommandService _commandService;
         
+        private readonly Color _color = new(26, 148, 230);
 
-        public InfoModule(ITranslation translation, IJsonReader<Dictionary<string,CommandText>> commandReader)
+        public InfoModule(ITranslation translation, CommandService commandService)
         {
             _translation = translation;
-            _commandReader = commandReader;
-            LoadCommandText();
+            _commandService = commandService;
         }
         [Command("help")]
         public async Task Help()
         {
-            if (!_commandText.TryGetValue("INFO_COMMAND_HELP", out var result))
+
+            var commandInfos = _commandService
+                .Commands
+                .Where(x => x.Module.Name != "AdminModule" && x.Module.Name != "AdminPunishmentModule");
+
+            var result = new StringBuilder(500);
+            foreach (var cmd in commandInfos)
             {
-                Console.WriteLine("Error! Not found text for help command!");
-                throw new Exception();
+                result.Append($"**!{cmd.Name}** ");
+
+                foreach (var param in cmd.Parameters)
+                    result.Append($"{param} ");
+
+                result.Append($" - {cmd.Summary}\n\n");
             }
 
-            var text = _translation.TranslationText(result.TextCommand);
+            var embed = new EmbedBuilder()
+                .WithColor(_color)
+                .WithDescription(_translation.TranslationText(result.ToString()));
 
-            await Context.Message.ReplyAsync(text);
+            await Context.Message.ReplyAsync(_translation.GetTranslationByTextID("CMD_USER_COMMANDS"),
+                embed: embed.Build());
         }
         [Command("test")]
         public async Task Test(IUser user)
@@ -55,11 +68,6 @@ namespace Discord_Bot.Modules
         public async Task Hello()
         {
             await ReplyAsync($"BanUser there, **{Context.User.Username}**!");
-        }
-
-        private void LoadCommandText()
-        {
-            _commandText = _commandReader.Load();
         }
     }
 }

@@ -11,7 +11,6 @@ namespace Discord_Bot.Services.DataReader.IoC.Extension
         {
             return collection
                 .AddSingleton<IJsonReader<Config>,JsonConfigReader>()
-                .AddSingleton<IJsonReader<Dictionary<string,CommandText>>,JsonCommandTextReader>()
                 .AddSingleton<IJsonReader<Dictionary<string,TranslationWord>>,JsonLanguageReader>();
         }
     }

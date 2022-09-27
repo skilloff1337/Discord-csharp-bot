@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Text.RegularExpressions;
 using Discord_Bot.Models;
-using Discord_Bot.Services.DataReader;
 using Discord_Bot.Services.DataReader.Interfaces;
 using Discord_Bot.Services.Translation.Interfaces;
 
@@ -23,12 +21,12 @@ namespace Discord_Bot.Services.Translation
             LoadTranslationWords();
         }
 
-        public string GetTranslationByTextID(string textID)
+        public string GetTranslationByTextID(string textId)
         {
-            if (_currentLanguage.TryGetValue(textID, out var result))
+            if (_currentLanguage.TryGetValue(textId, out var result))
                 return result.TranslationText;
             
-            System.Console.WriteLine($"Not found TEXT_ID: {textID}, result: {result}");
+            Console.WriteLine($"Not found TEXT_ID: {textId}, result: {result}");
             return "Unknown";
         }
 

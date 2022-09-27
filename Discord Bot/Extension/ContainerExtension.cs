@@ -1,4 +1,5 @@
-﻿using Discord.Commands;
+﻿using Discord;
+using Discord.Commands;
 using Discord.WebSocket;
 using Discord_Bot.Attributes;
 using Discord_Bot.Models;
@@ -20,7 +21,12 @@ namespace Discord_Bot.Extension
         public static IServiceCollection BindingGeneral(this IServiceCollection collection)
         {
             return collection
-                .AddSingleton(new DiscordSocketClient(new DiscordSocketConfig()))
+                .AddSingleton(new DiscordSocketClient(new DiscordSocketConfig
+                {
+                    AlwaysDownloadUsers = true,
+                    MessageCacheSize = 1000,
+                    GatewayIntents = GatewayIntents.All
+                }))
                 .AddSingleton(new CommandService(new CommandServiceConfig()))
                 .AddSingleton<ICommandHandler, CommandHandler>()
                 .AddSingleton<IUserHandler, UserHandler>()

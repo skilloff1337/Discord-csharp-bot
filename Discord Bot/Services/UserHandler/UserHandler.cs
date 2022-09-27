@@ -17,7 +17,7 @@ namespace Discord_Bot.Services.UserHandler
         private readonly IRepository<MessageUser> _repository;
 
         private readonly ulong _channelId;
-
+        private readonly Color _color= new(153, 0, 0);
         public UserHandler(DiscordSocketClient client,
             IJsonReader<Config> configReader, 
             IRepository<MessageUser> repository)
@@ -70,11 +70,14 @@ namespace Discord_Bot.Services.UserHandler
             _repository.Update(message);
 
             var channel = _client.GetChannel(_channelId) as IMessageChannel;
-            
-            channel!.SendMessageAsync($"Message from ***{message.NickName}*** deleted\n" +
-                                     $"***Channel:*** {message.ChannelName} ***ID:*** {message.ChannelId}\n" +
-                                     $"***Message ID:*** {message.Id}\n" +
-                                     $"***Message:***\n```{message.CurrentMessage}```");
+
+            var embed = new EmbedBuilder()
+                .WithColor(_color)
+                .WithDescription(
+                    $"***Channel:*** {message.ChannelName} ***ID:*** {message.ChannelId}\n" +
+                    $"***Message ID:*** {message.Id}\n" +
+                    $"***Message:***\n{(string.IsNullOrEmpty(message.CurrentMessage) ? "Null": message.CurrentMessage)}");
+                    channel!.SendMessageAsync($"Message from ***{message.NickName}*** deleted",embed:embed.Build());
             return Task.CompletedTask;
         }
 
@@ -94,11 +97,15 @@ namespace Discord_Bot.Services.UserHandler
             
             var channel = _client.GetChannel(_channelId) as IMessageChannel;
             
-            channel!.SendMessageAsync($"Message from ***{message.NickName}*** updated\n" +
-                                     $"***Channel:*** {message.ChannelName} ***ID:*** {message.ChannelId}\n" +
-                                     $"***Message ID:*** {message.Id}\n" +
-                                     $"***Message before:***\n```{message.HistoryMessage[^2]}```" +
-                                     $"***Message after:***\n```{DateTime.Now:G} | {message.CurrentMessage}```");
+            var embed = new EmbedBuilder()
+                .WithColor(_color)
+                .WithDescription(
+                $"***Channel:*** {message.ChannelName} ***ID:*** {message.ChannelId}\n" +
+                $"***Message ID:*** {message.Id}\n" +
+                $"***Message before:***\n{message.HistoryMessage[^2]}\n" +
+                $"***Message after:***\n{DateTime.Now:G} | {message.CurrentMessage}");
+            
+            channel!.SendMessageAsync($"Message from ***{message.NickName}*** updated",embed: embed.Build());
             
             return Task.CompletedTask;
         }

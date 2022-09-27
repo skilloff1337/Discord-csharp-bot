@@ -2,10 +2,178 @@
   "CMD_TEXT_HELLO": {
     "TranslationText": "Привет"
   },
+  "CMD_ADMINS_ADMINISTRATOR": {
+    "TranslationText": "Администратор"
+  },
+  "CMD_ADMINS_COMMANDS": {
+    "TranslationText": "Команды администратора"
+  },
+  "CMD_USER_COMMANDS": {
+    "TranslationText": "Команды пользователя"
+  },
+  "CMD_ADMINS_BANNED": {
+    "TranslationText": "Забанил"
+  },  
+  "CMD_ADMINS_UNBANNED": {
+    "TranslationText": "Разбанил"
+  },
+  "CMD_ADMINS_FOR": {
+    "TranslationText": "На"
+  },
+  "CMD_ADMINS_REASON": {
+    "TranslationText": "Причина"
+  },
+  "CMD_ADMINS_DAYS": {
+    "TranslationText": "Дней"
+  },
+  "CMD_ADMINS_MINUTES": {
+    "TranslationText": "Минут"
+  },
+  "CMD_ADMINS_KICK": {
+    "TranslationText": "Выгнал"
+  },
+  "CMD_ADMINS_MUTE": {
+    "TranslationText": "Заткнул"
+  },
+  "CMD_ADMINS_UNMUTE": {
+    "TranslationText": "Снял кляп"
+  },
+  "CMD_ADMINS_SERVER_INFO": {
+    "TranslationText": "Информация для сервера"
+  },
+  "CMD_ADMINS_SERVER_NAME": {
+    "TranslationText": "Имя сервера"
+  },
+  "CMD_ADMINS_SERVER_ID": {
+    "TranslationText": "Ид сервера"
+  },
+  "CMD_ADMINS_SERVER_CREATED": {
+    "TranslationText": "Дата создания"
+  },
+  "CMD_ADMINS_MESSAGE_EDIT": {
+    "TranslationText": "Дата изменения"
+  },
+  "CMD_ADMINS_DELETED_DATE_MESSAGE": {
+    "TranslationText": "Дата удаления"
+  },
+  "CMD_ADMINS_DELETED_MESSAGE": {
+    "TranslationText": "Сообщение удалено"
+  },
+  "CMD_ADMINS_SERVER_OWNER": {
+    "TranslationText": "Владелец"
+  },
+  "CMD_ADMINS_SERVER_USERS": {
+    "TranslationText": "Участников"
+  },
+  "CMD_ADMINS_SERVER_CHANNELS": {
+    "TranslationText": "Каналов"
+  }, 
+  "CMD_ADMINS_SERVER_ROLES": {
+    "TranslationText": "Ролей"
+  },
+  "CMD_ADMINS_USER_ACTIVITIES": {
+    "TranslationText": "Активности"
+  },
+  "CMD_ADMINS_USER_ROLES": {
+    "TranslationText": "Роли"
+  },
+  "CMD_ADMINS_USER_STATUS": {
+    "TranslationText": "Статус пользователя"
+  },
+  "CMD_ADMINS_USER_BOT": {
+    "TranslationText": "Бот"
+  },
+  "CMD_ADMINS_USER_INFO": {
+    "TranslationText": "Информация"
+  },
+  "CMD_ADMINS_USER_USER_ID": {
+    "TranslationText": "Ид пользователя"
+  },
+  "CMD_ADMINS_SERVER_EMOTES": {
+    "TranslationText": "Эмодзей"
+  },
+  "CMD_ADMINS_SERVER_SECURITY": {
+    "TranslationText": "Уровень проверки"
+  },
+  "CMD_ADMINS_ROLE_ROLE_ID": {
+    "TranslationText": "Ид роли"
+  },
+  "CMD_ADMINS_LIST_DELETED_MESSAGE": {
+    "TranslationText": "Удаленные сообщения"
+  },
+  "CMD_ADMINS_CLEAR": {
+    "TranslationText": "Очистка сообщений"
+  },
+  "CMD_ADMINS_LIST_COUNT_DELETED_MESSAGE": {
+    "TranslationText": "Удаленных сообщений"
+  },
+  "CMD_ADMINS_ROLE_HOISTED": {
+    "TranslationText": "Отображается отдельно"
+  },
+  "CMD_ADMINS_ROLE_POSITION": {
+    "TranslationText": "Позиция роли"
+  },
+  "CMD_ADMINS_ROLE_MENTIONABLE": {
+    "TranslationText": "Можно упоминать"
+  },
+  "CMD_ADMINS_ROLE_PERMISSIONS": {
+    "TranslationText": "Права роли"
+  },
+  "CMD_ADMINS_ROLE_COLOR": {
+    "TranslationText": "Цвет роли"
+  },
+  "CMD_ADMINS_NOT_FOUND": {
+    "TranslationText": "Не найдено сообщение в базе данных"
+  },
+  "CMD_ADMINS_HISTORY_MESSAGE": {
+    "TranslationText": "История сообщения"
+  },
+  "CMD_ADMINS_CHANNEL_NAME": {
+    "TranslationText": "Имя канала"
+  },
+  "CMD_ADMINS_CHANNEL_ID": {
+    "TranslationText": "Ид канала"
+  },
+  "CMD_ADMINS_MESSAGE": {
+    "TranslationText": "Сообщение"
+  },
   "CMD_TEXT_BYE": {
     "TranslationText": "Пока"
   },
   "CMD_TEXT_HELP": {
     "TranslationText": ":page_with_curl: Команды бота:"
+  },  
+  "CMD_SUMMARY_BAN": {
+    "TranslationText": "Забанить пользователя"
+  }, 
+  "CMD_SUMMARY_UNBAN": {
+    "TranslationText": "Разбанить пользователя"
+  },
+  "CMD_SUMMARY_KICK": {
+    "TranslationText": "Выгнать пользователя"
+  },
+  "CMD_SUMMARY_MUTE": {
+    "TranslationText": "Заткнуть пользователя"
+  },  
+  "CMD_SUMMARY_UNMUTE": {
+    "TranslationText": "Снять кляп с пользователя"
+  },
+  "CMD_SUMMARY_HELP": {
+    "TranslationText": "Помощь по командам"
+  },
+  "CMD_SUMMARY_SERVER_INFO": {
+    "TranslationText": "Показываем информацию о сервере"
+  },
+  "CMD_SUMMARY_USER_INFO": {
+    "TranslationText": "Показываем информацию о пользователе"
+  },
+  "CMD_SUMMARY_ROLE_INFO": {
+    "TranslationText": "Показываем информацию о роли"
+  },
+  "CMD_SUMMARY_HISTORY_MESSAGE": {
+    "TranslationText": "Получить полную информацию сообщения"
+  },
+  "CMD_SUMMARY_CLEAR_MESSAGE": {
+    "TranslationText": "Удалить последнии сообщения в канале"
   }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Discord;
@@ -31,7 +32,7 @@ namespace Discord_Bot
         private async Task MainAsync()
         {
             await using var services = ConfigureServices();
-
+            
             _client = services.GetRequiredService<DiscordSocketClient>();
             _reader = services.GetRequiredService<IJsonReader<Config>>();
             _command = services.GetRequiredService<ICommandHandler>();
@@ -43,9 +44,7 @@ namespace Discord_Bot
             await _command.InstallCommandsAsync();
             await _userHandler.InstallEventsAsync();
             await _welcomeHandler.InstallCommandsAsync();
-
             
-
             _client.Log += Log;
 
             var token = _reader.Load().Token;
@@ -55,7 +54,8 @@ namespace Discord_Bot
 
             await Task.Delay(Timeout.Infinite);
         }
-        
+
+
 
         private Task Log(LogMessage msg)
         {
