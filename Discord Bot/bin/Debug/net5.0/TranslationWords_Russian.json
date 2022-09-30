@@ -59,6 +59,9 @@
   "CMD_ADMINS_DELETED_MESSAGE": {
     "TranslationText": "Сообщение удалено"
   },
+  "CMD_ADMINS_MESSAGES_DELETED": {
+    "TranslationText": "Сообщений удалено"
+  },
   "CMD_ADMINS_SERVER_OWNER": {
     "TranslationText": "Владелец"
   },
@@ -174,6 +177,54 @@
     "TranslationText": "Получить полную информацию сообщения"
   },
   "CMD_SUMMARY_CLEAR_MESSAGE": {
-    "TranslationText": "Удалить последнии сообщения в канале"
+    "TranslationText": "Удалить последнии сообщения в текстовом канале"
+  },
+  "CMD_SUMMARY_CLEAR_ALL_MESSAGE": {
+    "TranslationText": "Удалить сообщения в текстовом канале, если в [countMessages] поставить -1, удалятся все сообщения."
+  },
+  "CMD_SUMMARY_CLEAR_USER_MESSAGE": {
+    "TranslationText": "Удалить сообщения пользователя в последних сообщениях, в [checkLastMessages] указывается сколько последних сообщений в каналах просматривать"
+  },
+  "CMD_ADMINS_START_DEL_MESSAGES": {
+    "TranslationText": "Начат процесс удаления сообщений в канале"
+  },
+  "CMD_ADMINS_COUNT_DELETED_MESSAGES": {
+    "TranslationText": "Удаленно сообщений"
+  },
+  "CMD_ADMINS_ELAPSED_DELETED_MESSAGES": {
+    "TranslationText": "Заняло времени"
+  },
+  "CMD_ADMINS_START_DELETED_MESSAGES": {
+    "TranslationText": "Начал уборку"
+  } ,
+  "CMD_ADMINS_END_DELETED_MESSAGES": {
+    "TranslationText": "Завершен процесс удаления сообщений"
+  },
+  "CMD_ADMINS_END_DELETED_CHANNEL_MESSAGES": {
+    "TranslationText": "Завершен процесс удаления сообщений для канала"
+  },
+  "CMD_ADMINS_START_USER_DELETED_MESSAGES": {
+    "TranslationText": "Начал уборку игрока во всех каналах"
+  },
+  "CMD_ADMINS_START_USER_IN_CHANNEL_DELETED_MESSAGES": {
+    "TranslationText": "Начал уборку игрока в канале"
+  },
+  "CMD_CLEAN_FOR_USER": {
+    "TranslationText": "Уборка для"
+  },
+  "CMD_ADMINS_END_USER_DELETED_MESSAGES": {
+    "TranslationText": "Завершен процесс удаления сообщений от игрока"
+  },
+  "CMD_ADMINS_END_USER_IN_CHANNEL_DELETED_MESSAGES": {
+    "TranslationText": "Завершен процесс удаления сообщений от игрока в канале"
+  },
+  "CMD_ADMINS_CLEAN_CHECK_LAST_MESSAGES": {
+    "TranslationText": "Количество сообщений которые нужно проверить"
+  },
+  "CMD_ADMINS_CHANNELS_IN_CLEAN": {
+    "TranslationText": "Каналов в уборке"
+  },
+  "CMD_ADMINS_VIEWED_MESSAGES": {
+    "TranslationText": "Сообщений проверено"
   }
 }

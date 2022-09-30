@@ -32,7 +32,7 @@ namespace Discord_Bot.Services.TextChatHandler
                     var textError =
                         $"***Error.*** The input text has too few parameters.\n***Example:*** !{info.Value.Name}";
                     textError = info.Value.Parameters.Aggregate(textError,
-                        (current, parameter) => current + $" {parameter} ");
+                        (current, parameter) => current + $" [**{parameter}**] ");
                     await context.Message.ReplyAsync(textError);
                     break;
                 case CommandError.UnknownCommand:

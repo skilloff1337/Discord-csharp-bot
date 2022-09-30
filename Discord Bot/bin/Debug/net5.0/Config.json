@@ -6,6 +6,7 @@
   "Version": "1.0.0",
   "Status": 5,
   "GameName": "CS:GO",
+  "IdServer": 305330911040372737,
   "ChannelIdForBotCommand": 1022189416728498186,
   "ChannelIdForBotAdminCommand": 1023177360155086878,
   "ChannelIdForBotWelcome": 1022418678807023687,

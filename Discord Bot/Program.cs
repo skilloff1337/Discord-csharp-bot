@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Linq;
+using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using Discord;
+using Discord.Interactions;
 using Discord.WebSocket;
 using Discord_Bot.Attributes;
 using Discord_Bot.Extension;
@@ -10,10 +12,11 @@ using Discord_Bot.Models;
 using Discord_Bot.Services.DataReader;
 using Discord_Bot.Services.DataReader.Interfaces;
 using Discord_Bot.Services.DataReader.IoC.Extension;
-using Discord_Bot.Services.TextChat.Interfaces;
 using Discord_Bot.Services.TextChatHandler;
+using Discord_Bot.Services.TextChatHandler.Interfaces;
 using Discord_Bot.Services.UserHandler.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.VisualBasic;
 
 namespace Discord_Bot
 {
@@ -24,6 +27,8 @@ namespace Discord_Bot
         private ICommandHandler _command;
         private IUserHandler _userHandler;
         private IWelcomeHandler _welcomeHandler;
+        private ServiceProvider _provider;
+        private InteractionService _interaction;
 
 
         private static void Main(string[] args) => new Program().MainAsync().GetAwaiter().GetResult();
@@ -31,15 +36,16 @@ namespace Discord_Bot
 
         private async Task MainAsync()
         {
-            await using var services = ConfigureServices();
+            await using var _provider = ConfigureServices();
             
-            _client = services.GetRequiredService<DiscordSocketClient>();
-            _reader = services.GetRequiredService<IJsonReader<Config>>();
-            _command = services.GetRequiredService<ICommandHandler>();
-            _userHandler = services.GetRequiredService<IUserHandler>();
-            _welcomeHandler = services.GetRequiredService<IWelcomeHandler>();
-            var test = services.GetRequiredService<AdminCommandErrorHandler>();
-            var test2 = services.GetRequiredService<CommandErrorHandler>();
+            _client = _provider.GetRequiredService<DiscordSocketClient>();
+            _reader = _provider.GetRequiredService<IJsonReader<Config>>();
+            _command = _provider.GetRequiredService<ICommandHandler>();
+            _userHandler = _provider.GetRequiredService<IUserHandler>();
+            _welcomeHandler = _provider.GetRequiredService<IWelcomeHandler>();
+            var test = _provider.GetRequiredService<AdminCommandErrorHandler>();
+            var test2 = _provider.GetRequiredService<CommandErrorHandler>();
+            _interaction = _provider.GetRequiredService<InteractionService>();
 
             await _command.InstallCommandsAsync();
             await _userHandler.InstallEventsAsync();
@@ -54,7 +60,6 @@ namespace Discord_Bot
 
             await Task.Delay(Timeout.Infinite);
         }
-
 
 
         private Task Log(LogMessage msg)

@@ -2,21 +2,21 @@
   "version": 3,
   "targets": {
     "net5.0": {
-      "Discord.Net/3.8.0": {
+      "Discord.Net/3.8.1": {
         "type": "package",
         "dependencies": {
-          "Discord.Net.Commands": "3.8.0",
-          "Discord.Net.Core": "3.8.0",
-          "Discord.Net.Interactions": "3.8.0",
-          "Discord.Net.Rest": "3.8.0",
-          "Discord.Net.WebSocket": "3.8.0",
-          "Discord.Net.Webhook": "3.8.0"
+          "Discord.Net.Commands": "3.8.1",
+          "Discord.Net.Core": "3.8.1",
+          "Discord.Net.Interactions": "3.8.1",
+          "Discord.Net.Rest": "3.8.1",
+          "Discord.Net.WebSocket": "3.8.1",
+          "Discord.Net.Webhook": "3.8.1"
         }
       },
-      "Discord.Net.Commands/3.8.0": {
+      "Discord.Net.Commands/3.8.1": {
         "type": "package",
         "dependencies": {
-          "Discord.Net.Core": "3.8.0"
+          "Discord.Net.Core": "3.8.1"
         },
         "compile": {
           "lib/net5.0/Discord.Net.Commands.dll": {}
@@ -25,7 +25,7 @@
           "lib/net5.0/Discord.Net.Commands.dll": {}
         }
       },
-      "Discord.Net.Core/3.8.0": {
+      "Discord.Net.Core/3.8.1": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "13.0.1",
@@ -40,12 +40,12 @@
           "lib/net5.0/Discord.Net.Core.dll": {}
         }
       },
-      "Discord.Net.Interactions/3.8.0": {
+      "Discord.Net.Interactions/3.8.1": {
         "type": "package",
         "dependencies": {
-          "Discord.Net.Core": "3.8.0",
-          "Discord.Net.Rest": "3.8.0",
-          "Discord.Net.WebSocket": "3.8.0",
+          "Discord.Net.Core": "3.8.1",
+          "Discord.Net.Rest": "3.8.1",
+          "Discord.Net.WebSocket": "3.8.1",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
           "System.Collections.Immutable": "5.0.0",
           "System.Reactive": "5.0.0"
@@ -57,10 +57,10 @@
           "lib/net5.0/Discord.Net.Interactions.dll": {}
         }
       },
-      "Discord.Net.Rest/3.8.0": {
+      "Discord.Net.Rest/3.8.1": {
         "type": "package",
         "dependencies": {
-          "Discord.Net.Core": "3.8.0"
+          "Discord.Net.Core": "3.8.1"
         },
         "compile": {
           "lib/net5.0/Discord.Net.Rest.dll": {}
@@ -69,11 +69,11 @@
           "lib/net5.0/Discord.Net.Rest.dll": {}
         }
       },
-      "Discord.Net.Webhook/3.8.0": {
+      "Discord.Net.Webhook/3.8.1": {
         "type": "package",
         "dependencies": {
-          "Discord.Net.Core": "3.8.0",
-          "Discord.Net.Rest": "3.8.0"
+          "Discord.Net.Core": "3.8.1",
+          "Discord.Net.Rest": "3.8.1"
         },
         "compile": {
           "lib/net5.0/Discord.Net.Webhook.dll": {}
@@ -82,11 +82,11 @@
           "lib/net5.0/Discord.Net.Webhook.dll": {}
         }
       },
-      "Discord.Net.WebSocket/3.8.0": {
+      "Discord.Net.WebSocket/3.8.1": {
         "type": "package",
         "dependencies": {
-          "Discord.Net.Core": "3.8.0",
-          "Discord.Net.Rest": "3.8.0"
+          "Discord.Net.Core": "3.8.1",
+          "Discord.Net.Rest": "3.8.1"
         },
         "compile": {
           "lib/net5.0/Discord.Net.WebSocket.dll": {}
@@ -409,26 +409,26 @@
     }
   },
   "libraries": {
-    "Discord.Net/3.8.0": {
-      "sha512": "sZD2xupS+9GD5n0hrg0i31bC8KszAt+S9COr3Z526vt0CE2TwIdohUjsOK6Pao7Hrl58Nf0BL9+j7iZZz+0VjQ==",
+    "Discord.Net/3.8.1": {
+      "sha512": "0Ed385FnrcN/4iH4a4nLwXZjRNT00ZK9VmYgE1Gefq/+A5FhjquGDgBdFn43H7u8pM1pHW0xP8iwiqjrtl0vpA==",
       "type": "package",
-      "path": "discord.net/3.8.0",
+      "path": "discord.net/3.8.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "discord.net.3.8.0.nupkg.sha512",
+        "discord.net.3.8.1.nupkg.sha512",
         "discord.net.nuspec"
       ]
     },
-    "Discord.Net.Commands/3.8.0": {
-      "sha512": "NaeScuFoL8O7QfeDxWGiBRAd13Qajn2iWl6MS5HdCFFfKWjNrCmo7v6STap8uN7PyID/14dwFDzCNCudRArJRg==",
+    "Discord.Net.Commands/3.8.1": {
+      "sha512": "EUqmEfwji9lb1eGTSzGC9dIXwsz1OUAJ+H6bCq2tXCcbvttkcZpXY1W4kwp91faDUxFFrvSXNYzVy4rTjnQ/ug==",
       "type": "package",
-      "path": "discord.net.commands/3.8.0",
+      "path": "discord.net.commands/3.8.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "PackageLogo.png",
-        "discord.net.commands.3.8.0.nupkg.sha512",
+        "discord.net.commands.3.8.1.nupkg.sha512",
         "discord.net.commands.nuspec",
         "lib/net461/Discord.Net.Commands.dll",
         "lib/net461/Discord.Net.Commands.xml",
@@ -442,15 +442,15 @@
         "lib/netstandard2.1/Discord.Net.Commands.xml"
       ]
     },
-    "Discord.Net.Core/3.8.0": {
-      "sha512": "anq5FvYE5Uls7zIbMJt6IT9yXndoJpPh/fMiNhFDMqgzQlZtCoOODGHcHtG50hDNn777kYTpWPQ8Q0UosqHjWQ==",
+    "Discord.Net.Core/3.8.1": {
+      "sha512": "HFN6NqOUIKarSEg3+ZqeaoL+3dMfcNyJX8niztHYFGORuXAdpaGo97TLePxfuOHz7cCLNKOlBuMUcnJBSy1gtA==",
       "type": "package",
-      "path": "discord.net.core/3.8.0",
+      "path": "discord.net.core/3.8.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "PackageLogo.png",
-        "discord.net.core.3.8.0.nupkg.sha512",
+        "discord.net.core.3.8.1.nupkg.sha512",
         "discord.net.core.nuspec",
         "lib/net461/Discord.Net.Core.dll",
         "lib/net461/Discord.Net.Core.xml",
@@ -464,15 +464,15 @@
         "lib/netstandard2.1/Discord.Net.Core.xml"
       ]
     },
-    "Discord.Net.Interactions/3.8.0": {
-      "sha512": "rbnSyD6GqNledBVzbjtkhIsnmoz8tKt2vTzEkNg4d4h8Q2Eh066Co5oVSO7jNH07ugT8kyZSdW87Q60YrrD7+w==",
+    "Discord.Net.Interactions/3.8.1": {
+      "sha512": "F/J12Kz6ALx4WXKwQnoyLleMfEnAWZdMnZKrtux4VwguEtUWzthPCLSlJqgBYOh6W51Npw5/1hV6hJPcWwBF8g==",
       "type": "package",
-      "path": "discord.net.interactions/3.8.0",
+      "path": "discord.net.interactions/3.8.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "PackageLogo.png",
-        "discord.net.interactions.3.8.0.nupkg.sha512",
+        "discord.net.interactions.3.8.1.nupkg.sha512",
         "discord.net.interactions.nuspec",
         "lib/net461/Discord.Net.Interactions.dll",
         "lib/net461/Discord.Net.Interactions.xml",
@@ -486,15 +486,15 @@
         "lib/netstandard2.1/Discord.Net.Interactions.xml"
       ]
     },
-    "Discord.Net.Rest/3.8.0": {
-      "sha512": "D8CGSkWqeRg3D8ZawthWdwKFHPVhdYB8dxltT5wAgN5op6lZd8BjEzCCOlsDrnIGcah3BkOnVqgPk1u0SBxqWw==",
+    "Discord.Net.Rest/3.8.1": {
+      "sha512": "0MFQwuvlvPXAm/U/AHqwlD3s35/uHB7PzaNTWpRIBuZIoV+9cH4seigSfXe6c6TzIQcNk+1jQs/udOf4WWzKOA==",
       "type": "package",
-      "path": "discord.net.rest/3.8.0",
+      "path": "discord.net.rest/3.8.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "PackageLogo.png",
-        "discord.net.rest.3.8.0.nupkg.sha512",
+        "discord.net.rest.3.8.1.nupkg.sha512",
         "discord.net.rest.nuspec",
         "lib/net461/Discord.Net.Rest.dll",
         "lib/net461/Discord.Net.Rest.xml",
@@ -508,15 +508,15 @@
         "lib/netstandard2.1/Discord.Net.Rest.xml"
       ]
     },
-    "Discord.Net.Webhook/3.8.0": {
-      "sha512": "5TZavUm1OqZKWr98JH1J9dZNixu32Kylz+9iL2czvR+IfdfpG6UXr40qk79Po6WLjWHmtBEpULVwSN11otTG3g==",
+    "Discord.Net.Webhook/3.8.1": {
+      "sha512": "f1YKcHdicawBXZhZmkw8WEOZ2S3TA7xgygG4m5+DC1yA2gukz5F3wNWmACz4nXjRPwQlNbZA2yWoceulQrj5/A==",
       "type": "package",
-      "path": "discord.net.webhook/3.8.0",
+      "path": "discord.net.webhook/3.8.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "PackageLogo.png",
-        "discord.net.webhook.3.8.0.nupkg.sha512",
+        "discord.net.webhook.3.8.1.nupkg.sha512",
         "discord.net.webhook.nuspec",
         "lib/net5.0/Discord.Net.Webhook.dll",
         "lib/net5.0/Discord.Net.Webhook.xml",
@@ -528,15 +528,15 @@
         "lib/netstandard2.1/Discord.Net.Webhook.xml"
       ]
     },
-    "Discord.Net.WebSocket/3.8.0": {
-      "sha512": "DOPGQLqyf2km0UyOcLxeV6TP4WA2f18aWJAaU4TxInYMqAVSOZVaQfB0bBf307uNNlYqCE6loYwrysH8zQNbpQ==",
+    "Discord.Net.WebSocket/3.8.1": {
+      "sha512": "lM4pITVCP1U44F/zBsBoKfKxzK73ONcv2oR48EcxZ+tni/BcCVX8HZlH5/6Dej7ijEHTkvuxKttqp80MROdXGg==",
       "type": "package",
-      "path": "discord.net.websocket/3.8.0",
+      "path": "discord.net.websocket/3.8.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "PackageLogo.png",
-        "discord.net.websocket.3.8.0.nupkg.sha512",
+        "discord.net.websocket.3.8.1.nupkg.sha512",
         "discord.net.websocket.nuspec",
         "lib/net461/Discord.Net.WebSocket.dll",
         "lib/net461/Discord.Net.WebSocket.xml",
@@ -1160,7 +1160,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "Discord.Net >= 3.8.0",
+      "Discord.Net >= 3.8.1",
       "Microsoft.Extensions.DependencyInjection >= 6.0.0",
       "MongoDB.Driver >= 2.17.1",
       "Newtonsoft.Json >= 13.0.1"
@@ -1212,7 +1212,7 @@
         "dependencies": {
           "Discord.Net": {
             "target": "Package",
-            "version": "[3.8.0, )"
+            "version": "[3.8.1, )"
           },
           "Microsoft.Extensions.DependencyInjection": {
             "target": "Package",

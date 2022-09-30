@@ -1,4 +1,4 @@
-﻿namespace Discord_Bot.Models
+﻿namespace Discord_Bot.Models.Types
 {
     public enum LanguageType
     {

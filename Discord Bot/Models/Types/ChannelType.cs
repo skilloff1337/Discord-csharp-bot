@@ -5,7 +5,6 @@
         Any,
         None,
         BotAdminCommand,
-        BotCommand,
-        BotNews
+        BotCommand
     }
 }

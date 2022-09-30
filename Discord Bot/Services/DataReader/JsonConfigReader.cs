@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Discord;
 using Discord_Bot.Models;
+using Discord_Bot.Models.Types;
 using Discord_Bot.Services.DataReader.Interfaces;
 using Newtonsoft.Json;
 
@@ -45,10 +47,14 @@ namespace Discord_Bot.Services.DataReader
                 Status = UserStatus.Online,
                 Token = "MTAyMTc0NjIzNDM0MTQ3MDI0Mg.GIomAd.cLuQ-spPvNiiyUEBctGIQ1L-FiLgr1atyyLJBk",
                 Version = "1.0.0",
+                IdServer = 305330911040372737,
                 ChannelIdForBotCommand = 1022189416728498186,
                 ChannelIdForBotWelcome = 1022418678807023687,
-                CommandHelpText = "Console",
-                Language = LanguageType.Russian
+                ChannelIdForBotLog = 1022438902809776128,
+                ChannelIdForBotAdminCommand = 1023177360155086878,
+                Language = LanguageType.Russian,
+                AdministratorRoles = new List<IRole>(),
+                Ranks = new List<Rank>()
             };
             var data = JsonConvert.SerializeObject(test, Formatting.Indented);
             File.AppendAllText(_path, data);

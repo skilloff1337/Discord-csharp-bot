@@ -1,21 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
 using Discord_Bot.Attributes;
 using Discord_Bot.Models;
-using Discord_Bot.Services.DataBase.Interfaces;
 using Discord_Bot.Services.DataReader.Interfaces;
 using Discord_Bot.Services.Translation.Interfaces;
-using MongoDB.Bson;
 using ChannelType = Discord_Bot.Models.Types.ChannelType;
 
-namespace Discord_Bot.Modules
+namespace Discord_Bot.Modules.Admins
 {
+    [Discord.Commands.Summary("Admin")]
     [RequiredChannel(ChannelType.BotAdminCommand)]
     public class AdminPunishmentModule : ModuleBase<SocketCommandContext>
     {

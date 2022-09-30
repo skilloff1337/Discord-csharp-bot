@@ -37,9 +37,6 @@ namespace Discord_Bot.Attributes
                     context.Channel != client.GetChannel(config.ChannelIdForBotCommand)
                         ? PreconditionResult.FromError("Unknown Command.")
                         : PreconditionResult.FromSuccess()),
-                ChannelType.BotNews => Task.FromResult(context.Channel != client.GetChannel(config.ChannelIdForBotNews)
-                    ? PreconditionResult.FromError("Unknown Command.")
-                    : PreconditionResult.FromSuccess()),
                 _ => Task.FromResult(PreconditionResult.FromError($"Unknown type: {_channel}"))
             };
         }

@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Discord_Bot.Services.TextChat.Interfaces
+namespace Discord_Bot.Services.TextChatHandler.Interfaces
 {
     public interface ICommandHandler
     {

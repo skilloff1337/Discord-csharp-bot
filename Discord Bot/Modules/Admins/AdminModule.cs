@@ -1,24 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
-using Discord.Interactions;
 using Discord.WebSocket;
 using Discord_Bot.Attributes;
 using Discord_Bot.Models;
 using Discord_Bot.Services.DataBase.Interfaces;
-using Discord_Bot.Services.DataReader;
 using Discord_Bot.Services.DataReader.Interfaces;
 using Discord_Bot.Services.Translation.Interfaces;
 using ChannelType = Discord_Bot.Models.Types.ChannelType;
 
-namespace Discord_Bot.Modules
+namespace Discord_Bot.Modules.Admins
 {
+    [Discord.Commands.Summary("Admin")]
     [RequiredChannel(ChannelType.BotAdminCommand)]
     [Discord.Commands.RequireUserPermission(GuildPermission.Administrator)]
+    [Discord.Commands.RequireBotPermission(GuildPermission.Administrator)]
     public class AdminModule : ModuleBase<SocketCommandContext>
     {
         private readonly ITranslation _translation;
@@ -44,7 +42,7 @@ namespace Discord_Bot.Modules
         {
             var commandInfos = _commandService
                 .Commands
-                .Where(x => x.Module.Name is "AdminModule" or "AdminPunishmentModule");
+                .Where(x => x.Module.Summary is "Admin");
 
             var result = new StringBuilder(500);
             foreach (var cmd in commandInfos)
@@ -52,7 +50,7 @@ namespace Discord_Bot.Modules
                 result.Append($"**!{cmd.Name}** ");
 
                 foreach (var param in cmd.Parameters)
-                    result.Append($"{param} ");
+                    result.Append($"[{param}] ");
 
                 result.Append($" - {cmd.Summary}\n\n");
             }
@@ -67,8 +65,6 @@ namespace Discord_Bot.Modules
 
         [Command("infoserver")]
         [Discord.Commands.Summary("CMD_SUMMARY_SERVER_INFO")]
-        [Discord.Commands.RequireUserPermission(GuildPermission.Administrator)]
-        [Discord.Commands.RequireBotPermission(GuildPermission.Administrator)]
         public async Task InfoServer()
         {
             var text = $"**CMD_ADMINS_SERVER_NAME :** {Context.Guild.Name}\n" +
@@ -94,8 +90,6 @@ namespace Discord_Bot.Modules
 
         [Command("infouser")]
         [Discord.Commands.Summary("CMD_SUMMARY_USER_INFO")]
-        [Discord.Commands.RequireUserPermission(GuildPermission.Administrator)]
-        [Discord.Commands.RequireBotPermission(GuildPermission.Administrator)]
         public async Task InfoUser(SocketGuildUser user)
         {
             var textRoles = user.Roles.Aggregate("", (current, role) => current + $"{role}\n");
@@ -123,8 +117,6 @@ namespace Discord_Bot.Modules
 
         [Command("inforole")]
         [Discord.Commands.Summary("CMD_SUMMARY_ROLE_INFO")]
-        [Discord.Commands.RequireUserPermission(GuildPermission.Administrator)]
-        [Discord.Commands.RequireBotPermission(GuildPermission.Administrator)]
         public async Task InfoRole(SocketRole role)
         {
             if (role.IsEveryone)
@@ -148,43 +140,6 @@ namespace Discord_Bot.Modules
             await Context.Message.ReplyAsync(
                 $"***{role.Name}*** {_translation.GetTranslationByTextID("CMD_ADMINS_USER_INFO")}\n",
                 embed: embed.Build());
-        }
-
-        [Command("messagehistory")]
-        [Discord.Commands.Summary("CMD_SUMMARY_HISTORY_MESSAGE")]
-        [Discord.Commands.RequireUserPermission(GuildPermission.Administrator)]
-        [Discord.Commands.RequireBotPermission(GuildPermission.Administrator)]
-        public async Task MessageHistory(ulong idMessage)
-        {
-            var message = _repository.GetById(idMessage);
-            if (message is null)
-            {
-                await Context.Message.ReplyAsync(_translation.GetTranslationByTextID("CMD_ADMINS_NOT_FOUND"));
-                return;
-            }
-
-            var historyMessages = new StringBuilder(300);
-            foreach (var msg in message.HistoryMessage)
-                historyMessages.Append($"{msg}\n");
-            var text = $"**CMD_ADMINS_SERVER_OWNER :**             {message.NickName}\n" +
-                       $"**CMD_ADMINS_CHANNEL_NAME :**      {message.ChannelName}\n" +
-                       $"**CMD_ADMINS_CHANNEL_ID :**        {message.ChannelId}\n" +
-                       $"**CMD_ADMINS_SERVER_CREATED :**       {message.CreateMessage}\n" +
-                       $"**CMD_ADMINS_SERVER_CREATED :**       {message.EditMessage}\n" +
-                       $"**CMD_ADMINS_MESSAGE_EDIT :**      {message.EditCount}\n" +
-                       $"**CMD_ADMINS_MESSAGE :**   {message.CurrentMessage}\n" +
-                       $"**CMD_ADMINS_HISTORY_MESSAGE :**\n {historyMessages}" +
-                       $"**CMD_ADMINS_DELETED_MESSAGE :**   {message.IsDeleted}\n" +
-                       $"**CMD_ADMINS_DELETED_DATE_MESSAGE :**      {message.DeletedDate}\n";
-
-            text = _translation.TranslationText(text);
-            
-            var embed = new EmbedBuilder()
-                .WithColor(_color)
-                .WithDescription(text);
-
-            await Context.Message.ReplyAsync($"{_translation.GetTranslationByTextID("CMD_ADMINS_HISTORY_MESSAGE")}" +
-                                             $" **{message.MessageId}**", embed: embed.Build());
         }
     }
 }
