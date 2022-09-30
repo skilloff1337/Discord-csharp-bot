@@ -8,6 +8,8 @@ using Discord_Bot.Services.BotSetting;
 using Discord_Bot.Services.BotSetting.Interfaces;
 using Discord_Bot.Services.DataBase;
 using Discord_Bot.Services.DataBase.Interfaces;
+using Discord_Bot.Services.PathProvider;
+using Discord_Bot.Services.PathProvider.Interfaces;
 using Discord_Bot.Services.TextChatHandler;
 using Discord_Bot.Services.TextChatHandler.Interfaces;
 using Discord_Bot.Services.Translation;
@@ -29,7 +31,7 @@ namespace Discord_Bot.Extension
                     MessageCacheSize = 1000,
                     GatewayIntents = GatewayIntents.All
                 }))
-                .AddSingleton<InteractionService>(x => new InteractionService(x.GetRequiredService<DiscordSocketClient>()))
+                .AddSingleton(x => new InteractionService(x.GetRequiredService<DiscordSocketClient>()))
                 .AddSingleton(new CommandService(new CommandServiceConfig()))
                 .AddSingleton<ICommandHandler, CommandHandler>()
                 .AddSingleton<IUserHandler, UserHandler>()
@@ -38,7 +40,8 @@ namespace Discord_Bot.Extension
                 .AddSingleton<ITranslation, Translation>()
                 .AddSingleton<AdminCommandErrorHandler>()
                 .AddSingleton<CommandErrorHandler>()
-                .AddSingleton<IRepository<MessageUser>, MessageRepository>();
+                .AddSingleton<IRepository<MessageUser>, MessageRepository>()
+                .AddSingleton<IPathProvider,PathProvider>();
         }
     }
 }

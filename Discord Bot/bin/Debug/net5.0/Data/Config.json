@@ -1,15 +1,16 @@
 {
-  "Language": 1,
   "Token": "MTAyMTc0NjIzNDM0MTQ3MDI0Mg.GIomAd.cLuQ-spPvNiiyUEBctGIQ1L-FiLgr1atyyLJBk",
-  "ConnectionString": "mongodb://localhost:27017",
-  "DataBaseName": "discordBot",
   "Version": "1.0.0",
-  "Status": 5,
-  "GameName": "CS:GO",
+  "AdministratorRoles": [],
+  "Ranks": [],
+  "DataBaseName": "discordBot",
+  "ConnectionString": "mongodb://localhost:27017",
+  "Language": 1,
+  "Status": 1,
+  "GameName": "Development",
   "IdServer": 305330911040372737,
   "ChannelIdForBotCommand": 1022189416728498186,
   "ChannelIdForBotAdminCommand": 1023177360155086878,
   "ChannelIdForBotWelcome": 1022418678807023687,
-  "ChannelIdForBotLog": 1022438902809776128,
-  "CommandHelpText": "Test "
+  "ChannelIdForBotLog": 1022438902809776128
 }

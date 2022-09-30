@@ -5,6 +5,7 @@ using Discord;
 using Discord_Bot.Models;
 using Discord_Bot.Models.Types;
 using Discord_Bot.Services.DataReader.Interfaces;
+using Discord_Bot.Services.PathProvider.Interfaces;
 using Newtonsoft.Json;
 
 namespace Discord_Bot.Services.DataReader
@@ -16,9 +17,9 @@ namespace Discord_Bot.Services.DataReader
         
         private const string FILE_NAME = "Config.json";
 
-        public JsonConfigReader()
+        public JsonConfigReader(IPathProvider pathProvider)
         {
-            _path = Path.Combine(AppContext.BaseDirectory, FILE_NAME);
+            _path = pathProvider.GetDataPath(FILE_NAME);
             _config = new Lazy<Config>(LoadCore);
         }
 

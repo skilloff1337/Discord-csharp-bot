@@ -12,11 +12,14 @@ using Discord_Bot.Models;
 using Discord_Bot.Services.DataReader;
 using Discord_Bot.Services.DataReader.Interfaces;
 using Discord_Bot.Services.DataReader.IoC.Extension;
+using Discord_Bot.Services.DataWriter.Interfaces;
+using Discord_Bot.Services.DataWriter.IoC.Extension;
 using Discord_Bot.Services.TextChatHandler;
 using Discord_Bot.Services.TextChatHandler.Interfaces;
 using Discord_Bot.Services.UserHandler.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualBasic;
+using Newtonsoft.Json;
 
 namespace Discord_Bot
 {
@@ -73,6 +76,7 @@ namespace Discord_Bot
             return new ServiceCollection()
                 .BindingGeneral()
                 .BindingReaders()
+                .BindingWriters()
                 .BuildServiceProvider();
         }
     }

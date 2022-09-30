@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using Discord_Bot.Models;
 using Discord_Bot.Services.DataReader.Interfaces;
+using Discord_Bot.Services.PathProvider.Interfaces;
 using Newtonsoft.Json;
 
 namespace Discord_Bot.Services.DataReader
@@ -14,13 +15,14 @@ namespace Discord_Bot.Services.DataReader
         
         private readonly string _fileName = "TranslationWords_";
 
-        public JsonLanguageReader(IJsonReader<Config> configReader)
+        public JsonLanguageReader(IPathProvider pathProvider,IJsonReader<Config> configReader)
         {
             var language = configReader.Load().Language;
             _translationWords = new Lazy<Dictionary<string, TranslationWord>>(LoadCore);
 
             _fileName += $"{language.ToString()}.json";
-            _path = Path.Combine(AppContext.BaseDirectory, _fileName);
+            
+            _path = pathProvider.GetDataPath(_fileName);
         }
 
         private Dictionary<string, TranslationWord> LoadCore() =>
