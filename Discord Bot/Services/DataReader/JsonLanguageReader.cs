@@ -15,9 +15,9 @@ namespace Discord_Bot.Services.DataReader
         
         private readonly string _fileName = "TranslationWords_";
 
-        public JsonLanguageReader(IPathProvider pathProvider,IJsonReader<Config> configReader)
+        public JsonLanguageReader(IPathProvider pathProvider,Config config)
         {
-            var language = configReader.Load().Language;
+            var language = config.Language;
             _translationWords = new Lazy<Dictionary<string, TranslationWord>>(LoadCore);
 
             _fileName += $"{language.ToString()}.json";

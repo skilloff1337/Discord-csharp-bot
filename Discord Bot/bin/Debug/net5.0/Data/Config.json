@@ -2,8 +2,17 @@
   "Token": "MTAyMTc0NjIzNDM0MTQ3MDI0Mg.GIomAd.cLuQ-spPvNiiyUEBctGIQ1L-FiLgr1atyyLJBk",
   "Version": "1.0.0",
   "AdministratorRoles": [],
-  "Ranks": [],
+  "Ranks": [
+    {
+      "Id": "63370c1a811a44a321b76212",
+      "NameRank": "test",
+      "Level": 2,
+      "NeedExp": 500,
+      "RoleID": 1025424166947664014
+    }
+  ],
   "DataBaseName": "discordBot",
+  "CollectionMessage": "messageUser",
   "ConnectionString": "mongodb://localhost:27017",
   "Language": 1,
   "Status": 1,

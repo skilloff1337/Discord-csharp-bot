@@ -15,17 +15,16 @@ namespace Discord_Bot.Services.BotSetting
         private readonly DiscordSocketClient _client;
         private readonly Config _config;
         
-        public BotSetting(IJsonReader<Config> configReader, DiscordSocketClient client)
+        public BotSetting(Config config, DiscordSocketClient client)
         {
             _client = client;
-            
-            _config = configReader.Load();
+            _config = config;
         }
 
         public async Task InstallSettingsAsync()
         {
             await _client.SetGameAsync(_config.GameName);
-            await _client.SetStatusAsync(UserStatus.Invisible);//_config.Status);
+            await _client.SetStatusAsync(_config.Status);
 
             await Task.CompletedTask;
         }

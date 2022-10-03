@@ -1,64 +1,59 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using Discord;
 using Discord_Bot.Models;
-using Discord_Bot.Models.Types;
-using Discord_Bot.Services.DataReader.Interfaces;
 using Discord_Bot.Services.PathProvider.Interfaces;
 using Newtonsoft.Json;
 
 namespace Discord_Bot.Services.DataReader
 {
-    public class JsonConfigReader : IJsonReader<Config>
+    public class JsonConfigReader
     {
-        private readonly string _path;
-        private readonly Lazy<Config> _config;
+        private readonly Config _config;
         
+        private readonly string _path;
         private const string FILE_NAME = "Config.json";
 
-        public JsonConfigReader(IPathProvider pathProvider)
+        public JsonConfigReader(IPathProvider pathProvider, Config config)
         {
+            _config = config;
             _path = pathProvider.GetDataPath(FILE_NAME);
-            _config = new Lazy<Config>(LoadCore);
+
+            Load();
         }
 
-        public Config Load() =>
-            _config.Value;
-        
-        private Config LoadCore()
+        private void Load()
         {
             if (!File.Exists(_path))
             {
-                CreateDefaultConfig();
                 Console.WriteLine($"{FILE_NAME} not found on path {_path}. Default settings loaded.");
+                return;
             }
-            var data = File.ReadAllText(_path);
-            
-            return JsonConvert.DeserializeObject<Config>(data);
-        }
 
-        private void CreateDefaultConfig()
-        {
-            var test = new Config()
-            {
-                DataBaseName = "discordBot",
-                ConnectionString = "mongodb://localhost:27017",
-                GameName = "Development",
-                Status = UserStatus.Online,
-                Token = "MTAyMTc0NjIzNDM0MTQ3MDI0Mg.GIomAd.cLuQ-spPvNiiyUEBctGIQ1L-FiLgr1atyyLJBk",
-                Version = "1.0.0",
-                IdServer = 305330911040372737,
-                ChannelIdForBotCommand = 1022189416728498186,
-                ChannelIdForBotWelcome = 1022418678807023687,
-                ChannelIdForBotLog = 1022438902809776128,
-                ChannelIdForBotAdminCommand = 1023177360155086878,
-                Language = LanguageType.Russian,
-                AdministratorRoles = new List<IRole>(),
-                Ranks = new List<Rank>()
-            };
-            var data = JsonConvert.SerializeObject(test, Formatting.Indented);
-            File.AppendAllText(_path, data);
+            var text = File.ReadAllText(_path);
+            var data = JsonConvert.DeserializeObject<Config>(text);
+
+            if (data == null)
+                return;
+            
+            _config.Token = data.Token;
+            _config.Version = data.Version;
+
+            _config.AdministratorRoles = data.AdministratorRoles;
+            _config.Ranks = data.Ranks;
+
+            _config.DataBaseName = data.DataBaseName;
+            _config.CollectionMessage = data.CollectionMessage;
+            _config.ConnectionString = data.ConnectionString;
+
+            _config.Language = data.Language;
+            _config.Status = data.Status;
+            _config.GameName = data.GameName;
+
+            _config.IdServer = data.IdServer;
+            _config.ChannelIdForBotAdminCommand = data.ChannelIdForBotAdminCommand;
+            _config.ChannelIdForBotCommand = data.ChannelIdForBotCommand;
+            _config.ChannelIdForBotWelcome = data.ChannelIdForBotWelcome;
+            _config.ChannelIdForBotLog = data.ChannelIdForBotLog;
         }
     }
 }

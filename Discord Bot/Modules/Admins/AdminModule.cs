@@ -13,31 +13,26 @@ using ChannelType = Discord_Bot.Models.Types.ChannelType;
 
 namespace Discord_Bot.Modules.Admins
 {
-    [Discord.Commands.Summary("Admin")]
+    [Summary("Admin")]
     [RequiredChannel(ChannelType.BotAdminCommand)]
-    [Discord.Commands.RequireUserPermission(GuildPermission.Administrator)]
-    [Discord.Commands.RequireBotPermission(GuildPermission.Administrator)]
+    [RequireUserPermission(GuildPermission.Administrator)]
+    [RequireBotPermission(GuildPermission.Administrator)]
     public class AdminModule : ModuleBase<SocketCommandContext>
     {
         private readonly ITranslation _translation;
         private readonly CommandService _commandService;
-        private readonly IRepository<MessageUser> _repository;
 
         private readonly Color _color = new(26, 148, 230);
-        private readonly ulong _idLogChannel;
 
         public AdminModule(ITranslation translation,
-            CommandService commandService, IRepository<MessageUser> repository, IJsonReader<Config> config)
+            CommandService commandService)
         {
             _translation = translation;
             _commandService = commandService;
-            _repository = repository;
-
-            _idLogChannel = config.Load().ChannelIdForBotLog;
         }
 
         [Command("help")]
-        [Discord.Commands.Summary("CMD_SUMMARY_HELP")]
+        [Summary("CMD_SUMMARY_HELP")]
         public async Task Help()
         {
             var commandInfos = _commandService
@@ -64,7 +59,7 @@ namespace Discord_Bot.Modules.Admins
         }
 
         [Command("infoserver")]
-        [Discord.Commands.Summary("CMD_SUMMARY_SERVER_INFO")]
+        [Summary("CMD_SUMMARY_SERVER_INFO")]
         public async Task InfoServer()
         {
             var text = $"**CMD_ADMINS_SERVER_NAME :** {Context.Guild.Name}\n" +
@@ -89,7 +84,7 @@ namespace Discord_Bot.Modules.Admins
         }
 
         [Command("infouser")]
-        [Discord.Commands.Summary("CMD_SUMMARY_USER_INFO")]
+        [Summary("CMD_SUMMARY_USER_INFO")]
         public async Task InfoUser(SocketGuildUser user)
         {
             var textRoles = user.Roles.Aggregate("", (current, role) => current + $"{role}\n");
@@ -116,7 +111,7 @@ namespace Discord_Bot.Modules.Admins
         }
 
         [Command("inforole")]
-        [Discord.Commands.Summary("CMD_SUMMARY_ROLE_INFO")]
+        [Summary("CMD_SUMMARY_ROLE_INFO")]
         public async Task InfoRole(SocketRole role)
         {
             if (role.IsEveryone)

@@ -39,11 +39,5 @@ namespace Discord_Bot.Models
 
         [BsonElement("historyMessage")]
         public List<string> HistoryMessage { get; set; } = new();
-
-        [BsonElement("isDeleted")]
-        public bool IsDeleted { get; set; }
-
-        [BsonElement("deletedDate")]
-        public DateTime DeletedDate { get; set; }
     }
 }

@@ -12,18 +12,18 @@ namespace Discord_Bot.Services.TextChatHandler
     public class CommandErrorHandler
     {
         private readonly DiscordSocketClient _client;
-        private readonly ulong _idBotChannel;
+        private readonly Config _config;
 
-        public CommandErrorHandler(CommandService command, DiscordSocketClient client, IJsonReader<Config> configReader)
+        public CommandErrorHandler(CommandService command, DiscordSocketClient client, Config config)
         {
             _client = client;
-            _idBotChannel = configReader.Load().ChannelIdForBotCommand;
+            _config = config;
             command.CommandExecuted += ErrorHandler;
         }
 
         private async Task ErrorHandler(Optional<CommandInfo> info, ICommandContext context, IResult result)
         {
-            if (context.Channel != _client.GetChannel(_idBotChannel))
+            if (context.Channel != _client.GetChannel(_config.ChannelIdForBotCommand))
                 return;
 
             switch (result.Error)

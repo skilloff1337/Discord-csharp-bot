@@ -14,20 +14,12 @@ namespace Discord_Bot.Services.TextChatHandler
     public class WelcomeHandler : IWelcomeHandler
     {
         private readonly DiscordSocketClient _client;
-        private readonly CommandService _command;
-        private readonly IServiceProvider _provider;
+        private readonly Config _config;
 
-        private readonly ulong _idBotChannel;
-
-        public WelcomeHandler(CommandService command,
-            DiscordSocketClient client,
-            IServiceProvider provider,
-            IJsonReader<Config> jsonReader)
+        public WelcomeHandler(DiscordSocketClient client, Config config)
         {
-            _command = command;
             _client = client;
-            _provider = provider;
-            _idBotChannel = jsonReader.Load().ChannelIdForBotWelcome;
+            _config = config;
         }
 
         public async Task InstallCommandsAsync()
@@ -38,8 +30,8 @@ namespace Discord_Bot.Services.TextChatHandler
 
         private async Task WelcomeHandlerAsync(SocketMessage messageParam)
         {
-            var channel = _client.GetChannel(_idBotChannel);
-            if (messageParam.Channel != _client.GetChannel(_idBotChannel))
+            var channel = _client.GetChannel(_config.ChannelIdForBotWelcome);
+            if (messageParam.Channel != _client.GetChannel(_config.ChannelIdForBotWelcome))
                 return;
             await messageParam.Author.SendMessageAsync("Welcome to my discord server dude!");
         }

@@ -20,15 +20,13 @@ namespace Discord_Bot.Modules.Admins.Message
     {
         private readonly IRepository<MessageUser> _repository;
         private readonly ITranslation _translation;
-        private readonly DiscordSocketClient _client;
-        
+
         private readonly Color _color = new(26, 148, 230);
 
-        public AdminMessageHistoryModule(IRepository<MessageUser> repository, ITranslation translation,
-            DiscordSocketClient client, IJsonReader<Config> reader)
+        public AdminMessageHistoryModule(IRepository<MessageUser> repository, ITranslation translation)
         {
+            _repository = repository;
             _translation = translation;
-            _client = client;
         }
 
         [Command("messageHistory")]
@@ -52,11 +50,9 @@ namespace Discord_Bot.Modules.Admins.Message
                        $"**CMD_ADMINS_SERVER_CREATED :** {message.EditMessage}\n" +
                        $"**CMD_ADMINS_MESSAGE_EDIT :** {message.EditCount}\n" +
                        $"**CMD_ADMINS_MESSAGE :** {message.CurrentMessage}\n" +
-                       $"**CMD_ADMINS_HISTORY_MESSAGE :**\n {historyMessages}" +
-                       $"**CMD_ADMINS_DELETED_MESSAGE :** {message.IsDeleted}\n" +
-                       $"**CMD_ADMINS_DELETED_DATE_MESSAGE :** {message.DeletedDate}\n";
+                       $"**CMD_ADMINS_HISTORY_MESSAGE :**\n {historyMessages}";
 
-            text = _translation.TranslationText(text);
+                       text = _translation.TranslationText(text);
 
             var embed = new EmbedBuilder()
                 .WithColor(_color)

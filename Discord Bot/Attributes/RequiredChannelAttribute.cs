@@ -22,7 +22,7 @@ namespace Discord_Bot.Attributes
         public override Task<PreconditionResult> CheckPermissionsAsync(ICommandContext context, CommandInfo command,
             IServiceProvider services)
         {
-            var config = services.GetRequiredService<IJsonReader<Config>>().Load();
+            var config = services.GetRequiredService<Config>();
             var client = services.GetRequiredService<DiscordSocketClient>();
 
             return _channel switch

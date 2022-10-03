@@ -20,23 +20,18 @@ namespace Discord_Bot.Services.TextChatHandler
         private readonly CommandService _command;
         private readonly IServiceProvider _provider;
         private readonly InteractionService _interaction;
-
-        private readonly ulong _idBotChannel;
-        private readonly ulong _idAdminCommandChannel;
-        private readonly ulong _idServer;
+        private readonly Config _config;
 
         public CommandHandler(CommandService command,
             DiscordSocketClient client,
             IServiceProvider provider,
-            IJsonReader<Config> jsonReader, InteractionService interaction)
+            Config config, InteractionService interaction)
         {
             _command = command;
             _client = client;
             _provider = provider;
             _interaction = interaction;
-            _idBotChannel = jsonReader.Load().ChannelIdForBotCommand;
-            _idAdminCommandChannel = jsonReader.Load().ChannelIdForBotAdminCommand;
-            _idServer = jsonReader.Load().IdServer;
+            _config = config;
         }
 
         public async Task InstallCommandsAsync()
@@ -67,8 +62,8 @@ namespace Discord_Bot.Services.TextChatHandler
         }
 
         private bool RequiredServer(ISocketMessageChannel channel)
-            => channel == _client.GetChannel(_idBotChannel) 
-               || channel == _client.GetChannel(_idAdminCommandChannel);
+            => channel == _client.GetChannel(_config.ChannelIdForBotCommand) 
+               || channel == _client.GetChannel(_config.ChannelIdForBotAdminCommand);
 
         private async Task Interaction(SocketInteraction interaction)
         {
@@ -80,7 +75,7 @@ namespace Discord_Bot.Services.TextChatHandler
         {
             await _command.AddModulesAsync(Assembly.GetEntryAssembly(), _provider);
             await _interaction.AddModulesAsync(Assembly.GetEntryAssembly(), _provider);
-            await _interaction.RegisterCommandsToGuildAsync(305330911040372737);
+            await _interaction.RegisterCommandsToGuildAsync(_config.IdServer);
         }
     }
 }

@@ -24,22 +24,18 @@ namespace Discord_Bot.Modules
     {
 
         private readonly ITranslation _translation;
-        private readonly CommandService _commandService;
         private readonly InteractionService _interaction;
         
         private readonly Color _color = new(26, 148, 230);
 
-        public InfoModule(ITranslation translation, CommandService commandService, InteractionService interaction)
+        public InfoModule(ITranslation translation, InteractionService interaction)
         {
             _translation = translation;
-            _commandService = commandService;
             _interaction = interaction;
         }
         [SlashCommand("help", "show commands")]
         public async Task Help()
         {
-            
-            var test = _interaction;
             var result = new StringBuilder(500);
             foreach (var module in _interaction.Modules)
             {

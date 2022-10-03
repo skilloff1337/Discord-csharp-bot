@@ -14,13 +14,15 @@ namespace Discord_Bot.Services.DataBase
         private readonly IMongoCollection<MessageUser> _collection;
         private readonly IMongoDatabase _database;
 
-        public MessageRepository(IJsonReader<Config> configReader)
+        public MessageRepository(Config config)
         {
-            var databaseName = configReader.Load().DataBaseName;
-            var connectionString = configReader.Load().ConnectionString;
+            var databaseName = config.DataBaseName;
+            var connectionString = config.ConnectionString;
+            var collectionName = config.CollectionMessage;
+            
             _client = new MongoClient(connectionString);
             _database = _client.GetDatabase(databaseName);
-            _collection = _database.GetCollection<MessageUser>("messageUser");
+            _collection = _database.GetCollection<MessageUser>(collectionName);
         }
 
         public IEnumerable<MessageUser> GetAll()
@@ -35,20 +37,21 @@ namespace Discord_Bot.Services.DataBase
 
         public bool Create(MessageUser data)
         {
-            if (IsAlreadyHaveEntryInDateBase(ObjectId.Parse(data.Id)))
-                return false;
-
             _collection.InsertOne(data);
+            return true;
+        }
+        
+        public bool CreateMany(List<MessageUser> data)
+        {
+            _collection.InsertMany(data);
             return true;
         }
 
         public void Update(MessageUser data)
         {
-            var test = GetByObjectId(ObjectId.Parse(data.Id));
-            var res = _collection.ReplaceOne(Builders<MessageUser>.Filter.Eq("_id", ObjectId.Parse(data.Id)), data);
+          _collection.ReplaceOne(Builders<MessageUser>.Filter.Eq("_id", ObjectId.Parse(data.Id)), data);
         }
-
-
+        
         public void Delete(ObjectId id)
             => _collection.DeleteOne(Builders<MessageUser>.Filter.Eq("_id", id));
 
@@ -56,8 +59,5 @@ namespace Discord_Bot.Services.DataBase
         {
             return _database.RunCommandAsync((Command<BsonDocument>) "{ping:1}").Wait(1000);
         }
-
-        private bool IsAlreadyHaveEntryInDateBase(ObjectId id)
-            => GetByObjectId(id) != null;
     }
 }

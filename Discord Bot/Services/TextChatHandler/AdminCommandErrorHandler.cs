@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
@@ -12,18 +13,18 @@ namespace Discord_Bot.Services.TextChatHandler
     public class AdminCommandErrorHandler
     {
         private readonly DiscordSocketClient _client;
-        private readonly ulong _idAdminChannel;
+        private readonly Config _config;
 
-        public AdminCommandErrorHandler(CommandService command, DiscordSocketClient client, IJsonReader<Config> configReader)
+        public AdminCommandErrorHandler(CommandService command, DiscordSocketClient client, Config config)
         {
             _client = client;
-            _idAdminChannel = configReader.Load().ChannelIdForBotAdminCommand;
+            _config = config;
             command.CommandExecuted += ErrorHandler;
         }
 
         private async Task ErrorHandler(Optional<CommandInfo> info, ICommandContext context, IResult result)
         {
-            if (context.Channel != _client.GetChannel(_idAdminChannel))
+            if (context.Channel != _client.GetChannel(_config.ChannelIdForBotAdminCommand))
                 return;
             
             switch (result.Error)

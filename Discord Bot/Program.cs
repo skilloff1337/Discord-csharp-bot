@@ -25,41 +25,20 @@ namespace Discord_Bot
 {
     internal class Program
     {
-        private DiscordSocketClient _client;
-        private IJsonReader<Config> _reader;
-        private ICommandHandler _command;
-        private IUserHandler _userHandler;
-        private IWelcomeHandler _welcomeHandler;
-        private ServiceProvider _provider;
-        private InteractionService _interaction;
-
-
-        private static void Main(string[] args) => new Program().MainAsync().GetAwaiter().GetResult();
+        private static async Task Main(string[] args) => await new Program().MainAsync();
 
 
         private async Task MainAsync()
         {
-            await using var _provider = ConfigureServices();
-            
-            _client = _provider.GetRequiredService<DiscordSocketClient>();
-            _reader = _provider.GetRequiredService<IJsonReader<Config>>();
-            _command = _provider.GetRequiredService<ICommandHandler>();
-            _userHandler = _provider.GetRequiredService<IUserHandler>();
-            _welcomeHandler = _provider.GetRequiredService<IWelcomeHandler>();
-            var test = _provider.GetRequiredService<AdminCommandErrorHandler>();
-            var test2 = _provider.GetRequiredService<CommandErrorHandler>();
-            _interaction = _provider.GetRequiredService<InteractionService>();
+            await using var provider = ConfigureServices();
+            await ServicesWakeUp(provider);
+            var config = provider.GetRequiredService<Config>();
+            var client = provider.GetRequiredService<DiscordSocketClient>();
 
-            await _command.InstallCommandsAsync();
-            await _userHandler.InstallEventsAsync();
-            await _welcomeHandler.InstallCommandsAsync();
-            
-            _client.Log += Log;
+            client.Log += Log;
 
-            var token = _reader.Load().Token;
-
-            await _client.LoginAsync(TokenType.Bot, token);
-            await _client.StartAsync();
+            await client.LoginAsync(TokenType.Bot, config.Token);
+            await client.StartAsync();
 
             await Task.Delay(Timeout.Infinite);
         }
@@ -71,13 +50,24 @@ namespace Discord_Bot
             return Task.CompletedTask;
         }
 
-        public ServiceProvider ConfigureServices()
+        private ServiceProvider ConfigureServices()
         {
             return new ServiceCollection()
                 .BindingGeneral()
                 .BindingReaders()
                 .BindingWriters()
                 .BuildServiceProvider();
+        }
+
+        private async Task ServicesWakeUp(ServiceProvider provider)
+        {
+            provider.GetRequiredService<JsonConfigReader>();
+            provider.GetRequiredService<AdminCommandErrorHandler>();
+            provider.GetRequiredService<CommandErrorHandler>();
+            provider.GetRequiredService<InteractionService>();
+            await provider.GetRequiredService<ICommandHandler>().InstallCommandsAsync();
+            await provider.GetRequiredService<IUserHandler>().InstallEventsAsync();
+            await provider.GetRequiredService<IWelcomeHandler>().InstallCommandsAsync();
         }
     }
 }

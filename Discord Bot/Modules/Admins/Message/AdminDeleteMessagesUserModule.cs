@@ -21,18 +21,18 @@ namespace Discord_Bot.Modules.Admins.Message
     {
         private readonly DiscordSocketClient _client;
         private readonly ITranslation _translation;
+        private readonly Config _config;
 
 
         private readonly Color _color = new(26, 148, 230);
         private readonly Stopwatch _stopwatch = new Stopwatch();
-        private readonly ulong _idLogChat;
 
-        public AdminDeleteMessagesUserModule(DiscordSocketClient client, IJsonReader<Config> reader,
+        public AdminDeleteMessagesUserModule(DiscordSocketClient client, Config config,
             ITranslation translation)
         {
             _client = client;
+            _config = config;
             _translation = translation;
-            _idLogChat = reader.Load().ChannelIdForBotLog;
         }
 
         [Command("deleteMessageUser")]
@@ -41,7 +41,7 @@ namespace Discord_Bot.Modules.Admins.Message
         {
             _ = Task.Run(async () =>
             {
-                if (_client.GetChannel(_idLogChat) is not IMessageChannel logChannel)
+                if (_client.GetChannel(_config.ChannelIdForBotLog) is not IMessageChannel logChannel)
                 {
                     Console.WriteLine($"Invalid channel ID for logs");
                     return;

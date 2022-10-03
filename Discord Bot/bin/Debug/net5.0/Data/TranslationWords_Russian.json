@@ -180,7 +180,7 @@
     "TranslationText": "Удалить последнии сообщения в текстовом канале"
   },
   "CMD_SUMMARY_CLEAR_ALL_MESSAGE": {
-    "TranslationText": "Удалить сообщения в текстовом канале, если в [countMessages] поставить -1, удалятся все сообщения."
+    "TranslationText": "Удалить сообщения в текстовом канале."
   },
   "CMD_SUMMARY_CLEAR_USER_MESSAGE": {
     "TranslationText": "Удалить сообщения пользователя в последних сообщениях, в [checkLastMessages] указывается сколько последних сообщений в каналах просматривать"

@@ -10,7 +10,6 @@ namespace Discord_Bot.Services.DataReader.IoC.Extension
         public static IServiceCollection BindingReaders(this IServiceCollection collection)
         {
             return collection
-                .AddSingleton<IJsonReader<Config>,JsonConfigReader>()
                 .AddSingleton<IJsonReader<Dictionary<string,TranslationWord>>,JsonLanguageReader>();
         }
     }

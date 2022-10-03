@@ -12,22 +12,20 @@ using ChannelType = Discord_Bot.Models.Types.ChannelType;
 
 namespace Discord_Bot.Modules.Admins
 {
-    [Discord.Commands.Summary("Admin")]
+    [Summary("Admin")]
     [RequiredChannel(ChannelType.BotAdminCommand)]
     public class AdminPunishmentModule : ModuleBase<SocketCommandContext>
     {
         private readonly ITranslation _translation;
         private readonly DiscordSocketClient _client;
+        private readonly Config _config;
 
-        private readonly ulong _idLogChannel;
-
-        public AdminPunishmentModule(IJsonReader<Config> configReader, 
+        public AdminPunishmentModule(Config config, 
             ITranslation translation, DiscordSocketClient client)
         {
+            _config = config;
             _translation = translation;
             _client = client;
-
-            _idLogChannel = configReader.Load().ChannelIdForBotLog;
         }
 
         [Command("ban")]
@@ -116,7 +114,7 @@ namespace Discord_Bot.Modules.Admins
 
         private async Task WriteTextToBotLog(string text)
         {
-            var channel = await _client.GetChannelAsync(_idLogChannel) as IMessageChannel;
+            var channel = await _client.GetChannelAsync(_config.ChannelIdForBotLog) as IMessageChannel;
 
             Console.WriteLine(text.Replace('*', ' '));
             await Context.Message.ReplyAsync(text);
