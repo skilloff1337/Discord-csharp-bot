@@ -48,7 +48,8 @@ namespace Discord_Bot.Services.UserHandler
                 EditMessage = arg.CreatedAt.DateTime,
                 MessageId = arg.Id,
                 CurrentMessage = arg.CleanContent,
-                HistoryMessage = new List<string> {$"{arg.CreatedAt.DateTime:G} | {arg.CleanContent}"},
+                HistoryMessage = new List<string> 
+                    {$"{arg.CreatedAt.DateTime:G} | {arg.CleanContent}"},
                 NickName = $"{arg.Author.Username}#{arg.Author.Discriminator}",
                 ChannelId = arg.Channel.Id,
                 ChannelName = arg.Channel.Name

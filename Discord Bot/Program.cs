@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
@@ -12,13 +15,17 @@ using Discord_Bot.Models;
 using Discord_Bot.Services.DataReader;
 using Discord_Bot.Services.DataReader.Interfaces;
 using Discord_Bot.Services.DataReader.IoC.Extension;
+using Discord_Bot.Services.DataWriter;
 using Discord_Bot.Services.DataWriter.Interfaces;
 using Discord_Bot.Services.DataWriter.IoC.Extension;
+using Discord_Bot.Services.RankHandler;
+using Discord_Bot.Services.RankHandler.IoC.Extension;
 using Discord_Bot.Services.TextChatHandler;
 using Discord_Bot.Services.TextChatHandler.Interfaces;
 using Discord_Bot.Services.UserHandler.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualBasic;
+using MongoDB.Bson;
 using Newtonsoft.Json;
 
 namespace Discord_Bot
@@ -40,9 +47,15 @@ namespace Discord_Bot
             await client.LoginAsync(TokenType.Bot, config.Token);
             await client.StartAsync();
 
+            await Test();
+
             await Task.Delay(Timeout.Infinite);
         }
 
+        private async Task Test()
+        {
+
+        }
 
         private Task Log(LogMessage msg)
         {
@@ -56,6 +69,7 @@ namespace Discord_Bot
                 .BindingGeneral()
                 .BindingReaders()
                 .BindingWriters()
+                .BindingRankSystem()
                 .BuildServiceProvider();
         }
 
@@ -65,6 +79,7 @@ namespace Discord_Bot
             provider.GetRequiredService<AdminCommandErrorHandler>();
             provider.GetRequiredService<CommandErrorHandler>();
             provider.GetRequiredService<InteractionService>();
+            await provider.GetRequiredService<IRankHandler>().InstallEventsAsync();
             await provider.GetRequiredService<ICommandHandler>().InstallCommandsAsync();
             await provider.GetRequiredService<IUserHandler>().InstallEventsAsync();
             await provider.GetRequiredService<IWelcomeHandler>().InstallCommandsAsync();

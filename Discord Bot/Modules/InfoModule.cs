@@ -14,7 +14,6 @@ using Discord_Bot.Services;
 using Discord_Bot.Services.DataReader;
 using Discord_Bot.Services.DataReader.Interfaces;
 using Discord_Bot.Services.Translation.Interfaces;
-using ChannelType = Discord_Bot.Models.Types.ChannelType;
 using Console = System.Console;
 
 namespace Discord_Bot.Modules

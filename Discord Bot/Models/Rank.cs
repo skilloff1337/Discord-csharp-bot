@@ -9,6 +9,6 @@ namespace Discord_Bot.Models
         public string NameRank { get; set; }
         public byte Level { get; set; }
         public uint NeedExp { get; set; }
-        public ulong RoleID { get; set; }
+        public ulong RoleId { get; set; }
     }
 }

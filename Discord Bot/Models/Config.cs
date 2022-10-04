@@ -15,8 +15,8 @@ namespace Discord_Bot.Models
         public string Token { get; set; }
         public string Version { get; set; }
 
-        public List<IRole> AdministratorRoles { get; set; }
-        public List<Rank> Ranks { get; set; }
+        public List<IRole> AdministratorRoles { get; set; } = new();
+        public Dictionary<int, Rank> Ranks { get; set; } = new();
         public string DataBaseName { get; set; }
         public string CollectionMessage { get; set; }
         public string ConnectionString { get; set; }

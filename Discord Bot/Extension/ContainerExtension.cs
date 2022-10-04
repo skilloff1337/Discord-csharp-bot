@@ -28,7 +28,6 @@ namespace Discord_Bot.Extension
         {
             return collection
                 .AddSingleton<Config>()
-                .AddSingleton<JsonConfigReader>()
                 .AddSingleton(new DiscordSocketClient(new DiscordSocketConfig
                 {
                     AlwaysDownloadUsers = true,

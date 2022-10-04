@@ -1,6 +1,6 @@
 ﻿namespace Discord_Bot.Models.Types
 {
-    public enum ChannelType
+    public enum DiscordChannelType
     {
         Any,
         None,

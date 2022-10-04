@@ -2,15 +2,43 @@
   "Token": "MTAyMTc0NjIzNDM0MTQ3MDI0Mg.GIomAd.cLuQ-spPvNiiyUEBctGIQ1L-FiLgr1atyyLJBk",
   "Version": "1.0.0",
   "AdministratorRoles": [],
-  "Ranks": [
-    {
-      "Id": "63370c1a811a44a321b76212",
-      "NameRank": "test",
+  "Ranks": {
+    "1": {
+      "Id": "633b34449667b93d3cb8fbcd",
+      "NameRank": "Level №1",
+      "Level": 1,
+      "NeedExp": 10,
+      "RoleId": 1025424128829820969
+    },
+    "2": {
+      "Id": "633b345e9667b93d3cb8fbcf",
+      "NameRank": "Level №2",
       "Level": 2,
+      "NeedExp": 200,
+      "RoleId": 1025424166947664014
+    },
+    "3": {
+      "Id": "633b346a9667b93d3cb8fbd1",
+      "NameRank": "Level №3",
+      "Level": 3,
+      "NeedExp": 300,
+      "RoleId": 1025424213055647914
+    },
+    "4": {
+      "Id": "633b36099512d0852771d897",
+      "NameRank": "Level №4",
+      "Level": 4,
+      "NeedExp": 400,
+      "RoleId": 660488849692033036
+    },
+    "5": {
+      "Id": "633b36364d6165ed82373dcc",
+      "NameRank": "Level №5",
+      "Level": 5,
       "NeedExp": 500,
-      "RoleID": 1025424166947664014
+      "RoleId": 380093221742706688
     }
-  ],
+  },
   "DataBaseName": "discordBot",
   "CollectionMessage": "messageUser",
   "ConnectionString": "mongodb://localhost:27017",

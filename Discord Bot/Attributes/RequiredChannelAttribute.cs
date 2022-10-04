@@ -13,10 +13,10 @@ namespace Discord_Bot.Attributes
 {
     public class RequiredChannelAttribute : PreconditionAttribute
     {
-        private readonly ChannelType _channel;
+        private readonly DiscordChannelType _discordChannel;
 
-        public RequiredChannelAttribute(ChannelType channel)
-            => _channel = channel;
+        public RequiredChannelAttribute(DiscordChannelType discordChannel)
+            => _discordChannel = discordChannel;
 
 
         public override Task<PreconditionResult> CheckPermissionsAsync(ICommandContext context, CommandInfo command,
@@ -25,19 +25,19 @@ namespace Discord_Bot.Attributes
             var config = services.GetRequiredService<Config>();
             var client = services.GetRequiredService<DiscordSocketClient>();
 
-            return _channel switch
+            return _discordChannel switch
             {
-                ChannelType.Any => Task.FromResult(PreconditionResult.FromSuccess()),
-                ChannelType.None => Task.FromResult(PreconditionResult.FromError("Unknown command.")),
-                ChannelType.BotAdminCommand => Task.FromResult(
+                DiscordChannelType.Any => Task.FromResult(PreconditionResult.FromSuccess()),
+                DiscordChannelType.None => Task.FromResult(PreconditionResult.FromError("Unknown command.")),
+                DiscordChannelType.BotAdminCommand => Task.FromResult(
                     context.Channel != client.GetChannel(config.ChannelIdForBotAdminCommand)
                         ? PreconditionResult.FromError("Unknown command.")
                         : PreconditionResult.FromSuccess()),
-                ChannelType.BotCommand => Task.FromResult(
+                DiscordChannelType.BotCommand => Task.FromResult(
                     context.Channel != client.GetChannel(config.ChannelIdForBotCommand)
                         ? PreconditionResult.FromError("Unknown Command.")
                         : PreconditionResult.FromSuccess()),
-                _ => Task.FromResult(PreconditionResult.FromError($"Unknown type: {_channel}"))
+                _ => Task.FromResult(PreconditionResult.FromError($"Unknown type: {_discordChannel}"))
             };
         }
     }

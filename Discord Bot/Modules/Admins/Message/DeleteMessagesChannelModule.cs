@@ -7,17 +7,17 @@ using Discord.Commands;
 using Discord.WebSocket;
 using Discord_Bot.Attributes;
 using Discord_Bot.Models;
+using Discord_Bot.Models.Types;
 using Discord_Bot.Services.DataReader.Interfaces;
 using Discord_Bot.Services.Translation.Interfaces;
-using ChannelType = Discord_Bot.Models.Types.ChannelType;
 
 namespace Discord_Bot.Modules.Admins.Message
 {
     [Summary("Admin")]
-    [RequiredChannel(ChannelType.BotAdminCommand)]
+    [RequiredChannel(DiscordChannelType.BotAdminCommand)]
     [RequireUserPermission(GuildPermission.Administrator)]
     [RequireBotPermission(GuildPermission.Administrator)]
-    public class AdminDeleteMessagesChannelModule : ModuleBase<SocketCommandContext>
+    public class DeleteMessagesChannelModule : ModuleBase<SocketCommandContext>
     {
         private readonly DiscordSocketClient _client;
         private readonly ITranslation _translation;
@@ -25,9 +25,9 @@ namespace Discord_Bot.Modules.Admins.Message
 
 
         private readonly Color _color = new(26, 148, 230);
-        private readonly Stopwatch _stopwatch = new Stopwatch();
+        private readonly Stopwatch _stopwatch = new();
 
-        public AdminDeleteMessagesChannelModule(DiscordSocketClient client, Config config,
+        public DeleteMessagesChannelModule(DiscordSocketClient client, Config config,
             ITranslation translation)
         {
             _client = client;
@@ -45,8 +45,8 @@ namespace Discord_Bot.Modules.Admins.Message
                 Console.WriteLine($"{name} : {i}");
                 await Task.Delay(1000);
             }
-            
         }
+
         [Command("deleteMessageChannel")]
         [Summary("CMD_SUMMARY_CLEAR_ALL_MESSAGE")]
         public async Task DeleteAllMessageChannel(IMessageChannel channel, int countMessages = 100)
@@ -76,7 +76,7 @@ namespace Discord_Bot.Modules.Admins.Message
             }
 
             _stopwatch.Stop();
-            
+
             var text = $"CMD_ADMINS_COUNT_DELETED_MESSAGES : {count}/{countMessages}\n" +
                        $"CMD_ADMINS_ELAPSED_DELETED_MESSAGES : {_stopwatch.Elapsed}\n" +
                        $"CMD_ADMINS_CHANNEL_ID : {channel.Id}\n" +

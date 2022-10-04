@@ -5,25 +5,25 @@ using Discord.Commands;
 using Discord.WebSocket;
 using Discord_Bot.Attributes;
 using Discord_Bot.Models;
+using Discord_Bot.Models.Types;
 using Discord_Bot.Services.DataBase.Interfaces;
 using Discord_Bot.Services.DataReader.Interfaces;
 using Discord_Bot.Services.Translation.Interfaces;
-using ChannelType = Discord_Bot.Models.Types.ChannelType;
 
 namespace Discord_Bot.Modules.Admins.Message
 {
     [Summary("Admin")]
-    [RequiredChannel(ChannelType.BotAdminCommand)]
+    [RequiredChannel(DiscordChannelType.BotAdminCommand)]
     [RequireUserPermission(GuildPermission.Administrator)]
     [RequireBotPermission(GuildPermission.Administrator)]
-    public class AdminMessageHistoryModule : ModuleBase<SocketCommandContext>
+    public class MessageHistoryModule : ModuleBase<SocketCommandContext>
     {
         private readonly IRepository<MessageUser> _repository;
         private readonly ITranslation _translation;
 
         private readonly Color _color = new(26, 148, 230);
 
-        public AdminMessageHistoryModule(IRepository<MessageUser> repository, ITranslation translation)
+        public MessageHistoryModule(IRepository<MessageUser> repository, ITranslation translation)
         {
             _repository = repository;
             _translation = translation;
