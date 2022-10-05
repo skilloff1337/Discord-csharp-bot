@@ -2,6 +2,7 @@
 using Discord_Bot.Models;
 using Discord_Bot.Services.DataWriter;
 using Discord_Bot.Services.DataWriter.Interfaces;
+using Discord_Bot.Services.RankHandler.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Discord_Bot.Services.RankHandler.IoC.Extension

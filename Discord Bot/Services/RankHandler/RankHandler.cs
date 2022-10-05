@@ -7,6 +7,8 @@ using Discord.WebSocket;
 using Discord_Bot.Models;
 using Discord_Bot.Services.DataReader.Interfaces;
 using Discord_Bot.Services.DataWriter.Interfaces;
+using Discord_Bot.Services.RankHandler.Interfaces;
+using MongoDB.Driver.Linq;
 
 namespace Discord_Bot.Services.RankHandler
 {
@@ -18,8 +20,12 @@ namespace Discord_Bot.Services.RankHandler
         private readonly Config _config;
 
         private readonly List<User> _users;
+        private readonly Color _color = new(26, 148, 230);
 
         private DateTime _nextSave = DateTime.Now.AddHours(1);
+
+        public int CountUsers =>
+            _users.Count;
 
         public RankHandler(IJsonReader<List<User>> reader, IJsonWriter<List<User>> jsonWriter,
             DiscordSocketClient client, IExperienceService experience, Config config)
@@ -40,7 +46,7 @@ namespace Discord_Bot.Services.RankHandler
 
         private async Task MessageReceived(SocketMessage message)
         {
-            if (message.Author.IsBot)
+            if (message.Author.IsBot || message.Channel is IDMChannel)
                 return;
 
             var user = _users.FirstOrDefault(x => x.DiscordId == message.Author.Id);
@@ -52,9 +58,21 @@ namespace Discord_Bot.Services.RankHandler
                     user.Level++;
                     user.CurrentExp = 0;
 
-                    var discordUser = _client.GetGuild(_config.IdServer).GetUser(user.DiscordId);
-                    await discordUser!.AddRoleAsync(_config.Ranks[user.Level].RoleId);
-                    await discordUser.SendMessageAsync($"You have leveled up, congratulations!");
+                    var guild = _client.GetGuild(_config.IdServer);
+                    var roleId = _config.Ranks[user.Level].RoleId;
+
+                    var embed = new EmbedBuilder()
+                        .WithColor(_color)
+                        .WithCurrentTimestamp()
+                        .WithDescription(
+                            $"New rank name: {_config.Ranks[user.Level].NameRank}\n" +
+                            $"New level: {user.Level}\n" +
+                            $"New Exp: {user.CurrentExp}\n" +
+                            $"New Role: {guild.GetRole(roleId).Name}")
+                        .Build();
+                    var discordUser = guild.GetUser(user.DiscordId);
+                    await discordUser!.AddRoleAsync(roleId);
+                    await discordUser.SendMessageAsync($"You have leveled up, congratulations!",embed:embed);
                 }
             }
             else
@@ -72,6 +90,18 @@ namespace Discord_Bot.Services.RankHandler
             if (DateTime.Now > _nextSave)
                 SaveUsers();
         }
+
+        public int[] CountUserInLevels()
+        {
+            var list = new List<int>();
+            for (var i = 0; i < _config.Ranks.Count; i++)
+            {
+                list.Add(_users.Count(x => x.Level == i));
+            }
+
+            return list.ToArray();
+        }
+        
 
 
         private void SaveUsers()

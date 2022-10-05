@@ -19,6 +19,7 @@ using Discord_Bot.Services.DataWriter;
 using Discord_Bot.Services.DataWriter.Interfaces;
 using Discord_Bot.Services.DataWriter.IoC.Extension;
 using Discord_Bot.Services.RankHandler;
+using Discord_Bot.Services.RankHandler.Interfaces;
 using Discord_Bot.Services.RankHandler.IoC.Extension;
 using Discord_Bot.Services.TextChatHandler;
 using Discord_Bot.Services.TextChatHandler.Interfaces;

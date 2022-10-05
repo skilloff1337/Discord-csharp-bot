@@ -3,6 +3,13 @@
   "Version": "1.0.0",
   "AdministratorRoles": [],
   "Ranks": {
+	   "0": {
+      "Id": "0",
+      "NameRank": "NoRank",
+      "Level": 0,
+      "NeedExp": 0,
+      "RoleId": 0,
+    },
     "1": {
       "Id": "633b34449667b93d3cb8fbcd",
       "NameRank": "Level №1",

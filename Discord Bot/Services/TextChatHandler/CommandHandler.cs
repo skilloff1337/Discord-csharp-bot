@@ -39,6 +39,7 @@ namespace Discord_Bot.Services.TextChatHandler
             _client.MessageReceived += HandleCommandAsync;
             _client.Ready += Ready;
             _client.InteractionCreated += Interaction;
+            await Task.CompletedTask;
         }
 
         private async Task HandleCommandAsync(SocketMessage messageParam)
@@ -67,6 +68,14 @@ namespace Discord_Bot.Services.TextChatHandler
 
         private async Task Interaction(SocketInteraction interaction)
         {
+            if(interaction.ChannelId != _config.ChannelIdForBotCommand || 
+               interaction.ChannelId != _config.ChannelIdForBotAdminCommand)
+            {
+                await interaction.RespondAsync(
+                    $"wrong channel, try in the channel - {_client.GetChannel(_config.ChannelIdForBotCommand)}",ephemeral:true);
+                return;
+            }
+            
             var ctx = new SocketInteractionContext(_client, interaction);
             await _interaction.ExecuteCommandAsync(ctx, _provider);
         }

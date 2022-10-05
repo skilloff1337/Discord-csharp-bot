@@ -1,25 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
+﻿using System.Text;
 using System.Threading.Tasks;
 using Discord;
-using Discord.Commands;
 using Discord.Interactions;
-using Discord.WebSocket;
-using Discord_Bot.Attributes;
-using Discord_Bot.Models;
-using Discord_Bot.Services;
-using Discord_Bot.Services.DataReader;
-using Discord_Bot.Services.DataReader.Interfaces;
 using Discord_Bot.Services.Translation.Interfaces;
-using Console = System.Console;
 
-namespace Discord_Bot.Modules
+namespace Discord_Bot.Modules.SlashCommands.Information
 {
-    [Discord.Commands.Summary("General")]
-    public class InfoModule : InteractionModuleBase<SocketInteractionContext>
+    public class HelpModule : InteractionModuleBase<SocketInteractionContext>
     {
 
         private readonly ITranslation _translation;
@@ -27,12 +14,12 @@ namespace Discord_Bot.Modules
         
         private readonly Color _color = new(26, 148, 230);
 
-        public InfoModule(ITranslation translation, InteractionService interaction)
+        public HelpModule(ITranslation translation, InteractionService interaction)
         {
             _translation = translation;
             _interaction = interaction;
         }
-        [SlashCommand("help", "show commands")]
+        [SlashCommand("help", "Show commands")]
         public async Task Help()
         {
             var result = new StringBuilder(500);

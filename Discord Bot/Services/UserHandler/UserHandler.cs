@@ -39,7 +39,9 @@ namespace Discord_Bot.Services.UserHandler
 
         private async Task WriteMessage(SocketMessage arg)
         {
-            if (arg.Channel.Id == _config.ChannelIdForBotLog || arg.Author.IsBot)
+            if (arg.Channel.Id == _config.ChannelIdForBotLog 
+                || arg.Author.IsBot 
+                || arg.Channel is IDMChannel)
                 return;
 
             var messageUser = new MessageUser()
