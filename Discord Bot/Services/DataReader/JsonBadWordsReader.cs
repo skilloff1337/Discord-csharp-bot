@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace Discord_Bot.Services.DataReader
 {
-    public class JsonBadWordsReader : IJsonReader<string[]>
+    public class JsonBadWordsReader : IJsonReader<List<string>>
     {
         private readonly string _path;
         private const string FILE_NAME = "BadWords.json";
@@ -14,10 +14,10 @@ namespace Discord_Bot.Services.DataReader
         {
             _path = provider.GetDataPath(FILE_NAME);
         }
-        public string[] Load()
+        public List<string> Load()
         {
             var text = File.ReadAllText(_path);
-            return JsonConvert.DeserializeObject<string[]>(text);
+            return JsonConvert.DeserializeObject<List<string>>(text);
         }
     }
 }

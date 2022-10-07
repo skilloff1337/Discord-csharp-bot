@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using Discord_Bot.Models;
 using Discord_Bot.Services.DataBase.Interfaces;
-using Discord_Bot.Services.DataReader;
-using Discord_Bot.Services.DataReader.Interfaces;
 using MongoDB.Bson;
 using MongoDB.Driver;
 

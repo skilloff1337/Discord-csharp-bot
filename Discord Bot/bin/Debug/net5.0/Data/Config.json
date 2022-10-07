@@ -1,14 +1,16 @@
 {
   "Token": "MTAyMTc0NjIzNDM0MTQ3MDI0Mg.GIomAd.cLuQ-spPvNiiyUEBctGIQ1L-FiLgr1atyyLJBk",
   "Version": "1.0.0",
-  "AdministratorRoles": [],
+  "AdministratorsID": [
+    305330357937635329
+  ],
   "Ranks": {
-	   "0": {
+    "0": {
       "Id": "0",
       "NameRank": "NoRank",
       "Level": 0,
       "NeedExp": 0,
-      "RoleId": 0,
+      "RoleId": 0
     },
     "1": {
       "Id": "633b34449667b93d3cb8fbcd",
@@ -52,6 +54,7 @@
   "Language": 1,
   "Status": 1,
   "GameName": "Development",
+  "EnableWordProtection": true,
   "IdServer": 305330911040372737,
   "ChannelIdForBotCommand": 1022189416728498186,
   "ChannelIdForBotAdminCommand": 1023177360155086878,

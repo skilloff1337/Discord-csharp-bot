@@ -38,7 +38,7 @@ namespace Discord_Bot.Services.DataReader
             _config.Token = data.Token;
             _config.Version = data.Version;
 
-            _config.AdministratorRoles = data.AdministratorRoles;
+            _config.AdministratorsID = data.AdministratorsID;
             _config.Ranks = data.Ranks;
 
             _config.DataBaseName = data.DataBaseName;

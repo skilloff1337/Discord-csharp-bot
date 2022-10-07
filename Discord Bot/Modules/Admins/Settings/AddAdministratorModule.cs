@@ -13,27 +13,28 @@ namespace Discord_Bot.Modules.Admins.Settings
     [RequiredChannel(DiscordChannelType.BotAdminCommand)]
     [RequireUserPermission(GuildPermission.Administrator)]
     [RequireBotPermission(GuildPermission.Administrator)]
-    public class SetLogChannelModule: ModuleBase<SocketCommandContext>
+    public class AddAdministratorModule: ModuleBase<SocketCommandContext>
     {
         private readonly DiscordSocketClient _client;
         private readonly Config _config;
         private readonly IJsonWriter<Config> _writer;
 
-        public SetLogChannelModule(DiscordSocketClient client, Config config, IJsonWriter<Config> writer)
+        public AddAdministratorModule(DiscordSocketClient client, Config config, IJsonWriter<Config> writer)
         {
             _client = client;
             _config = config;
             _writer = writer;
         }
 
-        [Command("setLogChannel")]
-        [Summary("CMD_SUMMARY_SET_LOG_CHANNEL")]
-        public async Task SetLogChannel(IMessageChannel channel)
+        [Command("addAdmin")]
+        [Summary("CMD_SUMMARY_SET_ADMIN_CHANNEL")]
+        public async Task SetAdminChannel(IUser user)
         {
-            _config.ChannelIdForBotLog = channel.Id;
+            var logChannel = await _client.GetChannelAsync(_config.ChannelIdForBotLog) as IMessageChannel;
+            _config.AdministratorsID.Add(user.Id);
             _writer.WriteData(_config);
-            await ReplyAsync($"Log channel changed to {channel}");
-            await channel!.SendMessageAsync($"{Context.User.Mention} changed log channel to {channel}");
+            await ReplyAsync($"Add admin to system.");
+            await logChannel!.SendMessageAsync($"{Context.User.Mention} add admin {user.Mention} to system");
         }
     }
 }

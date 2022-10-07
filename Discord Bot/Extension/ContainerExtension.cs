@@ -2,14 +2,13 @@
 using Discord.Commands;
 using Discord.Interactions;
 using Discord.WebSocket;
-using Discord_Bot.Attributes;
 using Discord_Bot.Models;
 using Discord_Bot.Services.BadWords;
+using Discord_Bot.Services.BadWords.Interfaces;
 using Discord_Bot.Services.BotSetting;
 using Discord_Bot.Services.BotSetting.Interfaces;
 using Discord_Bot.Services.DataBase;
 using Discord_Bot.Services.DataBase.Interfaces;
-using Discord_Bot.Services.DataReader;
 using Discord_Bot.Services.PathProvider;
 using Discord_Bot.Services.PathProvider.Interfaces;
 using Discord_Bot.Services.TextChatHandler;

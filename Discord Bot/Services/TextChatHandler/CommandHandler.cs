@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using Discord;
@@ -7,10 +6,7 @@ using Discord.Commands;
 using Discord.Interactions;
 using Discord.WebSocket;
 using Discord_Bot.Models;
-using Discord_Bot.Services.DataReader;
-using Discord_Bot.Services.DataReader.Interfaces;
 using Discord_Bot.Services.TextChatHandler.Interfaces;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Discord_Bot.Services.TextChatHandler
 {

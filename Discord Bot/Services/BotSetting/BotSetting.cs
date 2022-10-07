@@ -1,12 +1,7 @@
-﻿using System;
-using System.Threading.Tasks;
-using Discord;
-using Discord.Commands;
+﻿using System.Threading.Tasks;
 using Discord.WebSocket;
 using Discord_Bot.Models;
 using Discord_Bot.Services.BotSetting.Interfaces;
-using Discord_Bot.Services.DataReader;
-using Discord_Bot.Services.DataReader.Interfaces;
 
 namespace Discord_Bot.Services.BotSetting
 {

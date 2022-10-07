@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
-using Discord_Bot.Models;
 using MongoDB.Bson;
-using MongoDB.Driver;
 
 namespace Discord_Bot.Services.DataBase.Interfaces
 {

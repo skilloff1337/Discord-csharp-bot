@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Linq;
 using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
@@ -8,7 +7,6 @@ using Discord.WebSocket;
 using Discord_Bot.Attributes;
 using Discord_Bot.Models;
 using Discord_Bot.Models.Types;
-using Discord_Bot.Services.DataReader.Interfaces;
 using Discord_Bot.Services.Translation.Interfaces;
 
 namespace Discord_Bot.Modules.Admins.Message

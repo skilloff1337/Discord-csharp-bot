@@ -8,7 +8,6 @@ using Discord_Bot.Models;
 using Discord_Bot.Services.DataReader.Interfaces;
 using Discord_Bot.Services.DataWriter.Interfaces;
 using Discord_Bot.Services.RankHandler.Interfaces;
-using MongoDB.Driver.Linq;
 
 namespace Discord_Bot.Services.RankHandler
 {

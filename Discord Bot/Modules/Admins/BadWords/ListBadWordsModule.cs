@@ -6,6 +6,7 @@ using Discord_Bot.Attributes;
 using Discord_Bot.Models;
 using Discord_Bot.Models.Types;
 using Discord_Bot.Services.BadWords;
+using Discord_Bot.Services.BadWords.Interfaces;
 
 namespace Discord_Bot.Modules.Admins.BadWords
 {
@@ -30,10 +31,12 @@ namespace Discord_Bot.Modules.Admins.BadWords
         {
             var text = new StringBuilder(500);
             text.Append($"{Context.User.Mention} list bad words: \n");
-            foreach (var word in _badWords.GetWords)
+            foreach (var word in _badWords.Words)
             {
                 text.Append($"{word}\n");
             }
+
+            await ReplyAsync(text.ToString());
         }
     }
 }

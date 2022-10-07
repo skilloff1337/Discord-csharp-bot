@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
 using Discord_Bot.Attributes;
 using Discord_Bot.Models;
 using Discord_Bot.Models.Types;
 using Discord_Bot.Services.BadWords;
-using Discord_Bot.Services.DataWriter.Interfaces;
+using Discord_Bot.Services.BadWords.Interfaces;
 
 namespace Discord_Bot.Modules.Admins.BadWords
 {

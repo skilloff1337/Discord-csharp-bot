@@ -6,7 +6,6 @@ using Discord;
 using Discord.WebSocket;
 using Discord_Bot.Models;
 using Discord_Bot.Services.DataBase.Interfaces;
-using Discord_Bot.Services.DataReader.Interfaces;
 using Discord_Bot.Services.UserHandler.Interfaces;
 
 namespace Discord_Bot.Services.UserHandler

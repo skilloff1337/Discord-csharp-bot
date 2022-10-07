@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Discord_Bot.Services.PathProvider.Interfaces
+﻿namespace Discord_Bot.Services.PathProvider.Interfaces
 {
     public interface IPathProvider
     {

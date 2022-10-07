@@ -1,33 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using Discord;
 using Discord.Interactions;
 using Discord.WebSocket;
-using Discord_Bot.Attributes;
 using Discord_Bot.Extension;
 using Discord_Bot.Models;
 using Discord_Bot.Services.DataReader;
-using Discord_Bot.Services.DataReader.Interfaces;
 using Discord_Bot.Services.DataReader.IoC.Extension;
-using Discord_Bot.Services.DataWriter;
-using Discord_Bot.Services.DataWriter.Interfaces;
 using Discord_Bot.Services.DataWriter.IoC.Extension;
-using Discord_Bot.Services.RankHandler;
 using Discord_Bot.Services.RankHandler.Interfaces;
 using Discord_Bot.Services.RankHandler.IoC.Extension;
 using Discord_Bot.Services.TextChatHandler;
 using Discord_Bot.Services.TextChatHandler.Interfaces;
 using Discord_Bot.Services.UserHandler.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.VisualBasic;
-using MongoDB.Bson;
-using Newtonsoft.Json;
 
 namespace Discord_Bot
 {
@@ -44,6 +31,7 @@ namespace Discord_Bot
             var client = provider.GetRequiredService<DiscordSocketClient>();
 
             client.Log += Log;
+            
 
             await client.LoginAsync(TokenType.Bot, config.Token);
             await client.StartAsync();

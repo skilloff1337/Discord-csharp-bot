@@ -7,20 +7,20 @@ using Newtonsoft.Json;
 
 namespace Discord_Bot.Services.DataWriter
 {
-    public class JsonUserWriter : IJsonWriter<List<User>>
+    public class JsonBadWordsWriter : IJsonWriter<List<string>>
     {
         private readonly string _path;
-        private const string FILE_NAME = "Users.json";
+        private const string FILE_NAME = "BadWords.json";
 
-        public JsonUserWriter(IPathProvider pathProvider)
+        public JsonBadWordsWriter(IPathProvider pathProvider)
         {
             _path = pathProvider.GetDataPath(FILE_NAME);
         }
 
-        public void WriteData(List<User> data)
+        public void WriteData(List<string> data)
         {
             var text = JsonConvert.SerializeObject(data, Formatting.Indented);
-            File.WriteAllText(_path,text);
+            File.WriteAllText(_path, text);
         }
     }
 }

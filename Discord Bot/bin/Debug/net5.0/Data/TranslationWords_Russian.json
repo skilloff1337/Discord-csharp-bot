@@ -268,5 +268,8 @@
   },   
   "CMD_SUMMARY_SET_COMMAND_CHANNEL": {
     "TranslationText": "Установить новый текстовый канал для общих команд"
+  },   
+  "CMD_SUMMARY_SET_BAD_WORDS": {
+    "TranslationText": "Включить/выключить защиту от цензурных слов(true/false)"
   } 
 }

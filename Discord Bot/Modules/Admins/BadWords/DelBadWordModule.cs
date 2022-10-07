@@ -5,6 +5,7 @@ using Discord_Bot.Attributes;
 using Discord_Bot.Models;
 using Discord_Bot.Models.Types;
 using Discord_Bot.Services.BadWords;
+using Discord_Bot.Services.BadWords.Interfaces;
 
 namespace Discord_Bot.Modules.Admins.BadWords
 {

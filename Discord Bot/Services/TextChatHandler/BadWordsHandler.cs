@@ -1,10 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Discord;
 using Discord.WebSocket;
 using Discord_Bot.Models;
 using Discord_Bot.Services.BadWords;
+using Discord_Bot.Services.BadWords.Interfaces;
 
 namespace Discord_Bot.Services.TextChatHandler
 {
@@ -30,6 +31,12 @@ namespace Discord_Bot.Services.TextChatHandler
 
         private async Task MessageReceived(SocketMessage messageParam)
         {
+            if(!_config.EnableWordProtection)
+                return;
+            
+            if(_config.AdministratorsID.Any(x=> x == messageParam.Author.Id))
+                return;
+            
             if (messageParam.Author.IsBot || messageParam is not SocketUserMessage message
                                           || message.Channel is IDMChannel)
                 return;

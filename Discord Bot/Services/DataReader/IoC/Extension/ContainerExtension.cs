@@ -12,7 +12,7 @@ namespace Discord_Bot.Services.DataReader.IoC.Extension
             return collection
                 .AddSingleton<IJsonReader<Dictionary<string,TranslationWord>>,JsonLanguageReader>()
                 .AddSingleton<IJsonReader<List<User>>,JsonUserReader>()
-                .AddSingleton<IJsonReader<string[]>,JsonBadWordsReader>()
+                .AddSingleton<IJsonReader<List<string>>,JsonBadWordsReader>()
                 .AddSingleton<JsonConfigReader>();
         }
     }

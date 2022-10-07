@@ -1,46 +1,45 @@
-﻿using System;
-using System.Diagnostics;
-using System.Globalization;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Discord_Bot.Services.BadWords.Interfaces;
 using Discord_Bot.Services.DataReader.Interfaces;
+using Discord_Bot.Services.DataWriter.Interfaces;
 
 namespace Discord_Bot.Services.BadWords
 {
     public class BadWords : IBadWords
     {
-        private readonly Stopwatch _stopwatch = new();
+        private readonly IJsonWriter<List<string>> _writer;
 
-        public string[] GetWords { get; }
+        public List<string> Words { get; }
 
-        public BadWords(IJsonReader<string[]> reader)
+        public BadWords(IJsonReader<List<string>> reader, IJsonWriter<List<string>> writer)
         {
-            GetWords = reader.Load();
+            _writer = writer;
+            Words = reader.Load().ToList();
         }
 
         public bool CheckForBadWords(string text)
         {
-            _stopwatch.Restart();
-            var res= GetWords.Select(badword => 
+            return Words.Select(badword => 
                 new Regex(badword)).Select(regex => regex.Match(text.ToLower())).Any(match => match.Success);
-            _stopwatch.Stop();
-            Console.WriteLine(_stopwatch.Elapsed);
-            return res;
         }
 
         public void SaveWords()
         {
-            
+            _writer.WriteData(Words);
         }
 
         public void AddNewWord(string word)
         {
-            
+            Words.Add(word);
+            SaveWords();
         }
 
         public void DelWord(string word)
         {
-            
+            Words.Remove(word);
+            SaveWords();
         }
     }
 }

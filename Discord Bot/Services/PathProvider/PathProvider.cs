@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Net.Mime;
 using Discord_Bot.Services.PathProvider.Interfaces;
 
 namespace Discord_Bot.Services.PathProvider

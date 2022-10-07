@@ -1,7 +1,4 @@
-﻿using Discord;
-using MongoDB.Bson;
-
-namespace Discord_Bot.Models
+﻿namespace Discord_Bot.Models
 {
     public class Rank
     {
