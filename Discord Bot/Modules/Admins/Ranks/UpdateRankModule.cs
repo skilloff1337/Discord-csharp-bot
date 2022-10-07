@@ -18,20 +18,17 @@ namespace Discord_Bot.Modules.Admins.Ranks
     {
         private readonly IJsonWriter<Config> _writer;
         private readonly Config _config;
-
-        private readonly Dictionary<int, Rank> _listRanks;
+        
         private readonly Color _color = new(26, 148, 230);
 
         public UpdateRankModule(Config config, IJsonWriter<Config> writer)
         {
             _writer = writer;
             _config = config;
-
-            _listRanks = _config.Ranks;
         }
 
         [Command("updateRank")]
-        [Summary("CMD_SUMMARY_ADD_RANK")]
+        [Summary("CMD_SUMMARY_UPDATE_RANK")]
         public async Task UpdateRank(int levelRank, IRole role, uint needExp, [Remainder] string name)
         {
             if (Context.Guild.GetChannel(_config.ChannelIdForBotLog) is not IMessageChannel messageChannel)

@@ -84,6 +84,7 @@ namespace Discord_Bot
             await provider.GetRequiredService<ICommandHandler>().InstallCommandsAsync();
             await provider.GetRequiredService<IUserHandler>().InstallEventsAsync();
             await provider.GetRequiredService<IWelcomeHandler>().InstallCommandsAsync();
+            await provider.GetRequiredService<IBadWordsHandler>().Install();
         }
     }
 }

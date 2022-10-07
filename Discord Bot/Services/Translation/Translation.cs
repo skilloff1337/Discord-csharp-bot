@@ -33,7 +33,7 @@ namespace Discord_Bot.Services.Translation
         public string TranslationText(string text)
         {
             var matches = _regex.Matches(text);
-            
+            var i = 0;
             foreach (Match match in matches)
             {
                 if (!_currentLanguage.TryGetValue(match.ToString(), out var replace))
@@ -43,6 +43,7 @@ namespace Discord_Bot.Services.Translation
                 }
                 
                 text = text.Replace(match.ToString(), replace.TranslationText);
+                Console.WriteLine(i++);
             }
 
             return text;

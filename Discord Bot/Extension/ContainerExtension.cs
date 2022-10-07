@@ -4,6 +4,7 @@ using Discord.Interactions;
 using Discord.WebSocket;
 using Discord_Bot.Attributes;
 using Discord_Bot.Models;
+using Discord_Bot.Services.BadWords;
 using Discord_Bot.Services.BotSetting;
 using Discord_Bot.Services.BotSetting.Interfaces;
 using Discord_Bot.Services.DataBase;
@@ -47,7 +48,9 @@ namespace Discord_Bot.Extension
                 .AddSingleton<AdminCommandErrorHandler>()
                 .AddSingleton<CommandErrorHandler>()
                 .AddSingleton<IRepository<MessageUser>, MessageRepository>()
-                .AddSingleton<IPathProvider, PathProvider>();
+                .AddSingleton<IPathProvider, PathProvider>()
+                .AddSingleton<IBadWordsHandler, BadWordsHandler>()
+                .AddSingleton<IBadWords, BadWords>();
         }
     }
 }

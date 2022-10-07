@@ -9,7 +9,7 @@ using Discord_Bot.Services.RankHandler.Interfaces;
 
 namespace Discord_Bot.Modules.Admins.Ranks
 {
-    [Summary("Admin")]
+    [Summary("Adminn")] // todo not working /help
     [RequiredChannel(DiscordChannelType.BotAdminCommand)]
     [RequireUserPermission(GuildPermission.Administrator)]
     [RequireBotPermission(GuildPermission.Administrator)]

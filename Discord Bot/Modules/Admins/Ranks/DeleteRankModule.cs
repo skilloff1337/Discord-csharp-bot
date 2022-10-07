@@ -31,7 +31,7 @@ namespace Discord_Bot.Modules.Admins.Ranks
         }
 
         [Command("deleteRank")]
-        [Summary("CMD_SUMMARY_ADD_RANK")]
+        [Summary("CMD_SUMMARY_DEL_RANK")]
         public async Task DeleteRank(byte level)
         {
             if (Context.Guild.GetChannel(_config.ChannelIdForBotLog) is not IMessageChannel messageChannel)

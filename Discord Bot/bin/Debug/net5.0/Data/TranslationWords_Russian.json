@@ -235,11 +235,38 @@
   },   
   "CMD_SUMMARY_ADD_RANK": {
     "TranslationText": "Добавить новый ранк в ранговой системе"
-  } ,   
+  },   
   "CMD_SUMMARY_LIST_RANKS": {
     "TranslationText": "Посмотреть весь список рангов"
-  } ,   
+  },   
   "CMD_SUMMARY_SEND_PRIVATE_MESSAGE": {
     "TranslationText": "Отправить сообщение в личные сообщения"
+  },   
+  "CMD_SUMMARY_ADD_BAD_WORD": {
+    "TranslationText": "Добавить новое плохое слово в список проверки"
+  },   
+  "CMD_SUMMARY_DEL_BAD_WORD": {
+    "TranslationText": "Удалить слово из списка проверки"
+  },   
+  "CMD_SUMMARY_LIST_BAD_WORD": {
+    "TranslationText": "Показать весь список плохих слов"
+  },   
+  "CMD_SUMMARY_DEL_RANK": {
+    "TranslationText": "Удалить ранг"
+  },   
+  "CMD_SUMMARY_UPDATE_RANK": {
+    "TranslationText": "Обновить ранг"
+  },   
+  "CMD_SUMMARY_SET_LANGUAGE": {
+    "TranslationText": "Установить язык бота.(Язык поменяется после перезапуска)"
+  },   
+  "CMD_SUMMARY_SET_LOG_CHANNEL": {
+    "TranslationText": "Установить новый текстовый канал для логгирования."
+  },   
+  "CMD_SUMMARY_SET_ADMIN_CHANNEL": {
+    "TranslationText": "Установить новый текстовый канал для команд администратора."
+  },   
+  "CMD_SUMMARY_SET_COMMAND_CHANNEL": {
+    "TranslationText": "Установить новый текстовый канал для общих команд"
   } 
 }

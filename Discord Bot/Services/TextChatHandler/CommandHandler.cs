@@ -62,14 +62,9 @@ namespace Discord_Bot.Services.TextChatHandler
             await _command.ExecuteAsync(context, argPos, _provider);
         }
 
-        private bool RequiredServer(ISocketMessageChannel channel)
-            => channel == _client.GetChannel(_config.ChannelIdForBotCommand) 
-               || channel == _client.GetChannel(_config.ChannelIdForBotAdminCommand);
-
         private async Task Interaction(SocketInteraction interaction)
         {
-            if(interaction.ChannelId != _config.ChannelIdForBotCommand || 
-               interaction.ChannelId != _config.ChannelIdForBotAdminCommand)
+            if(!RequiredServer(interaction.Channel))
             {
                 await interaction.RespondAsync(
                     $"wrong channel, try in the channel - {_client.GetChannel(_config.ChannelIdForBotCommand)}",ephemeral:true);
@@ -79,6 +74,10 @@ namespace Discord_Bot.Services.TextChatHandler
             var ctx = new SocketInteractionContext(_client, interaction);
             await _interaction.ExecuteCommandAsync(ctx, _provider);
         }
+
+        private bool RequiredServer(ISocketMessageChannel channel)
+            => channel == _client.GetChannel(_config.ChannelIdForBotCommand) 
+               || channel == _client.GetChannel(_config.ChannelIdForBotAdminCommand);
 
         private async Task Ready()
         {

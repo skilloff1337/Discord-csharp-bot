@@ -85,8 +85,7 @@ namespace Discord_Bot.Services.RankHandler
                 };
                 _users.Add(newUser);
             }
-
-            Console.WriteLine($"User: id {_users[0].Id} level: {_users[0].Level} exp: {_users[0].CurrentExp}");
+            
             if (DateTime.Now > _nextSave)
                 SaveUsers();
         }
