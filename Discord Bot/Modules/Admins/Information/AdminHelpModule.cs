@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Discord;
@@ -46,12 +47,14 @@ namespace Discord_Bot.Modules.Admins.Information
                 result.Append($" - {cmd.Summary}\n\n");
             }
 
+            var text = _translation.TranslationText(result.ToString());
             var embed = new EmbedBuilder()
                 .WithColor(_color)
-                .WithDescription(_translation.TranslationText(result.ToString()));
+                .WithDescription(text)
+                .Build();
 
             await Context.Message.ReplyAsync(_translation.GetTranslationByTextID("CMD_ADMINS_COMMANDS"),
-                embed: embed.Build());
+                embed: embed);
         }
     }
 }
