@@ -271,5 +271,26 @@
   },   
   "CMD_SUMMARY_SET_BAD_WORDS": {
     "TranslationText": "Включить/выключить защиту от цензурных слов(true/false)"
+  },   
+  "CMD_SUMMARY_LIST_USER_RANKS": {
+    "TranslationText": "Информация по рангам у пользователей."
+  },   
+  "CMD_SUMMARY_ADMINS_LIST": {
+    "TranslationText": "Список администраторов"
+  },   
+  "CMD_SUMMARY_BOT_NEW_NAME": {
+    "TranslationText": "Изменить никнейм боту"
+  },   
+  "CMD_SUMMARY_ADD_LANGUAGE_REACTION_TO_MESSAGE": {
+    "TranslationText": "Добавить эмодзи от бота к сообщению, роли языков"
+  },
+  "CMD_SUMMARY_ADD_SERVER_REACTION_TO_MESSAGE": {
+    "TranslationText": "Добавить эмодзи от бота к сообщению, роли сервера"
+  },
+  "CMD_SUMMARY_SEND_GIVING_LANGUAGE_ROLE_MESSAGE": {
+    "TranslationText": "Отправить сообщение, о получении роли языка."
+  } ,   
+  "CMD_SUMMARY_SEND_GIVING_SERVER_ROLE_MESSAGE": {
+    "TranslationText": "Отправить сообщение, о получении роли сервера."
   } 
 }

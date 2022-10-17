@@ -39,7 +39,7 @@ namespace Discord_Bot.Modules.SlashCommands.Information
                 .WithColor(_color)
                 .WithDescription(_translation.TranslationText(result.ToString()));
 
-            await RespondAsync(_translation.GetTranslationByTextID("CMD_USER_COMMANDS"),
+            await RespondAsync(_translation.GetTranslationByTextId("CMD_USER_COMMANDS"),
                 embed: embed.Build());
         }
     }

@@ -26,5 +26,10 @@ namespace Discord_Bot.Models
         public ulong ChannelIdForBotAdminCommand { get; set; }
         public ulong ChannelIdForBotWelcome { get; set; }
         public ulong ChannelIdForBotLog { get; set; }
+        
+        public ulong IdMessageServerRole { get; set; }
+        public ulong IdMessageLanguageRole { get; set; }
+        public ulong IdRoleRu { get; set; }
+        public ulong IdRoleUs { get; set; }
     }
 }

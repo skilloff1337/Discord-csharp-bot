@@ -9,7 +9,7 @@ using Discord_Bot.Services.BadWords.Interfaces;
 
 namespace Discord_Bot.Services.TextChatHandler
 {
-    public class BadWordsHandler : IBadWordsHandler
+    public class BadWordsHandler
     {
         private readonly DiscordSocketClient _client;
         private readonly IBadWords _badWords;
@@ -21,14 +21,9 @@ namespace Discord_Bot.Services.TextChatHandler
             _client = client;
             _badWords = badWords;
             _config = config;
-        }
-
-        public async Task Install()
-        {
+            
             _client.MessageReceived += MessageReceived;
-            await Task.CompletedTask;
         }
-
         private async Task MessageReceived(SocketMessage messageParam)
         {
             if(!_config.EnableWordProtection)

@@ -11,12 +11,11 @@ using Discord_Bot.Services.DataBase;
 using Discord_Bot.Services.DataBase.Interfaces;
 using Discord_Bot.Services.PathProvider;
 using Discord_Bot.Services.PathProvider.Interfaces;
+using Discord_Bot.Services.ReactionHandler;
 using Discord_Bot.Services.TextChatHandler;
-using Discord_Bot.Services.TextChatHandler.Interfaces;
 using Discord_Bot.Services.Translation;
 using Discord_Bot.Services.Translation.Interfaces;
 using Discord_Bot.Services.UserHandler;
-using Discord_Bot.Services.UserHandler.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using RunMode = Discord.Commands.RunMode;
 
@@ -39,17 +38,19 @@ namespace Discord_Bot.Extension
                 {
                     DefaultRunMode = RunMode.Async
                 }))
-                .AddSingleton<ICommandHandler, CommandHandler>()
-                .AddSingleton<IUserHandler, UserHandler>()
+                .AddSingleton<CommandHandler>()
+                .AddSingleton<UserHandler>()
                 .AddSingleton<IBotSetting, BotSetting>()
-                .AddSingleton<IWelcomeHandler, WelcomeHandler>()
+                .AddSingleton<WelcomeHandler>()
                 .AddSingleton<ITranslation, Translation>()
                 .AddSingleton<AdminCommandErrorHandler>()
                 .AddSingleton<CommandErrorHandler>()
                 .AddSingleton<IRepository<MessageUser>, MessageRepository>()
                 .AddSingleton<IPathProvider, PathProvider>()
-                .AddSingleton<IBadWordsHandler, BadWordsHandler>()
-                .AddSingleton<IBadWords, BadWords>();
+                .AddSingleton<BadWordsHandler>()
+                .AddSingleton<IBadWords, BadWords>()
+                .AddSingleton<ReactionLanguageHandler>()
+                .AddSingleton<ReactionServerHandler>();
         }
     }
 }

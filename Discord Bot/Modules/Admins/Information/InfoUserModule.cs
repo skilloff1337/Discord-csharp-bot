@@ -48,7 +48,7 @@ namespace Discord_Bot.Modules.Admins.Information
                 .WithDescription(text);
 
             await Context.Message.ReplyAsync($"***{user.Username}#{user.Discriminator}***" +
-                                             $" {_translation.GetTranslationByTextID("CMD_ADMINS_USER_INFO")} \n",
+                                             $" {_translation.GetTranslationByTextId("CMD_ADMINS_USER_INFO")} \n",
                 embed: embed.Build());
         }
     }

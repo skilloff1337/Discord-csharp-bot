@@ -43,7 +43,7 @@ namespace Discord_Bot.Modules.Admins.Information
                 .WithImageUrl(Context.Guild.IconUrl)
                 .WithDescription(text);
 
-            await Context.Message.ReplyAsync($"{_translation.GetTranslationByTextID("CMD_ADMINS_SERVER_INFO")}" +
+            await Context.Message.ReplyAsync($"{_translation.GetTranslationByTextId("CMD_ADMINS_SERVER_INFO")}" +
                                              $" **{Context.Guild.Name}**", embed: embed.Build());
         }
     }

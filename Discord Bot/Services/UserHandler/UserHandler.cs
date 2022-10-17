@@ -6,11 +6,10 @@ using Discord;
 using Discord.WebSocket;
 using Discord_Bot.Models;
 using Discord_Bot.Services.DataBase.Interfaces;
-using Discord_Bot.Services.UserHandler.Interfaces;
 
 namespace Discord_Bot.Services.UserHandler
 {
-    public class UserHandler : IUserHandler
+    public class UserHandler
     {
         private readonly DiscordSocketClient _client;
         private readonly IRepository<MessageUser> _repository;
@@ -26,16 +25,11 @@ namespace Discord_Bot.Services.UserHandler
             _client = client;
             _config = config;
             _repository = repository;
-        }
-
-        public async Task InstallEventsAsync()
-        {
+            
             _client.MessageUpdated += UpdateMessage;
             _client.MessageDeleted += DeletedMessage;
             _client.MessageReceived += WriteMessage;
-            await Task.CompletedTask;
         }
-
         private async Task WriteMessage(SocketMessage arg)
         {
             if (arg.Channel.Id == _config.ChannelIdForBotLog 

@@ -47,7 +47,7 @@ namespace Discord_Bot.Modules.Admins.Information
                 .WithDescription(text);
 
             await Context.Message.ReplyAsync(
-                $"***{role.Name}*** {_translation.GetTranslationByTextID("CMD_ADMINS_USER_INFO")}\n",
+                $"***{role.Name}*** {_translation.GetTranslationByTextId("CMD_ADMINS_USER_INFO")}\n",
                 embed: embed.Build());
         }
     }

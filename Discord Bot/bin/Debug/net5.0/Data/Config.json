@@ -4,60 +4,21 @@
   "AdministratorsID": [
     305330357937635329
   ],
-  "Ranks": {
-    "0": {
-      "Id": "0",
-      "NameRank": "NoRank",
-      "Level": 0,
-      "NeedExp": 0,
-      "RoleId": 0
-    },
-    "1": {
-      "Id": "633b34449667b93d3cb8fbcd",
-      "NameRank": "Level №1",
-      "Level": 1,
-      "NeedExp": 10,
-      "RoleId": 1025424128829820969
-    },
-    "2": {
-      "Id": "633b345e9667b93d3cb8fbcf",
-      "NameRank": "Level №2",
-      "Level": 2,
-      "NeedExp": 200,
-      "RoleId": 1025424166947664014
-    },
-    "3": {
-      "Id": "633b346a9667b93d3cb8fbd1",
-      "NameRank": "Level №3",
-      "Level": 3,
-      "NeedExp": 300,
-      "RoleId": 1025424213055647914
-    },
-    "4": {
-      "Id": "633b36099512d0852771d897",
-      "NameRank": "Level №4",
-      "Level": 4,
-      "NeedExp": 400,
-      "RoleId": 660488849692033036
-    },
-    "5": {
-      "Id": "633b36364d6165ed82373dcc",
-      "NameRank": "Level №5",
-      "Level": 5,
-      "NeedExp": 500,
-      "RoleId": 380093221742706688
-    }
-  },
+  "Ranks": {},
   "DataBaseName": "discordBot",
   "CollectionMessage": "messageUser",
   "ConnectionString": "mongodb://localhost:27017",
   "Language": 1,
   "Status": 1,
-  "GameName": "Development",
+  "GameName": "5mp.gg | The Best Multiplayer for GTA5 Role Play!",
   "EnableWordProtection": true,
-  "IdServer": 305330911040372737,
-  "ChannelIdForBotCommand": 1022189416728498186,
-  "ChannelIdForBotAdminCommand": 1023177360155086878,
-  "ChannelIdForBotWelcome": 1022418678807023687,
-  "ChannelIdForBotLog": 1022438902809776128
+  "IdServer": 1031458286727348234,
+  "ChannelIdForBotCommand": 1031460950794059816,
+  "ChannelIdForBotAdminCommand": 1031460923812098048,
+  "ChannelIdForBotWelcome": 1031458287289380927,
+  "ChannelIdForBotLog": 1031460994188324915,
+  "IdMessageServerRole": 1031495699403120672,
+  "IdMessageLanguageRole": 1031472425986170961,
+  "IdRoleRu": 1031481902210752543,
+  "IdRoleUs": 1031482042854150155
 }

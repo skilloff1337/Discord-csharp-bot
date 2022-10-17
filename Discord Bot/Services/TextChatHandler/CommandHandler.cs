@@ -6,11 +6,10 @@ using Discord.Commands;
 using Discord.Interactions;
 using Discord.WebSocket;
 using Discord_Bot.Models;
-using Discord_Bot.Services.TextChatHandler.Interfaces;
 
 namespace Discord_Bot.Services.TextChatHandler
 {
-    public class CommandHandler : ICommandHandler
+    public class CommandHandler
     {
         private readonly DiscordSocketClient _client;
         private readonly CommandService _command;
@@ -28,14 +27,10 @@ namespace Discord_Bot.Services.TextChatHandler
             _provider = provider;
             _interaction = interaction;
             _config = config;
-        }
-
-        public async Task InstallCommandsAsync()
-        {
+            
             _client.MessageReceived += HandleCommandAsync;
             _client.Ready += Ready;
             _client.InteractionCreated += Interaction;
-            await Task.CompletedTask;
         }
 
         private async Task HandleCommandAsync(SocketMessage messageParam)

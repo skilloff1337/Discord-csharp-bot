@@ -33,18 +33,6 @@ namespace Discord_Bot.Modules.Admins.Message
             _translation = translation;
         }
 
-        [Command("test")]
-        [Summary("CMD_SUMMARY_CLEAR_ALL_MESSAGE")]
-        public async Task Test(string name)
-        {
-            for (var i = 0; i < 50; i++)
-            {
-                await Context.Message.ReplyAsync($"{name} : {i}");
-                Console.WriteLine($"{name} : {i}");
-                await Task.Delay(1000);
-            }
-        }
-
         [Command("deleteMessageChannel")]
         [Summary("CMD_SUMMARY_CLEAR_ALL_MESSAGE")]
         public async Task DeleteAllMessageChannel(IMessageChannel channel, int countMessages = 100)
@@ -56,7 +44,7 @@ namespace Discord_Bot.Modules.Admins.Message
             }
 
             await logChannel.SendMessageAsync(
-                $"{_translation.GetTranslationByTextID("CMD_ADMINS_START_DEL_MESSAGES")} " +
+                $"{_translation.GetTranslationByTextId("CMD_ADMINS_START_DEL_MESSAGES")} " +
                 channel.Id);
             _stopwatch.Restart();
 
@@ -90,7 +78,7 @@ namespace Discord_Bot.Modules.Admins.Message
 
 
             await logChannel.SendMessageAsync(
-                $"{Context.User.Mention} {_translation.GetTranslationByTextID("CMD_ADMINS_END_DELETED_MESSAGES")}.",
+                $"{Context.User.Mention} {_translation.GetTranslationByTextId("CMD_ADMINS_END_DELETED_MESSAGES")}.",
                 embed: embed.Build());
         }
     }

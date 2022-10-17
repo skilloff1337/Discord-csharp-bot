@@ -11,9 +11,9 @@ using Discord_Bot.Services.DataReader.IoC.Extension;
 using Discord_Bot.Services.DataWriter.IoC.Extension;
 using Discord_Bot.Services.RankHandler.Interfaces;
 using Discord_Bot.Services.RankHandler.IoC.Extension;
+using Discord_Bot.Services.ReactionHandler;
 using Discord_Bot.Services.TextChatHandler;
-using Discord_Bot.Services.TextChatHandler.Interfaces;
-using Discord_Bot.Services.UserHandler.Interfaces;
+using Discord_Bot.Services.UserHandler;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Discord_Bot
@@ -31,25 +31,34 @@ namespace Discord_Bot
             var client = provider.GetRequiredService<DiscordSocketClient>();
 
             client.Log += Log;
-            
+
 
             await client.LoginAsync(TokenType.Bot, config.Token);
             await client.StartAsync();
 
-            await Test();
-
             await Task.Delay(Timeout.Infinite);
         }
 
-        private async Task Test()
-        {
-
-        }
 
         private Task Log(LogMessage msg)
         {
             Console.WriteLine(msg.ToString());
             return Task.CompletedTask;
+        }
+
+        private async Task ServicesWakeUp(ServiceProvider provider)
+        {
+            provider.GetRequiredService<JsonConfigReader>();
+            provider.GetRequiredService<AdminCommandErrorHandler>();
+            provider.GetRequiredService<CommandErrorHandler>();
+            provider.GetRequiredService<InteractionService>();
+            provider.GetRequiredService<ReactionLanguageHandler>();
+            provider.GetRequiredService<ReactionServerHandler>();
+            provider.GetRequiredService<IRankHandler>();
+            provider.GetRequiredService<CommandHandler>();
+            provider.GetRequiredService<UserHandler>();
+            provider.GetRequiredService<WelcomeHandler>();
+            provider.GetRequiredService<BadWordsHandler>();
         }
 
         private ServiceProvider ConfigureServices()
@@ -60,19 +69,6 @@ namespace Discord_Bot
                 .BindingWriters()
                 .BindingRankSystem()
                 .BuildServiceProvider();
-        }
-
-        private async Task ServicesWakeUp(ServiceProvider provider)
-        {
-            provider.GetRequiredService<JsonConfigReader>();
-            provider.GetRequiredService<AdminCommandErrorHandler>();
-            provider.GetRequiredService<CommandErrorHandler>();
-            provider.GetRequiredService<InteractionService>();
-            await provider.GetRequiredService<IRankHandler>().InstallEventsAsync();
-            await provider.GetRequiredService<ICommandHandler>().InstallCommandsAsync();
-            await provider.GetRequiredService<IUserHandler>().InstallEventsAsync();
-            await provider.GetRequiredService<IWelcomeHandler>().InstallCommandsAsync();
-            await provider.GetRequiredService<IBadWordsHandler>().Install();
         }
     }
 }

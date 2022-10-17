@@ -61,7 +61,7 @@ namespace Discord_Bot.Modules.Admins.Message
 
             await logChannel.SendMessageAsync(
                 $"{Context.User.Mention} " +
-                $"{_translation.GetTranslationByTextID("CMD_ADMINS_START_USER_IN_CHANNEL_DELETED_MESSAGES")}",
+                $"{_translation.GetTranslationByTextId("CMD_ADMINS_START_USER_IN_CHANNEL_DELETED_MESSAGES")}",
                 embed: embed.Build());
 
             var countDeletedMessages = 0;
@@ -87,7 +87,7 @@ namespace Discord_Bot.Modules.Admins.Message
 
             await logChannel.SendMessageAsync(
                 $"{Context.User.Mention} " +
-                $"{_translation.GetTranslationByTextID("CMD_ADMINS_END_USER_IN_CHANNEL_DELETED_MESSAGES")} {channel}",
+                $"{_translation.GetTranslationByTextId("CMD_ADMINS_END_USER_IN_CHANNEL_DELETED_MESSAGES")} {channel}",
                 embed: embed.Build());
         }
     }

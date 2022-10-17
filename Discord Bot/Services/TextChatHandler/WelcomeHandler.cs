@@ -2,11 +2,10 @@
 using Discord;
 using Discord.WebSocket;
 using Discord_Bot.Models;
-using Discord_Bot.Services.TextChatHandler.Interfaces;
 
 namespace Discord_Bot.Services.TextChatHandler
 {
-    public class WelcomeHandler : IWelcomeHandler
+    public class WelcomeHandler
     {
         private readonly DiscordSocketClient _client;
         private readonly Config _config;
@@ -15,12 +14,8 @@ namespace Discord_Bot.Services.TextChatHandler
         {
             _client = client;
             _config = config;
-        }
-
-        public async Task InstallCommandsAsync()
-        {
+            
             _client.MessageReceived += WelcomeHandlerAsync;
-            await Task.CompletedTask;
         }
 
         private async Task WelcomeHandlerAsync(SocketMessage messageParam)

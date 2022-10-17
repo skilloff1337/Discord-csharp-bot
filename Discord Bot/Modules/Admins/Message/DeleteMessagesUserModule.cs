@@ -58,7 +58,7 @@ namespace Discord_Bot.Modules.Admins.Message
 
             await logChannel.SendMessageAsync(
                 $"{Context.User.Mention} " +
-                $"{_translation.GetTranslationByTextID("CMD_ADMINS_START_USER_DELETED_MESSAGES")}.",
+                $"{_translation.GetTranslationByTextId("CMD_ADMINS_START_USER_DELETED_MESSAGES")}.",
                 embed: embed.Build());
 
             var allDeletedMessages = 0;
@@ -100,7 +100,7 @@ namespace Discord_Bot.Modules.Admins.Message
 
 
             await logChannel.SendMessageAsync(
-                $"{Context.User.Mention} {_translation.GetTranslationByTextID("CMD_ADMINS_END_USER_DELETED_MESSAGES")}.",
+                $"{Context.User.Mention} {_translation.GetTranslationByTextId("CMD_ADMINS_END_USER_DELETED_MESSAGES")}.",
                 embed: embed.Build());
         }
     }

@@ -34,7 +34,7 @@ namespace Discord_Bot.Modules.Admins.Message
             var message = _repository.GetById(idMessage);
             if (message is null)
             {
-                await Context.Message.ReplyAsync(_translation.GetTranslationByTextID("CMD_ADMINS_NOT_FOUND"));
+                await Context.Message.ReplyAsync(_translation.GetTranslationByTextId("CMD_ADMINS_NOT_FOUND"));
                 return;
             }
 
@@ -56,7 +56,7 @@ namespace Discord_Bot.Modules.Admins.Message
                 .WithColor(_color)
                 .WithDescription(text);
 
-            await Context.Message.ReplyAsync($"{_translation.GetTranslationByTextID("CMD_ADMINS_HISTORY_MESSAGE")}" +
+            await Context.Message.ReplyAsync($"{_translation.GetTranslationByTextId("CMD_ADMINS_HISTORY_MESSAGE")}" +
                                              $" **{message.MessageId}**", embed: embed.Build());
         }
     }

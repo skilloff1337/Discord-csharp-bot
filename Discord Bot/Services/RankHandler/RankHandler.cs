@@ -34,20 +34,18 @@ namespace Discord_Bot.Services.RankHandler
             _experience = experience;
             _config = config;
             _users = reader.Load();
-            Console.WriteLine($"Users: {_users.Count}");
-        }
 
-        public async Task InstallEventsAsync()
-        {
             _client.MessageReceived += MessageReceived;
-            await Task.CompletedTask;
         }
 
         private async Task MessageReceived(SocketMessage message)
         {
             if (message.Author.IsBot || message.Channel is IDMChannel)
                 return;
-
+            
+            if (_config.Ranks.Count == 0)
+                return;
+            
             var user = _users.FirstOrDefault(x => x.DiscordId == message.Author.Id);
             if (user is not null)
             {
@@ -69,9 +67,10 @@ namespace Discord_Bot.Services.RankHandler
                             $"New Exp: {user.CurrentExp}\n" +
                             $"New Role: {guild.GetRole(roleId).Name}")
                         .Build();
+
                     var discordUser = guild.GetUser(user.DiscordId);
                     await discordUser!.AddRoleAsync(roleId);
-                    await discordUser.SendMessageAsync($"You have leveled up, congratulations!",embed:embed);
+                    await discordUser.SendMessageAsync($"You have leveled up, congratulations!", embed: embed);
                 }
             }
             else
@@ -84,7 +83,7 @@ namespace Discord_Bot.Services.RankHandler
                 };
                 _users.Add(newUser);
             }
-            
+
             if (DateTime.Now > _nextSave)
                 SaveUsers();
         }
@@ -99,7 +98,6 @@ namespace Discord_Bot.Services.RankHandler
 
             return list.ToArray();
         }
-        
 
 
         private void SaveUsers()

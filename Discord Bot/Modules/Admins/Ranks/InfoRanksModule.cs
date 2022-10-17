@@ -9,7 +9,7 @@ using Discord_Bot.Services.RankHandler.Interfaces;
 
 namespace Discord_Bot.Modules.Admins.Ranks
 {
-    [Summary("Adminn")] // todo not working /help
+    [Summary("Admin")] 
     [RequiredChannel(DiscordChannelType.BotAdminCommand)]
     [RequireUserPermission(GuildPermission.Administrator)]
     [RequireBotPermission(GuildPermission.Administrator)]
@@ -38,7 +38,7 @@ namespace Discord_Bot.Modules.Admins.Ranks
                 text.Append($"[{i}] | {_config.Ranks[i].NameRank} | {userInLevels[i]}\n");
             }
 
-            await Context.Message.ReplyAsync(text.ToString());
+            await ReplyAsync(text.ToString());
         }
     }
 }

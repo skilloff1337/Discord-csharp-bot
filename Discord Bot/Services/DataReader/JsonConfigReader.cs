@@ -54,6 +54,10 @@ namespace Discord_Bot.Services.DataReader
             _config.ChannelIdForBotCommand = data.ChannelIdForBotCommand;
             _config.ChannelIdForBotWelcome = data.ChannelIdForBotWelcome;
             _config.ChannelIdForBotLog = data.ChannelIdForBotLog;
+            _config.IdMessageLanguageRole = data.IdMessageLanguageRole;
+            _config.IdMessageServerRole = data.IdMessageServerRole;
+            _config.IdRoleRu = data.IdRoleRu;
+            _config.IdRoleUs = data.IdRoleUs;
         }
     }
 }

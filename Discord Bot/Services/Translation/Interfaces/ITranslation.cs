@@ -2,7 +2,7 @@
 {
     public interface ITranslation
     {
-        public string GetTranslationByTextID(string textID);
+        public string GetTranslationByTextId(string textID);
         
         public string TranslationText(string text);
     }
