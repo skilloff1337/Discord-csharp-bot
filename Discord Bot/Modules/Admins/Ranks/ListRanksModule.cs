@@ -23,7 +23,7 @@ namespace Discord_Bot.Modules.Admins.Ranks
         }
 
         [Command("listRanks")]
-        [Summary("CMD_SUMMARY_LIST_RANKS")]
+        [Summary("[CMD_SUMMARY_LIST_RANKS]")]
         public async Task ListRanks()
         {
             var text = new StringBuilder(2000);

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Discord;
 using Discord.WebSocket;
 using Discord_Bot.Models;
@@ -29,10 +28,10 @@ namespace Discord_Bot.Services.ReactionHandler
             switch (reaction.Emote.Name)
             {
                 case "🇷🇺":
-                    user!.RemoveRoleAsync(_config.IdRoleRu);
+                    user!.RemoveRoleAsync(1031481902210752543);
                     break;
                 case "🇺🇸":
-                    user!.RemoveRoleAsync(_config.IdRoleUs);
+                    user!.RemoveRoleAsync(1031482042854150155);
                     break;
             }
             
@@ -50,10 +49,10 @@ namespace Discord_Bot.Services.ReactionHandler
             switch (reaction.Emote.Name)
             {
                 case "🇷🇺":
-                    user!.AddRoleAsync(_config.IdRoleRu);
+                    user!.AddRoleAsync(1031481902210752543);
                     break;
                 case "🇺🇸":
-                    user!.AddRoleAsync(_config.IdRoleUs);
+                    user!.AddRoleAsync(1031482042854150155);
                     break;
             }
             return Task.CompletedTask;

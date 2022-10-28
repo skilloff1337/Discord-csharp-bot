@@ -1,13 +1,10 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
 using Discord_Bot.Attributes;
 using Discord_Bot.Models;
 using Discord_Bot.Models.Types;
-using Discord_Bot.Services.DataWriter.Interfaces;
 
 namespace Discord_Bot.Modules.Admins.Settings
 {
@@ -27,7 +24,7 @@ namespace Discord_Bot.Modules.Admins.Settings
         }
 
         [Command("setBotName")]
-        [Summary("CMD_SUMMARY_BOT_NEW_NAME")]
+        [Summary("[CMD_SUMMARY_BOT_NEW_NAME]")]
         public async Task SetBotName([Remainder] string newName)
         {
             var bot = _client.GetGuild(_config.IdServer).GetUser(1021746234341470242);

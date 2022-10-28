@@ -27,7 +27,7 @@ namespace Discord_Bot.Modules.Admins.Settings
         }
 
         [Command("addAdmin")]
-        [Summary("CMD_SUMMARY_SET_ADMIN_CHANNEL")]
+        [Summary("[CMD_SUMMARY_SET_ADMIN_CHANNEL]")]
         public async Task SetAdminChannel(IUser user)
         {
             var logChannel = await _client.GetChannelAsync(_config.ChannelIdForBotLog) as IMessageChannel;

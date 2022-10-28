@@ -29,7 +29,5 @@ namespace Discord_Bot.Models
         
         public ulong IdMessageServerRole { get; set; }
         public ulong IdMessageLanguageRole { get; set; }
-        public ulong IdRoleRu { get; set; }
-        public ulong IdRoleUs { get; set; }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
-using Discord.WebSocket;
 using Discord_Bot.Attributes;
 using Discord_Bot.Models;
 using Discord_Bot.Models.Types;
@@ -22,7 +21,7 @@ namespace Discord_Bot.Modules.Admins.Message
         }
 
         [Command("addBotLanguageReaction")]
-        [Summary("CMD_SUMMARY_ADD_LANGUAGE_REACTION_TO_MESSAGE")]
+        [Summary("[CMD_SUMMARY_ADD_LANGUAGE_REACTION_TO_MESSAGE]")]
         public async Task Test(ulong idChannel,ulong idMessage)
         {
             var chn = Context.Guild.GetChannel(idChannel) as IMessageChannel;

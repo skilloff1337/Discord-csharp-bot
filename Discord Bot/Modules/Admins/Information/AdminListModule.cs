@@ -7,7 +7,6 @@ using Discord.WebSocket;
 using Discord_Bot.Attributes;
 using Discord_Bot.Models;
 using Discord_Bot.Models.Types;
-using Discord_Bot.Services.Translation.Interfaces;
 
 namespace Discord_Bot.Modules.Admins.Information
 {
@@ -29,7 +28,7 @@ namespace Discord_Bot.Modules.Admins.Information
         }
 
         [Command("admins")]
-        [Summary("CMD_SUMMARY_ADMINS_LIST")]
+        [Summary("[CMD_SUMMARY_ADMINS_LIST]")]
         public async Task Admins()
         {
             var text = new StringBuilder(200);

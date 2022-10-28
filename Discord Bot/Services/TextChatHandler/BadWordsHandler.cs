@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using Discord;
 using Discord.WebSocket;
 using Discord_Bot.Models;
-using Discord_Bot.Services.BadWords;
 using Discord_Bot.Services.BadWords.Interfaces;
 
 namespace Discord_Bot.Services.TextChatHandler

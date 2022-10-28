@@ -28,7 +28,7 @@ namespace Discord_Bot.Modules.Admins.Message
         }
 
         [Command("messageHistory")]
-        [Summary("CMD_SUMMARY_HISTORY_MESSAGE")]
+        [Summary("[CMD_SUMMARY_HISTORY_MESSAGE]")]
         public async Task MessageHistory(ulong idMessage)
         {
             var message = _repository.GetById(idMessage);
@@ -41,14 +41,14 @@ namespace Discord_Bot.Modules.Admins.Message
             var historyMessages = new StringBuilder(300);
             foreach (var msg in message.HistoryMessage)
                 historyMessages.Append($"{msg}\n");
-            var text = $"**CMD_ADMINS_SERVER_OWNER :** {message.NickName}\n" +
-                       $"**CMD_ADMINS_CHANNEL_NAME :** {message.ChannelName}\n" +
-                       $"**CMD_ADMINS_CHANNEL_ID :** {message.ChannelId}\n" +
-                       $"**CMD_ADMINS_SERVER_CREATED :** {message.CreateMessage}\n" +
-                       $"**CMD_ADMINS_SERVER_CREATED :** {message.EditMessage}\n" +
-                       $"**CMD_ADMINS_MESSAGE_EDIT :** {message.EditCount}\n" +
-                       $"**CMD_ADMINS_MESSAGE :** {message.CurrentMessage}\n" +
-                       $"**CMD_ADMINS_HISTORY_MESSAGE :**\n {historyMessages}";
+            var text = $"**[CMD_ADMINS_SERVER_OWNER] :** {message.NickName}\n" +
+                       $"**[CMD_ADMINS_CHANNEL_NAME] :** {message.ChannelName}\n" +
+                       $"**[CMD_ADMINS_CHANNEL_ID] :** {message.ChannelId}\n" +
+                       $"**[CMD_ADMINS_SERVER_CREATED] :** {message.CreateMessage}\n" +
+                       $"**[CMD_ADMINS_MESSAGE_EDIT] :** {message.EditMessage}\n" +
+                       $"**[CMD_ADMINS_MESSAGE_EDIT] :** {message.EditCount}\n" +
+                       $"**[CMD_ADMINS_MESSAGE] :** {message.CurrentMessage}\n" +
+                       $"**[CMD_ADMINS_HISTORY_MESSAGE] :**\n {historyMessages}";
 
                        text = _translation.TranslationText(text);
 
@@ -56,7 +56,7 @@ namespace Discord_Bot.Modules.Admins.Message
                 .WithColor(_color)
                 .WithDescription(text);
 
-            await Context.Message.ReplyAsync($"{_translation.GetTranslationByTextId("CMD_ADMINS_HISTORY_MESSAGE")}" +
+            await Context.Message.ReplyAsync($"{_translation.GetTranslationByTextId("[CMD_ADMINS_HISTORY_MESSAGE]")}" +
                                              $" **{message.MessageId}**", embed: embed.Build());
         }
     }

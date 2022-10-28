@@ -25,20 +25,20 @@ namespace Discord_Bot.Modules.Admins.Information
         }
 
         [Command("inforole")]
-        [Summary("CMD_SUMMARY_ROLE_INFO")]
+        [Summary("[CMD_SUMMARY_ROLE_INFO]")]
         public async Task InfoRole(SocketRole role)
         {
             if (role.IsEveryone)
                 return;
 
-            var text = $"CMD_ADMINS_ROLE_ROLE_ID : {role.Id}\n" +
-                       $"CMD_ADMINS_SERVER_USERS : {role.Members.Count()}\n" +
-                       $"CMD_ADMINS_ROLE_HOISTED : {role.IsHoisted}\n" +
-                       $"CMD_ADMINS_SERVER_CREATED : {role.CreatedAt:d}\n" +
-                       $"CMD_ADMINS_ROLE_POSITION : {role.Position}\n" +
-                       $"CMD_ADMINS_ROLE_MENTIONABLE : {role.IsMentionable}\n" +
-                       $"CMD_ADMINS_ROLE_PERMISSIONS : {role.Permissions}\n" +
-                       $"CMD_ADMINS_ROLE_COLOR : {role.Color}";
+            var text = $"[CMD_ADMINS_ROLE_ROLE_ID] : {role.Id}\n" +
+                       $"[CMD_ADMINS_SERVER_USERS] : {role.Members.Count()}\n" +
+                       $"[CMD_ADMINS_ROLE_HOISTED] : {role.IsHoisted}\n" +
+                       $"[CMD_ADMINS_SERVER_CREATED] : {role.CreatedAt:d}\n" +
+                       $"[CMD_ADMINS_ROLE_POSITION] : {role.Position}\n" +
+                       $"[CMD_ADMINS_ROLE_MENTIONABLE] : {role.IsMentionable}\n" +
+                       $"[CMD_ADMINS_ROLE_PERMISSIONS] : {role.Permissions}\n" +
+                       $"[CMD_ADMINS_ROLE_COLOR] : {role.Color}";
 
             text = _translation.TranslationText(text);
 
@@ -47,7 +47,7 @@ namespace Discord_Bot.Modules.Admins.Information
                 .WithDescription(text);
 
             await Context.Message.ReplyAsync(
-                $"***{role.Name}*** {_translation.GetTranslationByTextId("CMD_ADMINS_USER_INFO")}\n",
+                $"***{role.Name}*** {_translation.GetTranslationByTextId("[CMD_ADMINS_USER_INFO]")}\n",
                 embed: embed.Build());
         }
     }

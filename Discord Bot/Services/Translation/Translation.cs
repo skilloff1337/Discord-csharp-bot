@@ -12,7 +12,7 @@ namespace Discord_Bot.Services.Translation
         private readonly IJsonReader<Dictionary<string,TranslationWord>> _loader;
         
         private Dictionary<string, TranslationWord> _currentLanguage = new();
-        private static readonly Regex _regex = new(@"(?:[A-Z]+_|[A-Z]:?){5,}", RegexOptions.Compiled);
+        private static readonly Regex _regex = new(@"\[([A-Z|0-9]+|_[A-Z|0-9]){1,}\]", RegexOptions.Compiled);
 
         public Translation(IJsonReader<Dictionary<string,TranslationWord>> loader)
         {

@@ -32,7 +32,7 @@ namespace Discord_Bot.Modules.Admins.Ranks
         }
 
         [Command("addRank")]
-        [Summary("CMD_SUMMARY_ADD_RANK")]
+        [Summary("[CMD_SUMMARY_ADD_RANK]")]
         public async Task AddRoleToRank(IRole role, uint needExp,byte level, [Remainder] string name)
         {
             if (Context.Guild.GetChannel(_config.ChannelIdForBotLog) is not IMessageChannel messageChannel)

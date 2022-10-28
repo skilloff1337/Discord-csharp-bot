@@ -29,14 +29,14 @@ namespace Discord_Bot.Modules.Admins.Punishment
         }
         
         [Command("unmute")]
-        [Summary("CMD_SUMMARY_UNMUTE")]
+        [Summary("[CMD_SUMMARY_UNMUTE]")]
         public async Task UnMuteUser(SocketGuildUser user)
         {
             var channel = await _client.GetChannelAsync(_config.ChannelIdForBotLog) as IMessageChannel;
             
             var role = Context.Guild.Roles.FirstOrDefault(x => x.Name == "Mute");
             var text =
-                $"CMD_ADMINS_ADMINISTRATOR ***{Context.User.Username}*** CMD_ADMINS_UNMUTE " +
+                $"[CMD_ADMINS_ADMINISTRATOR] ***{Context.User.Username}*** [CMD_ADMINS_UNMUTE] " +
                 $"***{user.Username}#{user.Discriminator}*** [ID:{user.Id}]";
 
             text = _translation.TranslationText(text);

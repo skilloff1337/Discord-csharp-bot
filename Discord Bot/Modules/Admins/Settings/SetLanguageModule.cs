@@ -27,7 +27,7 @@ namespace Discord_Bot.Modules.Admins.Settings
         }
 
         [Command("setLanguage")]
-        [Summary("CMD_SUMMARY_SET_LANGUAGE")]
+        [Summary("[CMD_SUMMARY_SET_LANGUAGE]")]
         public async Task SetLanguage(LanguageType language)
         {
             var channel = await _client.GetChannelAsync(_config.ChannelIdForBotLog) as IMessageChannel;

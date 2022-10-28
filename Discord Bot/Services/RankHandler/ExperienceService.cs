@@ -17,12 +17,9 @@ namespace Discord_Bot.Services.RankHandler
 
         public bool EnoughExperience(uint currentExp, byte currentLevel)
         {
-            var messageChannel = _client.GetChannel(_config.ChannelIdForBotLog) as IMessageChannel;
-
             if (currentLevel < _config.Ranks.Count) 
                 return currentExp >= _config.Ranks[currentLevel + 1].NeedExp;
             
-            messageChannel!.SendMessageAsync($"Not found rank, level {currentLevel+1}");
             return false;
 
         }

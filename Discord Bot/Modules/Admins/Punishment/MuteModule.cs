@@ -29,7 +29,7 @@ namespace Discord_Bot.Modules.Admins.Punishment
         }
         
         [Command("mute")]
-        [Summary("CMD_SUMMARY_MUTE")]
+        [Summary("[CMD_SUMMARY_MUTE]")]
         public async Task MuteUser(SocketGuildUser user, int hours, string reason)
         {
             var channel = await _client.GetChannelAsync(_config.ChannelIdForBotLog) as IMessageChannel;
@@ -37,9 +37,9 @@ namespace Discord_Bot.Modules.Admins.Punishment
             var role = Context.Guild.Roles.FirstOrDefault(x => x.Name == "Mute");
             
             var text =
-                $"CMD_ADMINS_ADMINISTRATOR ***{Context.User.Username}*** CMD_ADMINS_MUTE" +
+                $"[CMD_ADMINS_ADMINISTRATOR] ***{Context.User.Username}*** [CMD_ADMINS_MUTE]" +
                 $" ***{user.Username}#{user.Discriminator}*** [ID:{user.Id}], " +
-                $"CMD_ADMINS_REASON : ***{reason}***";
+                $"[CMD_ADMINS_REASON] : ***{reason}***";
 
             text = _translation.TranslationText(text);
             

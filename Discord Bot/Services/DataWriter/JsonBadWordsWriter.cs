@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using Discord_Bot.Models;
 using Discord_Bot.Services.DataWriter.Interfaces;
 using Discord_Bot.Services.PathProvider.Interfaces;
 using Newtonsoft.Json;

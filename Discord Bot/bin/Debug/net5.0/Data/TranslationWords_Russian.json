@@ -1,296 +1,296 @@
 {
-  "CMD_TEXT_HELLO": {
+  "[CMD_TEXT_HELLO]": {
     "TranslationText": "Привет"
   },
-  "CMD_ADMINS_ADMINISTRATOR": {
+  "[CMD_ADMINS_ADMINISTRATOR]": {
     "TranslationText": "Администратор"
   },
-  "CMD_ADMINS_COMMANDS": {
+  "[CMD_ADMINS_COMMANDS]": {
     "TranslationText": "Команды администратора"
   },
-  "CMD_USER_COMMANDS": {
+  "[CMD_USER_COMMANDS]": {
     "TranslationText": "Команды пользователя"
   },
-  "CMD_ADMINS_BANNED": {
+  "[CMD_ADMINS_BANNED]": {
     "TranslationText": "Забанил"
-  },  
-  "CMD_ADMINS_UNBANNED": {
+  },
+  "[CMD_ADMINS_UNBANNED]": {
     "TranslationText": "Разбанил"
   },
-  "CMD_ADMINS_FOR": {
+  "[CMD_ADMINS_FOR]": {
     "TranslationText": "На"
   },
-  "CMD_ADMINS_REASON": {
+  "[CMD_ADMINS_REASON]": {
     "TranslationText": "Причина"
   },
-  "CMD_ADMINS_DAYS": {
+  "[CMD_ADMINS_DAYS]": {
     "TranslationText": "Дней"
   },
-  "CMD_ADMINS_MINUTES": {
+  "[CMD_ADMINS_MINUTES]": {
     "TranslationText": "Минут"
   },
-  "CMD_ADMINS_KICK": {
+  "[CMD_ADMINS_KICK]": {
     "TranslationText": "Выгнал"
   },
-  "CMD_ADMINS_MUTE": {
+  "[CMD_ADMINS_MUTE]": {
     "TranslationText": "Заткнул"
   },
-  "CMD_ADMINS_UNMUTE": {
+  "[CMD_ADMINS_UNMUTE]": {
     "TranslationText": "Снял кляп"
   },
-  "CMD_ADMINS_SERVER_INFO": {
+  "[CMD_ADMINS_SERVER_INFO]": {
     "TranslationText": "Информация для сервера"
   },
-  "CMD_ADMINS_SERVER_NAME": {
+  "[CMD_ADMINS_SERVER_NAME]": {
     "TranslationText": "Имя сервера"
   },
-  "CMD_ADMINS_SERVER_ID": {
+  "[CMD_ADMINS_SERVER_ID]": {
     "TranslationText": "Ид сервера"
   },
-  "CMD_ADMINS_SERVER_CREATED": {
+  "[CMD_ADMINS_SERVER_CREATED]": {
     "TranslationText": "Дата создания"
   },
-  "CMD_ADMINS_MESSAGE_EDIT": {
+  "[CMD_ADMINS_MESSAGE_EDIT]": {
     "TranslationText": "Дата изменения"
   },
-  "CMD_ADMINS_DELETED_DATE_MESSAGE": {
+  "[CMD_ADMINS_DELETED_DATE_MESSAGE]": {
     "TranslationText": "Дата удаления"
   },
-  "CMD_ADMINS_DELETED_MESSAGE": {
+  "[CMD_ADMINS_DELETED_MESSAGE]": {
     "TranslationText": "Сообщение удалено"
   },
-  "CMD_ADMINS_MESSAGES_DELETED": {
+  "[CMD_ADMINS_MESSAGES_DELETED]": {
     "TranslationText": "Сообщений удалено"
   },
-  "CMD_ADMINS_SERVER_OWNER": {
+  "[CMD_ADMINS_SERVER_OWNER]": {
     "TranslationText": "Владелец"
   },
-  "CMD_ADMINS_SERVER_USERS": {
+  "[CMD_ADMINS_SERVER_USERS]": {
     "TranslationText": "Участников"
   },
-  "CMD_ADMINS_SERVER_CHANNELS": {
+  "[CMD_ADMINS_SERVER_CHANNELS]": {
     "TranslationText": "Каналов"
-  }, 
-  "CMD_ADMINS_SERVER_ROLES": {
+  },
+  "[CMD_ADMINS_SERVER_ROLES]": {
     "TranslationText": "Ролей"
   },
-  "CMD_ADMINS_USER_ACTIVITIES": {
+  "[CMD_ADMINS_USER_ACTIVITIES]": {
     "TranslationText": "Активности"
   },
-  "CMD_ADMINS_USER_ROLES": {
+  "[CMD_ADMINS_USER_ROLES]": {
     "TranslationText": "Роли"
   },
-  "CMD_ADMINS_USER_STATUS": {
+  "[CMD_ADMINS_USER_STATUS]": {
     "TranslationText": "Статус пользователя"
   },
-  "CMD_ADMINS_USER_BOT": {
+  "[CMD_ADMINS_USER_BOT]": {
     "TranslationText": "Бот"
   },
-  "CMD_ADMINS_USER_INFO": {
+  "[CMD_ADMINS_USER_INFO]": {
     "TranslationText": "Информация"
   },
-  "CMD_ADMINS_USER_USER_ID": {
+  "[CMD_ADMINS_USER_USER_ID]": {
     "TranslationText": "Ид пользователя"
   },
-  "CMD_ADMINS_SERVER_EMOTES": {
+  "[CMD_ADMINS_SERVER_EMOTES]": {
     "TranslationText": "Эмодзей"
   },
-  "CMD_ADMINS_SERVER_SECURITY": {
+  "[CMD_ADMINS_SERVER_SECURITY]": {
     "TranslationText": "Уровень проверки"
   },
-  "CMD_ADMINS_ROLE_ROLE_ID": {
+  "[CMD_ADMINS_ROLE_ROLE_ID]": {
     "TranslationText": "Ид роли"
   },
-  "CMD_ADMINS_LIST_DELETED_MESSAGE": {
+  "[CMD_ADMINS_LIST_DELETED_MESSAGE]": {
     "TranslationText": "Удаленные сообщения"
   },
-  "CMD_ADMINS_CLEAR": {
+  "[CMD_ADMINS_CLEAR]": {
     "TranslationText": "Очистка сообщений"
   },
-  "CMD_ADMINS_LIST_COUNT_DELETED_MESSAGE": {
+  "[CMD_ADMINS_LIST_COUNT_DELETED_MESSAGE]": {
     "TranslationText": "Удаленных сообщений"
   },
-  "CMD_ADMINS_ROLE_HOISTED": {
+  "[CMD_ADMINS_ROLE_HOISTED]": {
     "TranslationText": "Отображается отдельно"
   },
-  "CMD_ADMINS_ROLE_POSITION": {
+  "[CMD_ADMINS_ROLE_POSITION]": {
     "TranslationText": "Позиция роли"
   },
-  "CMD_ADMINS_ROLE_MENTIONABLE": {
+  "[CMD_ADMINS_ROLE_MENTIONABLE]": {
     "TranslationText": "Можно упоминать"
   },
-  "CMD_ADMINS_ROLE_PERMISSIONS": {
+  "[CMD_ADMINS_ROLE_PERMISSIONS]": {
     "TranslationText": "Права роли"
   },
-  "CMD_ADMINS_ROLE_COLOR": {
+  "[CMD_ADMINS_ROLE_COLOR]": {
     "TranslationText": "Цвет роли"
   },
-  "CMD_ADMINS_NOT_FOUND": {
+  "[CMD_ADMINS_NOT_FOUND]": {
     "TranslationText": "Не найдено сообщение в базе данных"
   },
-  "CMD_ADMINS_HISTORY_MESSAGE": {
+  "[CMD_ADMINS_HISTORY_MESSAGE]": {
     "TranslationText": "История сообщения"
   },
-  "CMD_ADMINS_CHANNEL_NAME": {
+  "[CMD_ADMINS_CHANNEL_NAME]": {
     "TranslationText": "Имя канала"
   },
-  "CMD_ADMINS_CHANNEL_ID": {
+  "[CMD_ADMINS_CHANNEL_ID]": {
     "TranslationText": "Ид канала"
   },
-  "CMD_ADMINS_MESSAGE": {
+  "[CMD_ADMINS_MESSAGE]": {
     "TranslationText": "Сообщение"
   },
-  "CMD_TEXT_BYE": {
+  "[CMD_TEXT_BYE]": {
     "TranslationText": "Пока"
   },
-  "CMD_TEXT_HELP": {
+  "[CMD_TEXT_HELP]": {
     "TranslationText": ":page_with_curl: Команды бота:"
-  },  
-  "CMD_SUMMARY_BAN": {
+  },
+  "[CMD_SUMMARY_BAN]": {
     "TranslationText": "Забанить пользователя"
-  }, 
-  "CMD_SUMMARY_UNBAN": {
+  },
+  "[CMD_SUMMARY_UNBAN]": {
     "TranslationText": "Разбанить пользователя"
   },
-  "CMD_SUMMARY_KICK": {
+  "[CMD_SUMMARY_KICK]": {
     "TranslationText": "Выгнать пользователя"
   },
-  "CMD_SUMMARY_MUTE": {
+  "[CMD_SUMMARY_MUTE]": {
     "TranslationText": "Заткнуть пользователя"
-  },  
-  "CMD_SUMMARY_UNMUTE": {
+  },
+  "[CMD_SUMMARY_UNMUTE]": {
     "TranslationText": "Снять кляп с пользователя"
   },
-  "CMD_SUMMARY_HELP": {
+  "[CMD_SUMMARY_HELP]": {
     "TranslationText": "Помощь по командам"
   },
-  "CMD_SUMMARY_SERVER_INFO": {
+  "[CMD_SUMMARY_SERVER_INFO]": {
     "TranslationText": "Показываем информацию о сервере"
   },
-  "CMD_SUMMARY_USER_INFO": {
+  "[CMD_SUMMARY_USER_INFO]": {
     "TranslationText": "Показываем информацию о пользователе"
   },
-  "CMD_SUMMARY_ROLE_INFO": {
+  "[CMD_SUMMARY_ROLE_INFO]": {
     "TranslationText": "Показываем информацию о роли"
   },
-  "CMD_SUMMARY_HISTORY_MESSAGE": {
+  "[CMD_SUMMARY_HISTORY_MESSAGE]": {
     "TranslationText": "Получить полную информацию сообщения"
   },
-  "CMD_SUMMARY_CLEAR_MESSAGE": {
+  "[CMD_SUMMARY_CLEAR_MESSAGE]": {
     "TranslationText": "Удалить последнии сообщения в текстовом канале"
   },
-  "CMD_SUMMARY_CLEAR_ALL_MESSAGE": {
+  "[CMD_SUMMARY_CLEAR_ALL_MESSAGE]": {
     "TranslationText": "Удалить сообщения в текстовом канале."
   },
-  "CMD_SUMMARY_CLEAR_USER_MESSAGE": {
+  "[CMD_SUMMARY_CLEAR_USER_MESSAGE]": {
     "TranslationText": "Удалить сообщения пользователя в последних сообщениях, в [checkLastMessages] указывается сколько последних сообщений в каналах просматривать"
   },
-  "CMD_ADMINS_START_DEL_MESSAGES": {
+  "[CMD_ADMINS_START_DEL_MESSAGES]": {
     "TranslationText": "Начат процесс удаления сообщений в канале"
   },
-  "CMD_ADMINS_COUNT_DELETED_MESSAGES": {
+  "[CMD_ADMINS_COUNT_DELETED_MESSAGES]": {
     "TranslationText": "Удаленно сообщений"
   },
-  "CMD_ADMINS_ELAPSED_DELETED_MESSAGES": {
+  "[CMD_ADMINS_ELAPSED_DELETED_MESSAGES]": {
     "TranslationText": "Заняло времени"
   },
-  "CMD_ADMINS_START_DELETED_MESSAGES": {
+  "[CMD_ADMINS_START_DELETED_MESSAGES]": {
     "TranslationText": "Начал уборку"
-  } ,
-  "CMD_ADMINS_END_DELETED_MESSAGES": {
+  },
+  "[CMD_ADMINS_END_DELETED_MESSAGES]": {
     "TranslationText": "Завершен процесс удаления сообщений"
   },
-  "CMD_ADMINS_END_DELETED_CHANNEL_MESSAGES": {
+  "[CMD_ADMINS_END_DELETED_CHANNEL_MESSAGES]": {
     "TranslationText": "Завершен процесс удаления сообщений для канала"
   },
-  "CMD_ADMINS_START_USER_DELETED_MESSAGES": {
+  "[CMD_ADMINS_START_USER_DELETED_MESSAGES]": {
     "TranslationText": "Начал уборку игрока во всех каналах"
   },
-  "CMD_ADMINS_START_USER_IN_CHANNEL_DELETED_MESSAGES": {
+  "[CMD_ADMINS_START_USER_IN_CHANNEL_DELETED_MESSAGES]": {
     "TranslationText": "Начал уборку игрока в канале"
   },
-  "CMD_CLEAN_FOR_USER": {
+  "[CMD_CLEAN_FOR_USER]": {
     "TranslationText": "Уборка для"
   },
-  "CMD_ADMINS_END_USER_DELETED_MESSAGES": {
+  "[CMD_ADMINS_END_USER_DELETED_MESSAGES]": {
     "TranslationText": "Завершен процесс удаления сообщений от игрока"
   },
-  "CMD_ADMINS_END_USER_IN_CHANNEL_DELETED_MESSAGES": {
+  "[CMD_ADMINS_END_USER_IN_CHANNEL_DELETED_MESSAGES]": {
     "TranslationText": "Завершен процесс удаления сообщений от игрока в канале"
   },
-  "CMD_ADMINS_CLEAN_CHECK_LAST_MESSAGES": {
+  "[CMD_ADMINS_CLEAN_CHECK_LAST_MESSAGES]": {
     "TranslationText": "Количество сообщений которые нужно проверить"
   },
-  "CMD_ADMINS_CHANNELS_IN_CLEAN": {
+  "[CMD_ADMINS_CHANNELS_IN_CLEAN]": {
     "TranslationText": "Каналов в уборке"
   },
-  "CMD_ADMINS_VIEWED_MESSAGES": {
+  "[CMD_ADMINS_VIEWED_MESSAGES]": {
     "TranslationText": "Сообщений проверено"
   },
- "CMD_SUMMARY_SEND_MESSAGE": {
+  "[CMD_SUMMARY_SEND_MESSAGE]": {
     "TranslationText": "Отправить сообщение в чат с уведомлением роли."
   },
-   "CMD_SUMMARY_SEND_REPLY_MESSAGE": {
+  "[CMD_SUMMARY_SEND_REPLY_MESSAGE]": {
     "TranslationText": "Отправить сообщение в чат с цитатой"
-  },   
-  "CMD_SUMMARY_ADD_RANK": {
+  },
+  "[CMD_SUMMARY_ADD_RANK]": {
     "TranslationText": "Добавить новый ранк в ранговой системе"
-  },   
-  "CMD_SUMMARY_LIST_RANKS": {
+  },
+  "[CMD_SUMMARY_LIST_RANKS]": {
     "TranslationText": "Посмотреть весь список рангов"
-  },   
-  "CMD_SUMMARY_SEND_PRIVATE_MESSAGE": {
+  },
+  "[CMD_SUMMARY_SEND_PRIVATE_MESSAGE]": {
     "TranslationText": "Отправить сообщение в личные сообщения"
-  },   
-  "CMD_SUMMARY_ADD_BAD_WORD": {
+  },
+  "[CMD_SUMMARY_ADD_BAD_WORD]": {
     "TranslationText": "Добавить новое плохое слово в список проверки"
-  },   
-  "CMD_SUMMARY_DEL_BAD_WORD": {
+  },
+  "[CMD_SUMMARY_DEL_BAD_WORD]": {
     "TranslationText": "Удалить слово из списка проверки"
-  },   
-  "CMD_SUMMARY_LIST_BAD_WORD": {
+  },
+  "[CMD_SUMMARY_LIST_BAD_WORD]": {
     "TranslationText": "Показать весь список плохих слов"
-  },   
-  "CMD_SUMMARY_DEL_RANK": {
+  },
+  "[CMD_SUMMARY_DEL_RANK]": {
     "TranslationText": "Удалить ранг"
-  },   
-  "CMD_SUMMARY_UPDATE_RANK": {
+  },
+  "[CMD_SUMMARY_UPDATE_RANK]": {
     "TranslationText": "Обновить ранг"
-  },   
-  "CMD_SUMMARY_SET_LANGUAGE": {
+  },
+  "[CMD_SUMMARY_SET_LANGUAGE]": {
     "TranslationText": "Установить язык бота.(Язык поменяется после перезапуска)"
-  },   
-  "CMD_SUMMARY_SET_LOG_CHANNEL": {
+  },
+  "[CMD_SUMMARY_SET_LOG_CHANNEL]": {
     "TranslationText": "Установить новый текстовый канал для логгирования."
-  },   
-  "CMD_SUMMARY_SET_ADMIN_CHANNEL": {
+  },
+  "[CMD_SUMMARY_SET_ADMIN_CHANNEL]": {
     "TranslationText": "Установить новый текстовый канал для команд администратора."
-  },   
-  "CMD_SUMMARY_SET_COMMAND_CHANNEL": {
+  },
+  "[CMD_SUMMARY_SET_COMMAND_CHANNEL]": {
     "TranslationText": "Установить новый текстовый канал для общих команд"
-  },   
-  "CMD_SUMMARY_SET_BAD_WORDS": {
+  },
+  "[CMD_SUMMARY_SET_BAD_WORDS]": {
     "TranslationText": "Включить/выключить защиту от цензурных слов(true/false)"
-  },   
-  "CMD_SUMMARY_LIST_USER_RANKS": {
+  },
+  "[CMD_SUMMARY_LIST_USER_RANKS]": {
     "TranslationText": "Информация по рангам у пользователей."
-  },   
-  "CMD_SUMMARY_ADMINS_LIST": {
+  },
+  "[CMD_SUMMARY_ADMINS_LIST]": {
     "TranslationText": "Список администраторов"
-  },   
-  "CMD_SUMMARY_BOT_NEW_NAME": {
+  },
+  "[CMD_SUMMARY_BOT_NEW_NAME]": {
     "TranslationText": "Изменить никнейм боту"
-  },   
-  "CMD_SUMMARY_ADD_LANGUAGE_REACTION_TO_MESSAGE": {
+  },
+  "[CMD_SUMMARY_ADD_LANGUAGE_REACTION_TO_MESSAGE]": {
     "TranslationText": "Добавить эмодзи от бота к сообщению, роли языков"
   },
-  "CMD_SUMMARY_ADD_SERVER_REACTION_TO_MESSAGE": {
+  "[CMD_SUMMARY_ADD_SERVER_REACTION_TO_MESSAGE]": {
     "TranslationText": "Добавить эмодзи от бота к сообщению, роли сервера"
   },
-  "CMD_SUMMARY_SEND_GIVING_LANGUAGE_ROLE_MESSAGE": {
+  "[CMD_SUMMARY_SEND_GIVING_LANGUAGE_ROLE_MESSAGE]": {
     "TranslationText": "Отправить сообщение, о получении роли языка."
-  } ,   
-  "CMD_SUMMARY_SEND_GIVING_SERVER_ROLE_MESSAGE": {
+  },
+  "[CMD_SUMMARY_SEND_GIVING_SERVER_ROLE_MESSAGE]": {
     "TranslationText": "Отправить сообщение, о получении роли сервера."
-  } 
+  }
 }

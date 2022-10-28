@@ -23,18 +23,18 @@ namespace Discord_Bot.Modules.Admins.Information
         }
 
         [Command("infoServer")]
-        [Summary("CMD_SUMMARY_SERVER_INFO")]
+        [Summary("[CMD_SUMMARY_SERVER_INFO]")]
         public async Task InfoServer()
         {
-            var text = $"**CMD_ADMINS_SERVER_NAME :** {Context.Guild.Name}\n" +
-                       $"**CMD_ADMINS_SERVER_ID :** {Context.Guild.Id}\n" +
-                       $"**CMD_ADMINS_SERVER_CREATED :** {Context.Guild.CreatedAt:d}\n" +
-                       $"**CMD_ADMINS_SERVER_OWNER :** {Context.Guild.Owner}\n" +
-                       $"**CMD_ADMINS_SERVER_USERS :** {Context.Guild.MemberCount}\n" +
-                       $"**CMD_ADMINS_SERVER_CHANNELS :** {Context.Guild.Channels.Count}\n" +
-                       $"**CMD_ADMINS_SERVER_ROLES :** {Context.Guild.Roles.Count}\n" +
-                       $"**CMD_ADMINS_SERVER_EMOTES : ** {Context.Guild.Emotes.Count}\n\n" +
-                       $"**CMD_ADMINS_SERVER_SECURITY :** {Context.Guild.VerificationLevel}";
+            var text = $"**[CMD_ADMINS_SERVER_NAME] :** {Context.Guild.Name}\n" +
+                       $"**[CMD_ADMINS_SERVER_ID] :** {Context.Guild.Id}\n" +
+                       $"**[CMD_ADMINS_SERVER_CREATED] :** {Context.Guild.CreatedAt:d}\n" +
+                       $"**[CMD_ADMINS_SERVER_OWNER] :** {Context.Guild.Owner}\n" +
+                       $"**[CMD_ADMINS_SERVER_USERS] :** {Context.Guild.MemberCount}\n" +
+                       $"**[CMD_ADMINS_SERVER_CHANNELS] :** {Context.Guild.Channels.Count}\n" +
+                       $"**[CMD_ADMINS_SERVER_ROLES] :** {Context.Guild.Roles.Count}\n" +
+                       $"**[CMD_ADMINS_SERVER_EMOTES] : ** {Context.Guild.Emotes.Count}\n\n" +
+                       $"**[CMD_ADMINS_SERVER_SECURITY] :** {Context.Guild.VerificationLevel}";
 
             text = _translation.TranslationText(text);
 
@@ -43,7 +43,7 @@ namespace Discord_Bot.Modules.Admins.Information
                 .WithImageUrl(Context.Guild.IconUrl)
                 .WithDescription(text);
 
-            await Context.Message.ReplyAsync($"{_translation.GetTranslationByTextId("CMD_ADMINS_SERVER_INFO")}" +
+            await Context.Message.ReplyAsync($"{_translation.GetTranslationByTextId("[CMD_ADMINS_SERVER_INFO]")}" +
                                              $" **{Context.Guild.Name}**", embed: embed.Build());
         }
     }

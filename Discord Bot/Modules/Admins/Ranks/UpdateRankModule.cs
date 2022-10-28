@@ -27,7 +27,7 @@ namespace Discord_Bot.Modules.Admins.Ranks
         }
 
         [Command("updateRank")]
-        [Summary("CMD_SUMMARY_UPDATE_RANK")]
+        [Summary("[CMD_SUMMARY_UPDATE_RANK]")]
         public async Task UpdateRank(int levelRank, IRole role, uint needExp, [Remainder] string name)
         {
             if (Context.Guild.GetChannel(_config.ChannelIdForBotLog) is not IMessageChannel messageChannel)

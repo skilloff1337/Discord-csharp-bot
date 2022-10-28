@@ -25,7 +25,7 @@ namespace Discord_Bot.Modules.Admins.Ranks
         }
 
         [Command("infoRanks")]
-        [Summary("CMD_SUMMARY_LIST_USER_RANKS")]
+        [Summary("[CMD_SUMMARY_LIST_USER_RANKS]")]
         public async Task InfoRanks()
         {
             var countUser = _rank.CountUsers;
@@ -33,7 +33,7 @@ namespace Discord_Bot.Modules.Admins.Ranks
             var text = new StringBuilder(500);
             text.Append($"Total users in the system: {countUser}\n\n");
             text.Append($"[Level] | Name Level | Count\n");
-            for (var i = 0; i < userInLevels.Length; i++)
+            for (var i = 1; i < userInLevels.Length; i++)
             {
                 text.Append($"[{i}] | {_config.Ranks[i].NameRank} | {userInLevels[i]}\n");
             }

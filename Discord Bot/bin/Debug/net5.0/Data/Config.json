@@ -4,7 +4,78 @@
   "AdministratorsID": [
     305330357937635329
   ],
-  "Ranks": {},
+  "Ranks": {
+    "1": {
+      "Id": "635b6dcbe44071acf576c927",
+      "NameRank": "Newly Arrived",
+      "Level": 1,
+      "NeedExp": 10,
+      "RoleId": 1035428411688099840
+    },
+    "2": {
+      "Id": "635b6de6e44071acf576c929",
+      "NameRank": "Newby",
+      "Level": 2,
+      "NeedExp": 50,
+      "RoleId": 1035428852568166481
+    },
+    "3": {
+      "Id": "635b6dfee44071acf576c92b",
+      "NameRank": "Accustomed",
+      "Level": 3,
+      "NeedExp": 200,
+      "RoleId": 1035428907014426655
+    },
+    "4": {
+      "Id": "635b6e0ae44071acf576c92d",
+      "NameRank": "Huckster",
+      "Level": 4,
+      "NeedExp": 500,
+      "RoleId": 1035429013352611871
+    },
+    "5": {
+      "Id": "635b6e19e44071acf576c92f",
+      "NameRank": "Gangster",
+      "Level": 5,
+      "NeedExp": 1000,
+      "RoleId": 1035429138749722695
+    },
+    "6": {
+      "Id": "635b6e2ee44071acf576c931",
+      "NameRank": "Storm of the streets",
+      "Level": 6,
+      "NeedExp": 2500,
+      "RoleId": 1035429419310927882
+    },
+    "7": {
+      "Id": "635b6e3ae44071acf576c933",
+      "NameRank": "Elite",
+      "Level": 7,
+      "NeedExp": 5000,
+      "RoleId": 1035429467440566282
+    },
+    "8": {
+      "Id": "635b6e46e44071acf576c935",
+      "NameRank": "Legend",
+      "Level": 8,
+      "NeedExp": 10000,
+      "RoleId": 1035429471806816318
+    },
+    "9": {
+      "Id": "635b6e58e44071acf576c937",
+      "NameRank": "Deputy Boss",
+      "Level": 9,
+      "NeedExp": 50000,
+      "RoleId": 1035429476030492672
+    },
+    "10": {
+      "Id": "635b6e66e44071acf576c939",
+      "NameRank": "Boss",
+      "Level": 10,
+      "NeedExp": 100000,
+      "RoleId": 1035429480136712212
+    }
+  },
   "DataBaseName": "discordBot",
   "CollectionMessage": "messageUser",
   "ConnectionString": "mongodb://localhost:27017",

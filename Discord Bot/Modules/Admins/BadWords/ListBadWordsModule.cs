@@ -5,7 +5,6 @@ using Discord.Commands;
 using Discord_Bot.Attributes;
 using Discord_Bot.Models;
 using Discord_Bot.Models.Types;
-using Discord_Bot.Services.BadWords;
 using Discord_Bot.Services.BadWords.Interfaces;
 
 namespace Discord_Bot.Modules.Admins.BadWords
@@ -26,7 +25,7 @@ namespace Discord_Bot.Modules.Admins.BadWords
         }
 
         [Command("listBadWords")]
-        [Summary("CMD_SUMMARY_LIST_BAD_WORD")]
+        [Summary("[CMD_SUMMARY_LIST_BAD_WORD]")]
         public async Task ListBadWords()
         {
             var text = new StringBuilder(500);

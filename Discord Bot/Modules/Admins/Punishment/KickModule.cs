@@ -27,13 +27,13 @@ namespace Discord_Bot.Modules.Admins.Punishment
         }
 
         [Command("kick")]
-        [Summary("CMD_SUMMARY_KICK")]
+        [Summary("[CMD_SUMMARY_KICK]")]
         public async Task KickUser(SocketGuildUser user, string reason)
         {
             var channel = await _client.GetChannelAsync(_config.ChannelIdForBotLog) as IMessageChannel;
             var text =
-                $"CMD_ADMINS_ADMINISTRATOR ***{Context.User.Username}*** CMD_ADMINS_KICK " +
-                $"***{user.Username}#{user.Discriminator}*** [ID:{user.Id}], CMD_ADMINS_REASON : ***{reason}***";
+                $"[CMD_ADMINS_ADMINISTRATOR] ***{Context.User.Username}*** [CMD_ADMINS_KICK] " +
+                $"***{user.Username}#{user.Discriminator}*** [ID:{user.Id}], [CMD_ADMINS_REASON] : ***{reason}***";
 
             text = _translation.TranslationText(text);
 

@@ -27,7 +27,7 @@ namespace Discord_Bot.Modules.Admins.Settings
         }
 
         [Command("setCommandChannel")]
-        [Summary("CMD_SUMMARY_SET_COMMAND_CHANNEL")]
+        [Summary("[CMD_SUMMARY_SET_COMMAND_CHANNEL]")]
         public async Task SetCommandChannel(IMessageChannel channel)
         {
             var logChannel = await _client.GetChannelAsync(_config.ChannelIdForBotLog) as IMessageChannel;

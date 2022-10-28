@@ -14,7 +14,7 @@ namespace Discord_Bot.Modules.Admins.Message
     public class SendMessageByBotReplyModule : ModuleBase<SocketCommandContext>
     {
         [Command("sendreply")]
-        [Summary("CMD_SUMMARY_SEND_REPLY_MESSAGE")]
+        [Summary("[CMD_SUMMARY_SEND_REPLY_MESSAGE]")]
         public async Task SendMessage(IMessageChannel channel, ulong idMessage, [Remainder] string text)
         {
             var message = await channel.GetMessageAsync(idMessage) as SocketUserMessage;

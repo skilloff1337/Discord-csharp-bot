@@ -28,7 +28,7 @@ namespace Discord_Bot.Modules.Admins.Settings
         }
 
         [Command("setWelcomeChannel")]
-        [Summary("CMD_SUMMARY_SET_COMMAND_CHANNEL")]
+        [Summary("[CMD_SUMMARY_SET_COMMAND_CHANNEL]")]
         public async Task SetCommandChannel(IMessageChannel channel)
         {
             if(channel != _client.GetGuild(_config.IdServer).SystemChannel)

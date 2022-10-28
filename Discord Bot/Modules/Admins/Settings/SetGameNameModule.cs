@@ -27,7 +27,7 @@ namespace Discord_Bot.Modules.Admins.Settings
         }
 
         [Command("setGameName")]
-        [Summary("CMD_SUMMARY_HELP")]
+        [Summary("[CMD_SUMMARY_HELP]")]
         public async Task SetGameName([Remainder]string name)
         {
             await _client.SetGameAsync(name);

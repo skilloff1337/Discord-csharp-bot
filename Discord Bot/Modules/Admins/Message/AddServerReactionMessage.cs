@@ -1,6 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
 using Discord_Bot.Attributes;
@@ -23,7 +21,7 @@ namespace Discord_Bot.Modules.Admins.Message
         }
 
         [Command("addBotServerReaction")]
-        [Summary("CMD_SUMMARY_ADD_SERVER_REACTION_TO_MESSAGE")]
+        [Summary("[CMD_SUMMARY_ADD_SERVER_REACTION_TO_MESSAGE]")]
         public async Task AddBotServerReaction(ulong idChannel, ulong idMessage)
         {
 

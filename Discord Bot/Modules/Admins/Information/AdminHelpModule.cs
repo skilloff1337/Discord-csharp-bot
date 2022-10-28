@@ -28,7 +28,7 @@ namespace Discord_Bot.Modules.Admins.Information
         }
 
         [Command("help")]
-        [Summary("CMD_SUMMARY_HELP")]
+        [Summary("[CMD_SUMMARY_HELP]")]
         public async Task Help()
         {
             var commandInfos = _commandService
@@ -52,7 +52,7 @@ namespace Discord_Bot.Modules.Admins.Information
                 .WithDescription(text)
                 .Build();
 
-            await Context.Message.ReplyAsync(_translation.GetTranslationByTextId("CMD_ADMINS_COMMANDS"),
+            await Context.Message.ReplyAsync(_translation.GetTranslationByTextId("[CMD_ADMINS_COMMANDS]"),
                 embed: embed);
         }
     }

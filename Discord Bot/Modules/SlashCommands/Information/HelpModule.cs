@@ -27,7 +27,7 @@ namespace Discord_Bot.Modules.SlashCommands.Information
             {
                 foreach (var cmd in module.SlashCommands)
                 {
-                    result.Append($"**!{cmd.Name}** ");
+                    result.Append($"**/{cmd.Name}** ");
                     
                     foreach (var parameter in cmd.Parameters)
                         result.Append($"{parameter.Name} ");
@@ -39,7 +39,7 @@ namespace Discord_Bot.Modules.SlashCommands.Information
                 .WithColor(_color)
                 .WithDescription(_translation.TranslationText(result.ToString()));
 
-            await RespondAsync(_translation.GetTranslationByTextId("CMD_USER_COMMANDS"),
+            await RespondAsync(_translation.GetTranslationByTextId("[CMD_USER_COMMANDS]"),
                 embed: embed.Build());
         }
     }

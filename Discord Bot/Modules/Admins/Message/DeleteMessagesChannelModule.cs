@@ -34,7 +34,7 @@ namespace Discord_Bot.Modules.Admins.Message
         }
 
         [Command("deleteMessageChannel")]
-        [Summary("CMD_SUMMARY_CLEAR_ALL_MESSAGE")]
+        [Summary("[CMD_SUMMARY_CLEAR_ALL_MESSAGE]")]
         public async Task DeleteAllMessageChannel(IMessageChannel channel, int countMessages = 100)
         {
             if (_client.GetChannel(_config.ChannelIdForBotLog) is not IMessageChannel logChannel)
@@ -44,7 +44,7 @@ namespace Discord_Bot.Modules.Admins.Message
             }
 
             await logChannel.SendMessageAsync(
-                $"{_translation.GetTranslationByTextId("CMD_ADMINS_START_DEL_MESSAGES")} " +
+                $"{_translation.GetTranslationByTextId("[CMD_ADMINS_START_DEL_MESSAGES]")} " +
                 channel.Id);
             _stopwatch.Restart();
 
@@ -63,11 +63,11 @@ namespace Discord_Bot.Modules.Admins.Message
 
             _stopwatch.Stop();
 
-            var text = $"CMD_ADMINS_COUNT_DELETED_MESSAGES : {count}/{countMessages}\n" +
-                       $"CMD_ADMINS_ELAPSED_DELETED_MESSAGES : {_stopwatch.Elapsed}\n" +
-                       $"CMD_ADMINS_CHANNEL_ID : {channel.Id}\n" +
-                       $"CMD_ADMINS_CHANNEL_NAME : {channel.Name}\n" +
-                       $"CMD_ADMINS_START_DELETED_MESSAGES : {Context.User.Username}#{Context.User.Discriminator}\n";
+            var text = $"[CMD_ADMINS_COUNT_DELETED_MESSAGES] : {count}/{countMessages}\n" +
+                       $"[CMD_ADMINS_ELAPSED_DELETED_MESSAGES] : {_stopwatch.Elapsed}\n" +
+                       $"[CMD_ADMINS_CHANNEL_ID] : {channel.Id}\n" +
+                       $"[CMD_ADMINS_CHANNEL_NAME] : {channel.Name}\n" +
+                       $"[CMD_ADMINS_START_DELETED_MESSAGES] : {Context.User.Username}#{Context.User.Discriminator}\n";
 
             text = _translation.TranslationText(text);
 
@@ -78,7 +78,7 @@ namespace Discord_Bot.Modules.Admins.Message
 
 
             await logChannel.SendMessageAsync(
-                $"{Context.User.Mention} {_translation.GetTranslationByTextId("CMD_ADMINS_END_DELETED_MESSAGES")}.",
+                $"{Context.User.Mention} {_translation.GetTranslationByTextId("[CMD_ADMINS_END_DELETED_MESSAGES]")}.",
                 embed: embed.Build());
         }
     }

@@ -27,13 +27,13 @@ namespace Discord_Bot.Modules.Admins.Punishment
         }
         
         [Command("unban")]
-        [Summary("CMD_SUMMARY_UNBAN")]
+        [Summary("[CMD_SUMMARY_UNBAN]")]
         public async Task UnBanUser(IUser user)
         {
             var channel = await _client.GetChannelAsync(_config.ChannelIdForBotLog) as IMessageChannel;
             
             var text =
-                $"CMD_ADMINS_ADMINISTRATOR  ***{Context.User.Username}*** CMD_ADMINS_UNBANNED " +
+                $"[CMD_ADMINS_ADMINISTRATOR]  ***{Context.User.Username}*** [CMD_ADMINS_UNBANNED] " +
                 $"***{user.Username}#{user.Discriminator}*** [ID:{user.Id}] ";
 
             text = _translation.TranslationText(text);

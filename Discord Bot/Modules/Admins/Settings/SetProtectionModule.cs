@@ -26,7 +26,7 @@ namespace Discord_Bot.Modules.Admins.Settings
         }
         
         [Command("setProtectionBadWords")]
-        [Summary("CMD_SUMMARY_SET_BAD_WORDS")]
+        [Summary("[CMD_SUMMARY_SET_BAD_WORDS]")]
         public async Task SetProtectionChannel(bool value)
         {
             var logChannel = await _client.GetChannelAsync(_config.ChannelIdForBotLog) as IMessageChannel;

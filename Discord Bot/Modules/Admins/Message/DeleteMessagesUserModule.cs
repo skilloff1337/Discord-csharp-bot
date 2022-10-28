@@ -33,7 +33,7 @@ namespace Discord_Bot.Modules.Admins.Message
         }
 
         [Command("deleteMessageUser")]
-        [Summary("CMD_SUMMARY_CLEAR_USER_MESSAGE")]
+        [Summary("[CMD_SUMMARY_CLEAR_USER_MESSAGE]")]
         public async Task DeleteMessagesUser(IUser user, int checkLastMessages = 100)
         {
             if (_client.GetChannel(_config.ChannelIdForBotLog) is not IMessageChannel logChannel)
@@ -47,9 +47,9 @@ namespace Discord_Bot.Modules.Admins.Message
             var allMessages = checkLastMessages * channels.Count;
 
             var text =
-                $"CMD_ADMINS_START_DELETED_MESSAGES : {Context.User.Username}#{Context.User.Discriminator}\n" +
-                $"CMD_CLEAN_FOR_USER : {user.Username}#{user.Discriminator}\n" +
-                $"CMD_ADMINS_CHANNELS_IN_CLEAN : {channels.Count}\n";
+                $"[CMD_ADMINS_START_DELETED_MESSAGES] : {Context.User.Username}#{Context.User.Discriminator}\n" +
+                $"[CMD_CLEAN_FOR_USER] : {user.Username}#{user.Discriminator}\n" +
+                $"[CMD_ADMINS_CHANNELS_IN_CLEAN] : {channels.Count}\n";
 
             var embed = new EmbedBuilder()
                 .WithColor(_color)
@@ -58,7 +58,7 @@ namespace Discord_Bot.Modules.Admins.Message
 
             await logChannel.SendMessageAsync(
                 $"{Context.User.Mention} " +
-                $"{_translation.GetTranslationByTextId("CMD_ADMINS_START_USER_DELETED_MESSAGES")}.",
+                $"{_translation.GetTranslationByTextId("[CMD_ADMINS_START_USER_DELETED_MESSAGES]")}.",
                 embed: embed.Build());
 
             var allDeletedMessages = 0;
@@ -86,21 +86,21 @@ namespace Discord_Bot.Modules.Admins.Message
                 allMsg += await messages.CountAsync();
                 allDeletedMessages += countInCurrentChannel;
                 await logChannel.SendMessageAsync(
-                    $"{Context.User.Mention} CMD_ADMINS_END_DELETED_CHANNEL_MESSAGES {channel}," +
-                    $" CMD_ADMINS_MESSAGES_DELETED {user.Username} : {countInCurrentChannel}");
+                    $"{Context.User.Mention} [CMD_ADMINS_END_DELETED_CHANNEL_MESSAGES] {channel}," +
+                    $" [CMD_ADMINS_MESSAGES_DELETED] {user.Username} : {countInCurrentChannel}");
                 await Task.Delay(1000);
             }
 
-            text = $"CMD_ADMINS_START_DELETED_MESSAGES : {user.Username}#{user.Discriminator}\n" +
-                   $"CMD_ADMINS_CHANNELS_IN_CLEAN : {channels.Count}\n" +
-                   $"CMD_ADMINS_VIEWED_MESSAGES : {allMsg}\n" +
-                   $"CMD_ADMINS_COUNT_DELETED_MESSAGES : {allDeletedMessages}";
+            text = $"[CMD_ADMINS_START_DELETED_MESSAGES] : {user.Username}#{user.Discriminator}\n" +
+                   $"[CMD_ADMINS_CHANNELS_IN_CLEAN] : {channels.Count}\n" +
+                   $"[CMD_ADMINS_VIEWED_MESSAGES] : {allMsg}\n" +
+                   $"[CMD_ADMINS_COUNT_DELETED_MESSAGES] : {allDeletedMessages}";
 
             embed.WithDescription(text);
 
 
             await logChannel.SendMessageAsync(
-                $"{Context.User.Mention} {_translation.GetTranslationByTextId("CMD_ADMINS_END_USER_DELETED_MESSAGES")}.",
+                $"{Context.User.Mention} {_translation.GetTranslationByTextId("[CMD_ADMINS_END_USER_DELETED_MESSAGES]")}.",
                 embed: embed.Build());
         }
     }

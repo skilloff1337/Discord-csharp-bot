@@ -1,9 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
-using Discord.WebSocket;
 using Discord_Bot.Attributes;
-using Discord_Bot.Models;
 using Discord_Bot.Models.Types;
 
 namespace Discord_Bot.Modules.Admins.Message
@@ -15,7 +13,7 @@ namespace Discord_Bot.Modules.Admins.Message
     public class SendRoleLanguageMessage: ModuleBase<SocketCommandContext>
     {
         [Command("sendRoleLanguageMessage")]
-        [Summary("CMD_SUMMARY_SEND_GIVING_LANGUAGE_ROLE_MESSAGE")]
+        [Summary("[CMD_SUMMARY_SEND_GIVING_LANGUAGE_ROLE_MESSAGE]")]
         public async Task SendRoleLanguage()
         {
             var chn = Context.Guild.GetChannel(1031459953124323328) as IMessageChannel;

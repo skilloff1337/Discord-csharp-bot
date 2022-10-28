@@ -13,7 +13,7 @@ namespace Discord_Bot.Modules.Admins.Message
     public class SendRoleServerMessage : ModuleBase<SocketCommandContext>
     {
         [Command("sendRoleServerMessage")]
-        [Summary("CMD_SUMMARY_SEND_GIVING_SERVER_ROLE_MESSAGE")]
+        [Summary("[CMD_SUMMARY_SEND_GIVING_SERVER_ROLE_MESSAGE]")]
         public async Task Test()
         {
             var chn = Context.Guild.GetChannel(1031459953124323328) as IMessageChannel;

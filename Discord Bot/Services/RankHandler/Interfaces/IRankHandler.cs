@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+﻿using Discord_Bot.Models;
 
 namespace Discord_Bot.Services.RankHandler.Interfaces
 {
@@ -6,5 +6,6 @@ namespace Discord_Bot.Services.RankHandler.Interfaces
     {
         int CountUsers { get; }
         int[] CountUserInLevels();
+        User GetUser(ulong discordId);
     }
 }

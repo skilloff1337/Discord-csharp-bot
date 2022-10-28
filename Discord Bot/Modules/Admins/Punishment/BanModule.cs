@@ -30,15 +30,15 @@ namespace Discord_Bot.Modules.Admins.Punishment
         }
 
         [Command("ban")]
-        [Summary("CMD_SUMMARY_BAN")]
+        [Summary("[CMD_SUMMARY_BAN]")]
         public async Task BanUser(IUser user, int days, string reason)
         {
             var channel = await _client.GetChannelAsync(_config.ChannelIdForBotLog) as IMessageChannel;
             
             var text =
-                $"CMD_ADMINS_ADMINISTRATOR ***{Context.User.Username}*** CMD_ADMINS_BANNED " +
+                $"[CMD_ADMINS_ADMINISTRATOR] ***{Context.User.Username}*** [CMD_ADMINS_BANNED] " +
                 $"***{user.Username}#{user.Discriminator}*** [ID:{user.Id}] " +
-                $"CMD_ADMINS_FOR ***{days}*** CMD_ADMINS_DAYS, CMD_ADMINS_REASON : ***{reason}***";
+                $"[CMD_ADMINS_FOR] ***{days}*** [CMD_ADMINS_DAYS], [CMD_ADMINS_REASON] : ***{reason}***";
 
             text = _translation.TranslationText(text);
 

@@ -42,10 +42,10 @@ namespace Discord_Bot.Services.RankHandler
         {
             if (message.Author.IsBot || message.Channel is IDMChannel)
                 return;
-            
+
             if (_config.Ranks.Count == 0)
                 return;
-            
+
             var user = _users.FirstOrDefault(x => x.DiscordId == message.Author.Id);
             if (user is not null)
             {
@@ -64,7 +64,8 @@ namespace Discord_Bot.Services.RankHandler
                         .WithDescription(
                             $"New rank name: {_config.Ranks[user.Level].NameRank}\n" +
                             $"New level: {user.Level}\n" +
-                            $"New Exp: {user.CurrentExp}\n" +
+                            $"Now Exp: {user.CurrentExp}\n" +
+                            $"Need exp: {_config.Ranks[user.Level].NeedExp}" +
                             $"New Role: {guild.GetRole(roleId).Name}")
                         .Build();
 
@@ -99,10 +100,13 @@ namespace Discord_Bot.Services.RankHandler
             return list.ToArray();
         }
 
+        public User GetUser(ulong discordId) 
+            => _users.FirstOrDefault(x => x.DiscordId == discordId);
+
 
         private void SaveUsers()
         {
-            _nextSave = DateTime.Now.AddHours(1);
+            _nextSave = DateTime.Now.AddMinutes(5);
             _jsonWriter.WriteData(_users);
         }
     }

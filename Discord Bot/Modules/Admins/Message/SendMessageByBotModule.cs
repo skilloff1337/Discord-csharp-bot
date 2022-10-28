@@ -13,7 +13,7 @@ namespace Discord_Bot.Modules.Admins.Message
     public class SendMessageByBotModule : ModuleBase<SocketCommandContext>
     {
         [Command("send")]
-        [Summary("CMD_SUMMARY_SEND_MESSAGE")]
+        [Summary("[CMD_SUMMARY_SEND_MESSAGE]")]
         public async Task SendMessage(IMessageChannel channel, IRole role, [Remainder] string text)
         {
             await channel.SendMessageAsync($"{role.Mention} {text}");

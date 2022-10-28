@@ -13,7 +13,7 @@ namespace Discord_Bot.Modules.Admins.Message
     public class SendPrivateMessageByBotModule: ModuleBase<SocketCommandContext>
     {
         [Command("sendPrivate")]
-        [Summary("CMD_SUMMARY_SEND_PRIVATE_MESSAGE")]
+        [Summary("[CMD_SUMMARY_SEND_PRIVATE_MESSAGE]")]
         public async Task SendMessage(IUser user, [Remainder] string text)
         {
             await user.SendMessageAsync(text);
